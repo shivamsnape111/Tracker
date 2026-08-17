@@ -717,7 +717,7 @@ function renderRoadmap(){
 }
 function editPhaseTitle(pi){
   const phases=getPhases();
-  const row=document.getElementById('ph-title-row-'+pi);
+  const row=document.getElementById('pt-row-'+pi);
   if(!row)return;
   const current=phases[pi].title;
   row.innerHTML=`
