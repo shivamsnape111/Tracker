@@ -234,7 +234,7 @@ body.light .tag{background:#f0f4ff;border-color:#d0daf0;}
 <div class="hero">
   <div class="gdots"><div class="gd"></div><div class="gd"></div><div class="gd"></div><div class="gd"></div></div>
   <h1>Google Mission 2027</h1>
-  <div class="hero-sub">Shivam Chauhan &nbsp;·&nbsp; Google SWE &nbsp;·&nbsp; Target: 15 Feb 2027 &nbsp;·&nbsp; Wedding: Apr 2027</div>
+  <div class="hero-sub" id="hero-sub-text">Shivam Chauhan &nbsp;·&nbsp; Google SWE &nbsp;·&nbsp; Target: 15 Feb 2027</div>
 </div>
 
 <div class="qotd" id="qotd"></div>
@@ -369,17 +369,63 @@ body.light .tag{background:#f0f4ff;border-color:#d0daf0;}
 
 <!-- MISSION -->
 <div class="panel" id="panel-manifest">
-  <div class="manif-card">
-    Dear Universe, thank you for guiding me toward my dream career.<br><br>
-    I am preparing with <span class="mh">discipline, confidence, and consistency</span> for a <span class="mh">Google Software Engineer</span> role.<br><br>
-    I welcome the right opportunity at the right time — whether it comes before <span class="my">February 2027</span> or even earlier.<br><br>
-    Every day I improve my <span class="mh">coding, communication, and confidence</span>. I attract opportunities that match my hard work and values.<br><br>
-    I remain <span class="mg">calm, focused, and grateful</span> throughout this journey. I trust the process, and I am <span class="mh">ready</span>.
-    <div class="manif-sign"><span>Shivam Chauhan</span><span>17 August 2026</span></div>
+
+  <!-- MANIFESTATION CARD -->
+  <div style="background:linear-gradient(160deg,#0a1628 0%,#0d1f45 50%,#0a1628 100%);border:1px solid rgba(66,133,244,.35);border-radius:16px;padding:24px 20px;margin-bottom:14px;position:relative;overflow:hidden;user-select:none;-webkit-user-select:none;">
+    <!-- decorative glow -->
+    <div style="position:absolute;top:-40px;right:-40px;width:120px;height:120px;background:radial-gradient(circle,rgba(66,133,244,.18),transparent 70%);pointer-events:none;"></div>
+    <div style="position:absolute;bottom:-40px;left:-40px;width:120px;height:120px;background:radial-gradient(circle,rgba(124,58,237,.15),transparent 70%);pointer-events:none;"></div>
+    <!-- Om symbol watermark -->
+    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:120px;opacity:.03;pointer-events:none;user-select:none;">🕉️</div>
+
+    <div style="font-size:11px;font-weight:800;color:rgba(66,133,244,.7);text-transform:uppercase;letter-spacing:2px;margin-bottom:16px;text-align:center;">Morning Manifestation</div>
+
+    <div style="font-size:13px;line-height:2;color:#b8cfe8;font-style:italic;position:relative;z-index:1;">
+      Dear Universe, thank you for guiding me toward my dream career.<br><br>
+      I am preparing with <span style="color:#4285f4;font-weight:800;font-style:normal;">discipline, confidence, and consistency</span> for a <span style="color:#4285f4;font-weight:800;font-style:normal;">Google Software Engineer</span> role.<br><br>
+      I welcome the right opportunity at the right time — whenever it arrives.<br><br>
+      Every day I improve my <span style="color:#4285f4;font-weight:800;font-style:normal;">coding, communication, and confidence</span>. I attract opportunities that match my hard work and values.<br><br>
+      I remain <span style="color:#34a853;font-weight:800;font-style:normal;">calm, focused, and grateful</span> throughout this journey. I trust the process, and I am <span style="color:#4285f4;font-weight:800;font-style:normal;">ready</span> when the opportunity arrives.
+    </div>
+
+    <div style="margin-top:18px;padding-top:14px;border-top:1px solid rgba(66,133,244,.2);display:flex;justify-content:space-between;align-items:center;">
+      <span style="font-size:11px;color:rgba(255,255,255,.4);font-style:normal;">Shivam Chauhan</span>
+      <span style="font-size:10px;color:rgba(255,255,255,.3);font-style:normal;">Google Mission 2027</span>
+    </div>
   </div>
-  <div class="promise-card"><strong style="color:#fca5a5">My Promise —</strong> I will follow this roadmap from 17 Aug 2026 to 15 Feb 2027. Consistency over perfection. One day at a time.</div>
-  <button class="btn btn-purple" id="manifest-btn" onclick="doManifest()">🌟 Mark Morning Manifestation Done</button>
-  <div id="manifest-status" style="font-size:11px;color:var(--muted);text-align:center;margin-top:6px;"></div>
+
+  <!-- MY PROMISE -->
+  <div style="background:linear-gradient(135deg,rgba(234,67,53,.08),rgba(251,188,5,.05));border:1px solid rgba(234,67,53,.25);border-radius:14px;padding:16px 18px;margin-bottom:14px;position:relative;overflow:hidden;user-select:none;-webkit-user-select:none;">
+    <div style="position:absolute;top:50%;right:16px;transform:translateY(-50%);font-size:40px;opacity:.06;pointer-events:none;">🔥</div>
+    <div style="font-size:10px;font-weight:800;color:rgba(234,67,53,.7);text-transform:uppercase;letter-spacing:2px;margin-bottom:10px;">My Promise</div>
+    <div style="font-size:13px;line-height:1.9;color:#fca5a5;">
+      I will follow this roadmap with <strong style="color:#f87171;">full discipline and consistency</strong> until I walk into Google.<br>
+      I will not create a new roadmap out of fear, confusion, or comparison.<br>
+      I choose <strong style="color:#f87171;">consistency over perfection</strong>.<br>
+      <span style="color:rgba(255,255,255,.4);font-size:11px;">One day at a time. One problem at a time. One step at a time.</span>
+    </div>
+  </div>
+
+  <!-- QUICK STATS -->
+  <div style="font-size:9px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px;">Mission at a Glance</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:14px;" id="mission-stats"></div>
+
+  <!-- GOOGLE VALUES REMINDER - EDITABLE -->
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+      <div style="font-size:10px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;">Why Google?</div>
+      <button onclick="addWhyReason()" style="padding:3px 10px;background:rgba(66,133,244,.15);color:#8ab4f8;border:1px solid rgba(66,133,244,.3);border-radius:99px;font-size:10px;font-weight:700;cursor:pointer;">+ Add</button>
+    </div>
+    <div id="why-list" style="display:flex;flex-direction:column;gap:8px;"></div>
+  </div>
+
+  <!-- MANIFESTATION DONE BUTTON - at bottom -->
+  <div style="margin-top:16px;">
+    <button class="btn btn-purple" id="manifest-btn" onclick="doManifest()" style="margin-bottom:6px;">🌟 Mark Morning Manifestation Done</button>
+    <div id="manifest-status" style="font-size:11px;color:var(--muted);text-align:center;margin-bottom:8px;"></div>
+    <button id="manifest-undo-btn" onclick="undoManifest()" style="display:none;width:100%;padding:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);font-size:11px;color:var(--muted);cursor:pointer;">↩ Undo — Mark as Not Done</button>
+  </div>
+
 </div>
 
 </div>
@@ -393,14 +439,16 @@ const CHECKS=[
   {id:'sleep',  text:'7+ hours sleep planned or completed',                     cat:'Sleep',  bg:'rgba(251,188,5,.15)', col:'#fcd34d'},
   {id:'growth', text:'One step more Google-ready than yesterday',               cat:'Mindset',bg:'rgba(234,67,53,.15)', col:'#fca5a5'},
 ];
-const PHASES=[
-  {title:'Phase 1 · DSA Foundation + C++ STL',   dates:'Aug 17 – Sep 16',s:'2026-08-17',e:'2026-09-17',topics:['Arrays','Strings','Hashing','Two Pointers','Sliding Window','Prefix Sum','Binary Search','Stack','Queue','Recursion','C++ STL']},
-  {title:'Phase 2 · Advanced DSA + Concurrency', dates:'Sep 17 – Oct 16',s:'2026-09-17',e:'2026-10-17',topics:['Trees','BST','Heaps','Graphs','Topological Sort','DSU','Backtracking','DP','Threads','Mutex','Semaphore','Condition Variables','Deadlocks']},
-  {title:'Phase 3 · System Design + Networking', dates:'Oct 17 – Nov 16',s:'2026-10-17',e:'2026-11-17',topics:['Scalability','Load Balancer','Caching','Databases','Replication','Sharding','Message Queues','Rate Limiter','URL Shortener','TCP/IP','HTTP/HTTPS','DNS','TLS','REST']},
-  {title:'Phase 4 · OS + Projects + Resume',     dates:'Nov 17 – Dec 16',s:'2026-11-17',e:'2026-12-17',topics:['Virtual Memory','Paging','Scheduling','Context Switching','Synchronization','IPC','File Systems','Hyper-V','Active Directory','Resume']},
-  {title:'Phase 5 · Interview Simulation',       dates:'Dec 17 – Jan 16',s:'2026-12-17',e:'2027-01-17',topics:['Google-tagged LeetCode','Timed Coding','Mock System Design','Behavioral STAR','OS/Networking Revision','C++ Deep Revision']},
-  {title:'Phase 6 · Google Execution',           dates:'Jan 17 – Feb 15',s:'2027-01-17',e:'2027-02-15',topics:['Referrals','Recruiter Outreach','Mock Interviews','Final Revision','English Interview Practice','Offer Negotiation']},
+const DEFAULT_PHASES=[
+  {title:'Phase 1 · DSA Foundation + C++ STL',   dates:'Aug 18 – Sep 17',s:'2026-08-18',e:'2026-09-18',topics:['Arrays','Strings','Hashing','Two Pointers','Sliding Window','Prefix Sum','Binary Search','Stack','Queue','Recursion','C++ STL']},
+  {title:'Phase 2 · Advanced DSA + Concurrency', dates:'Sep 18 – Oct 17',s:'2026-09-18',e:'2026-10-18',topics:['Trees','BST','Heaps','Graphs','Topological Sort','DSU','Backtracking','DP','Threads','Mutex','Semaphore','Condition Variables','Deadlocks']},
+  {title:'Phase 3 · System Design + Networking', dates:'Oct 18 – Nov 17',s:'2026-10-18',e:'2026-11-18',topics:['Scalability','Load Balancer','Caching','Databases','Replication','Sharding','Message Queues','Rate Limiter','URL Shortener','TCP/IP','HTTP/HTTPS','DNS','TLS','REST']},
+  {title:'Phase 4 · OS + Projects + Resume',     dates:'Nov 18 – Dec 17',s:'2026-11-18',e:'2026-12-18',topics:['Virtual Memory','Paging','Scheduling','Context Switching','Synchronization','IPC','File Systems','Hyper-V','Active Directory','Resume']},
+  {title:'Phase 5 · Interview Simulation',       dates:'Dec 18 – Jan 17',s:'2026-12-18',e:'2027-01-18',topics:['Google-tagged LeetCode','Timed Coding','Mock System Design','Behavioral STAR','OS/Networking Revision','C++ Deep Revision']},
+  {title:'Phase 6 · Google Execution',           dates:'Jan 18 – Feb 15',s:'2027-01-18',e:'2027-02-15',topics:['Referrals','Recruiter Outreach','Mock Interviews','Final Revision','English Interview Practice','Offer Negotiation']},
 ];
+function getPhases(){return ld('gm-phases',DEFAULT_PHASES);}
+function savePhases(phases){sv('gm-phases',phases);}
 const SUNDAY_TASKS=[
   {id:'puzzle',    text:'🧩 Puzzles & Reasoning (Fermi, Probability, Logic)'},
   {id:'behavioral',text:'🎭 Behavioral STAR (Ownership, Failure, Leadership...)'},
@@ -440,12 +488,19 @@ const QUOTES=[
   {q:"Success usually comes to those too busy to be looking for it.",a:"Henry David Thoreau"},
 ];
 const DL=['M','T','W','T','F','S','S'];
-const MSS=new Date('2026-08-17'),MSE=new Date('2027-02-15');
+function getTargetDate(){return new Date(ld('gm-target','2027-02-15'));}
+function getMissionStart(){return new Date(ld('gm-mstart','2026-08-18'));}
+const MSS=getMissionStart(),MSE=getTargetDate();
 const NOW=new Date(),TK=fmt(NOW);
 const _m={};
 function ld(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d;}catch{return _m[k]!==undefined?_m[k]:d;}}
 function sv(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch{_m[k]=v;}}
-function fmt(d){return d.toISOString().split('T')[0];}
+function fmt(d){
+  const y=d.getFullYear();
+  const m=String(d.getMonth()+1).padStart(2,'0');
+  const day=String(d.getDate()).padStart(2,'0');
+  return y+'-'+m+'-'+day;
+}
 function wkOf(dateStr){
   const d=dateStr?new Date(dateStr+'T12:00:00'):new Date(NOW);
   const day=d.getDay(),diff=d.getDate()-day+(day===0?-6:1);
@@ -472,13 +527,14 @@ function switchTab(name){
   if(name==='journal')renderJournal();
   if(name==='weekly')renderWeekly();
   if(name==='meditation')loadMedStatus();
+  if(name==='manifest'){loadManifest();renderMissionStats();renderWhyList();renderMissionStats();}
   if(name==='roadmap')renderRoadmap();
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
 // COUNTDOWN
 function renderCountdown(){
-  const diff=MSE-new Date(),days=Math.max(0,Math.floor(diff/86400000));
+  const MSE2=getTargetDate(),diff=MSE2-new Date(),days=Math.max(0,Math.floor(diff/86400000));
   document.getElementById('countdown').innerHTML=
     [['Days',days],['Weeks',Math.floor(days/7)],['Months',Math.floor(days/30)],['Total','182']]
     .map(([l,v])=>`<div class="cd"><div class="cd-n">${v}</div><div class="cd-l">${l}</div></div>`).join('');
@@ -565,11 +621,185 @@ function loadMedStatus(){
 
 // ROADMAP
 function renderRoadmap(){
-  const now=new Date();
-  document.getElementById('roadmap-content').innerHTML=PHASES.map(p=>{
-    const s=new Date(p.s),e=new Date(p.e),isA=now>=s&&now<e,isD=now>=e;
-    return `<div class="phase"><div class="ph-head"><div><div class="ph-title">${p.title}</div><div class="ph-dates">${p.dates}</div></div><div class="ph-badge ${isD?'b-done':isA?'b-active':'b-up'}">${isD?'✅ Done':isA?'🔥 Active':'⏳ Upcoming'}</div></div><div class="topics">${p.topics.map(t=>`<span class="tag ${isD?'done':isA?'curr':''}">${t}</span>`).join('')}</div></div>`;
-  }).join('');
+  const now=new Date(), phases=getPhases();
+  const ct=ld('gm-topics-done',{});
+  const targetDate=ld('gm-target','2027-02-15');
+
+  const ACCENT=['#4285f4','#7c3aed','#22c55e','#f59e0b','#0ea5e9','#14b8a6'];
+
+  let out='';
+
+  // Target date card
+  out+=`<div style="background:#111e33;border:1px solid #1a2f50;border-radius:14px;padding:16px;margin-bottom:16px;">
+    <div style="font-size:10px;font-weight:800;color:#6b8ab0;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px;">🎯 Target Date</div>
+    <div style="display:flex;gap:8px;">
+      <input type="date" id="target-date-inp" value="${targetDate}" style="flex:1;background:#060d1f;border:1px solid #1a2f50;border-radius:9px;color:#8ab4f8;padding:9px 12px;font-size:13px;font-family:inherit;outline:none;">
+      <button onclick="saveTargetDate()" style="padding:9px 18px;background:linear-gradient(135deg,#4285f4,#1a6ef5);color:#fff;border:none;border-radius:9px;font-size:12px;font-weight:800;cursor:pointer;">Save</button>
+    </div>
+  </div>`;
+
+  // Phases
+  phases.forEach((p,pi)=>{
+    const s=new Date(p.s),e=new Date(p.e);
+    const isActive=now>=s&&now<e, isDone=now>=e;
+    const accent=ACCENT[pi%ACCENT.length];
+    const totalT=p.topics.length;
+    const doneT=p.topics.filter((_,ti)=>ct[pi+'-'+ti]).length;
+    const pct=totalT?Math.round(doneT/totalT*100):0;
+    const isComplete=totalT>0&&doneT===totalT;
+
+    // Status pill
+    const statusHtml=isDone
+      ?`<span style="background:rgba(34,197,94,.15);color:#4ade80;border:1px solid rgba(34,197,94,.3);font-size:9px;padding:3px 10px;border-radius:99px;font-weight:800;">✅ Done</span>`
+      :isActive
+      ?`<span style="background:rgba(66,133,244,.15);color:#8ab4f8;border:1px solid rgba(66,133,244,.3);font-size:9px;padding:3px 10px;border-radius:99px;font-weight:800;">🔥 Active</span>`
+      :`<span style="background:rgba(107,138,176,.1);color:#6b8ab0;border:1px solid rgba(107,138,176,.2);font-size:9px;padding:3px 10px;border-radius:99px;font-weight:800;">⏳ Upcoming</span>`;
+
+    // Topic pills
+    const topicHtml=p.topics.map((t,ti)=>{
+      const done=ct[pi+'-'+ti];
+      return `<span onclick="toggleTopic(${pi},${ti})" style="display:inline-flex;align-items:center;gap:4px;font-size:10px;padding:4px 10px;border-radius:99px;cursor:pointer;margin:2px;background:${done?'rgba(34,197,94,.15)':'rgba(255,255,255,.04)'};color:${done?'#4ade80':'#6b8ab0'};border:1px solid ${done?'rgba(34,197,94,.35)':accent+'44'};font-weight:${done?'700':'400'};">${done?'✓ ':''}${t}<span onclick="event.stopPropagation();removeTopic(${pi},${ti})" style="margin-left:3px;opacity:.35;font-size:9px;">✕</span></span>`;
+    }).join('')||`<span style="font-size:10px;color:#6b8ab0;font-style:italic;">No topics — add below</span>`;
+
+    out+=`<div style="background:#0d1828;border:1px solid #1a2f50;border-left:3px solid ${accent};border-radius:14px;margin-bottom:10px;overflow:hidden;">
+
+      <!-- Header row -->
+      <div style="padding:14px 16px 10px;display:flex;justify-content:space-between;align-items:flex-start;gap:8px;">
+        <div style="flex:1;">
+          <div style="display:flex;align-items:center;gap:8px;" id="pt-row-${pi}">
+            <div style="font-size:13px;font-weight:800;color:#e2eaf8;">${p.title}</div>
+            <button onclick="editPhaseTitle(${pi})" style="padding:2px 9px;background:rgba(255,255,255,.06);color:#6b8ab0;border:1px solid #1a2f50;border-radius:99px;font-size:9px;font-weight:700;cursor:pointer;white-space:nowrap;">✏️ Edit</button>
+          </div>
+          <div style="display:flex;gap:5px;align-items:center;margin-top:6px;flex-wrap:wrap;">
+            <input type="date" value="${p.s}" onblur="updatePhaseDate(${pi},'s',this.value)" style="background:#060d1f;border:1px solid #1a2f50;border-radius:7px;color:#6b8ab0;padding:3px 8px;font-size:10px;font-family:inherit;outline:none;">
+            <span style="color:#6b8ab0;font-size:11px;">→</span>
+            <input type="date" value="${p.e}" onblur="updatePhaseDate(${pi},'e',this.value)" style="background:#060d1f;border:1px solid #1a2f50;border-radius:7px;color:#6b8ab0;padding:3px 8px;font-size:10px;font-family:inherit;outline:none;">
+            ${statusHtml}
+          </div>
+        </div>
+        <div style="text-align:right;flex-shrink:0;">
+          <div style="font-size:18px;font-weight:900;color:${isComplete?'#4ade80':accent};">${pct}%</div>
+          <div style="font-size:9px;color:#6b8ab0;">${doneT}/${totalT}</div>
+        </div>
+      </div>
+
+      <!-- Progress bar -->
+      <div style="padding:0 16px 10px;">
+        <div style="height:4px;background:rgba(255,255,255,.06);border-radius:99px;overflow:hidden;">
+          <div style="height:100%;width:${pct}%;background:${isComplete?'linear-gradient(90deg,#22c55e,#16a34a)':'linear-gradient(90deg,'+accent+','+accent+'aa)'};border-radius:99px;transition:width .5s;${isComplete?'box-shadow:0 0 6px rgba(34,197,94,.5);':''}"></div>
+        </div>
+      </div>
+
+      <!-- Topics -->
+      <div style="padding:2px 16px 12px;display:flex;flex-wrap:wrap;">${topicHtml}</div>
+
+      <!-- Add topic -->
+      <div style="padding:0 16px 10px;display:flex;gap:6px;">
+        <input id="nt-${pi}" placeholder="Type topic and press Enter..." onkeydown="if(event.key==='Enter')addTopic(${pi})" style="flex:1;background:#060d1f;border:1px solid #1a2f50;border-radius:8px;color:#e2eaf8;padding:7px 11px;font-size:11px;font-family:inherit;outline:none;">
+        <button onclick="addTopic(${pi})" style="padding:7px 14px;background:${accent};color:#fff;border:none;border-radius:8px;font-size:11px;font-weight:800;cursor:pointer;">+</button>
+      </div>
+
+      <!-- Actions -->
+      <div style="padding:0 16px 12px;display:flex;gap:6px;">
+        <button onclick="resetPhase(${pi})" style="flex:1;padding:6px;background:rgba(255,255,255,.04);color:#6b8ab0;border:1px solid #1a2f50;border-radius:8px;font-size:10px;cursor:pointer;">↺ Reset Topics</button>
+        <button onclick="removePhase(${pi})" style="flex:1;padding:6px;background:rgba(239,68,68,.07);color:#fca5a5;border:1px solid rgba(239,68,68,.2);border-radius:8px;font-size:10px;cursor:pointer;">🗑 Remove</button>
+      </div>
+    </div>`;
+  });
+
+  // Bottom actions
+  out+=`<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px;">
+    <button onclick="addNewPhase()" style="padding:11px;background:rgba(34,197,94,.1);color:#4ade80;border:1px solid rgba(34,197,94,.25);border-radius:12px;font-size:11px;font-weight:800;cursor:pointer;">+ New Phase</button>
+    <button onclick="resetRoadmap()" style="padding:11px;background:rgba(255,255,255,.04);color:#6b8ab0;border:1px solid #1a2f50;border-radius:12px;font-size:11px;cursor:pointer;">↺ Reset All</button>
+  </div>`;
+
+  document.getElementById('roadmap-content').innerHTML=out;
+}
+function editPhaseTitle(pi){
+  const phases=getPhases();
+  const row=document.getElementById('ph-title-row-'+pi);
+  if(!row)return;
+  const current=phases[pi].title;
+  row.innerHTML=`
+    <input id="ph-edit-${pi}" value="${current}" style="flex:1;background:rgba(0,0,0,.4);border:1px solid #4285f4;border-radius:8px;color:#fff;padding:5px 10px;font-size:13px;font-weight:800;font-family:inherit;outline:none;">
+    <button onclick="savePhaseTitle(${pi})" style="padding:4px 12px;background:#4285f4;color:#fff;border:none;border-radius:99px;font-size:10px;font-weight:800;cursor:pointer;">Save</button>
+    <button onclick="renderRoadmap()" style="padding:4px 10px;background:rgba(255,255,255,.1);color:rgba(255,255,255,.5);border:none;border-radius:99px;font-size:10px;cursor:pointer;">Cancel</button>
+  `;
+  setTimeout(()=>{const el=document.getElementById('ph-edit-'+pi);if(el){el.focus();el.select();}},50);
+}
+function savePhaseTitle(pi){
+  const inp=document.getElementById('ph-edit-'+pi);if(!inp)return;
+  const val=inp.value.trim();if(!val)return;
+  const phases=getPhases();phases[pi].title=val;savePhases(phases);renderRoadmap();
+}
+function toggleTopic(pi,ti){
+  const ct=ld('gm-topics-done',{});const key=pi+'-'+ti;ct[key]=!ct[key];sv('gm-topics-done',ct);renderRoadmap();
+}
+function removeTopic(pi,ti){
+  const phases=getPhases();phases[pi].topics.splice(ti,1);savePhases(phases);renderRoadmap();
+}
+function addTopic(pi){
+  const inp=document.getElementById('nt-'+pi);if(!inp)return;const val=inp.value.trim();if(!val)return;
+  const phases=getPhases();phases[pi].topics.push(val);savePhases(phases);inp.value='';renderRoadmap();
+}
+function updatePhaseTitle(pi,val){
+  if(!val.trim())return;const phases=getPhases();phases[pi].title=val.trim();savePhases(phases);
+}
+function updatePhaseDate(pi,field,val){
+  if(!val)return;const phases=getPhases();phases[pi][field]=val;
+  // update dates display
+  const s=phases[pi].s,e=phases[pi].e;
+  if(s&&e){const sd=new Date(s+'T12:00:00'),ed=new Date(e+'T12:00:00');phases[pi].dates=sd.toLocaleDateString('en-IN',{day:'numeric',month:'short'})+' – '+ed.toLocaleDateString('en-IN',{day:'numeric',month:'short'});}
+  savePhases(phases);
+}
+function saveTargetDate(){
+  const val=document.getElementById('target-date-inp').value;if(!val)return;
+  sv('gm-target',val);
+  // Update countdown immediately
+  renderCountdown();
+  // Update hero subtitle
+  const d=new Date(val+'T12:00:00');
+  const formatted=d.toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'});
+  const sub=document.querySelector('.hero-sub');
+  if(sub)sub.innerHTML=`Shivam Chauhan &nbsp;·&nbsp; Google SWE &nbsp;·&nbsp; Target: ${formatted}`;
+  const btn=document.querySelector('[onclick="saveTargetDate()"]');
+  if(btn){btn.textContent='✅ Saved!';setTimeout(()=>{btn.textContent='Save';},1500);}
+}
+function resetRoadmap(){
+  if(!confirm('Reset ALL phases and target date to defaults?'))return;
+  sv('gm-phases',DEFAULT_PHASES);sv('gm-topics-done',{});sv('gm-target','2027-02-15');renderRoadmap();renderCountdown();
+}
+function resetPhase(pi){
+  if(!confirm('Reset this phase to its original topics?'))return;
+  const phases=getPhases();
+  if(DEFAULT_PHASES[pi]){
+    phases[pi].topics=[...DEFAULT_PHASES[pi].topics];
+    savePhases(phases);
+    // clear topic done state for this phase
+    const ct=ld('gm-topics-done',{});
+    Object.keys(ct).forEach(k=>{if(k.startsWith(pi+'-'))delete ct[k];});
+    sv('gm-topics-done',ct);
+  }
+  renderRoadmap();
+}
+function removePhase(pi){
+  if(!confirm('Remove this phase permanently?'))return;
+  const phases=getPhases();phases.splice(pi,1);savePhases(phases);renderRoadmap();
+}
+function addNewPhase(){
+  const phases=getPhases();
+  const lastEnd=phases.length?phases[phases.length-1].e:'2027-01-18';
+  const s=new Date(lastEnd+'T12:00:00');s.setDate(s.getDate()+1);
+  const e=new Date(s);e.setDate(e.getDate()+30);
+  const sf=s.toISOString().split('T')[0],ef=e.toISOString().split('T')[0];
+  phases.push({
+    title:'New Phase · Add Your Topics',
+    dates:s.toLocaleDateString('en-IN',{day:'numeric',month:'short'})+' – '+e.toLocaleDateString('en-IN',{day:'numeric',month:'short'}),
+    s:sf,e:ef,topics:[]
+  });
+  savePhases(phases);renderRoadmap();
+  // scroll to bottom
+  setTimeout(()=>window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'}),100);
 }
 
 // WEEKLY
@@ -657,13 +887,68 @@ function renderJournal(){
 // MANIFESTATION
 function doManifest(){
   const m=ld('gm-manifest',{});m[TK]=true;sv('gm-manifest',m);
-  document.getElementById('manifest-btn').textContent='🌟 Done for Today!';document.getElementById('manifest-btn').className='btn btn-green';
-  document.getElementById('manifest-status').textContent='Complete · '+NOW.toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long'});
+  loadManifest();
 }
 function loadManifest(){
-  const m=ld('gm-manifest',{});if(!m[TK])return;
-  document.getElementById('manifest-btn').textContent='🌟 Done for Today!';document.getElementById('manifest-btn').className='btn btn-green';
-  document.getElementById('manifest-status').textContent='Complete · '+NOW.toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long'});
+  const m=ld('gm-manifest',{});
+  const btn=document.getElementById('manifest-btn');
+  const status=document.getElementById('manifest-status');
+  const undo=document.getElementById('manifest-undo-btn');
+  if(!btn||!status)return;
+  if(m[TK]){
+    btn.textContent='✅ Done for Today!';
+    btn.className='btn btn-green';
+    status.textContent='Complete · '+NOW.toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long'});
+    if(undo)undo.style.display='block';
+  } else {
+    btn.textContent='🌟 Mark Morning Manifestation Done';
+    btn.className='btn btn-purple';
+    status.textContent='';
+    if(undo)undo.style.display='none';
+  }
+}
+function undoManifest(){
+  const m=ld('gm-manifest',{});delete m[TK];sv('gm-manifest',m);loadManifest();
+}
+const DEFAULT_WHY=[
+  {emoji:'💰',text:'Financial freedom and a great life for my family'},
+  {emoji:'🧠',text:'Work with the best engineers in the world'},
+  {emoji:'🚀',text:'Prove to myself that consistent hard work wins'},
+  {emoji:'🙏',text:'Make my parents and family proud'},
+  {emoji:'💪',text:'Become the best version of myself'},
+];
+function getWhyReasons(){return ld('gm-why',DEFAULT_WHY);}
+function renderWhyList(){
+  const el=document.getElementById('why-list');if(!el)return;
+  const reasons=getWhyReasons();
+  el.innerHTML=reasons.map((r,i)=>`
+    <div style="display:flex;align-items:center;gap:8px;">
+      <input value="${r.emoji}" onblur="updateWhyEmoji(${i},this.value)" style="width:36px;background:rgba(66,133,244,.08);border:1px solid rgba(66,133,244,.2);border-radius:8px;color:#e2eaf8;padding:4px;font-size:16px;text-align:center;outline:none;font-family:inherit;">
+      <input value="${r.text}" onblur="updateWhyText(${i},this.value)" style="flex:1;background:rgba(66,133,244,.06);border:1px solid rgba(66,133,244,.15);border-radius:8px;color:#b8cfe8;padding:6px 10px;font-size:12px;outline:none;font-family:inherit;">
+      <button onclick="removeWhyReason(${i})" style="width:26px;height:26px;background:rgba(234,67,53,.1);border:1px solid rgba(234,67,53,.2);border-radius:6px;color:#f87171;font-size:12px;cursor:pointer;flex-shrink:0;">✕</button>
+    </div>`).join('');
+}
+function updateWhyEmoji(i,val){const r=getWhyReasons();r[i].emoji=val;sv('gm-why',r);}
+function updateWhyText(i,val){const r=getWhyReasons();r[i].text=val;sv('gm-why',r);}
+function removeWhyReason(i){const r=getWhyReasons();r.splice(i,1);sv('gm-why',r);renderWhyList();}
+function addWhyReason(){const r=getWhyReasons();r.push({emoji:'⭐',text:'My reason...'});sv('gm-why',r);renderWhyList();}
+
+function renderMissionStats(){
+  const el=document.getElementById('mission-stats');if(!el)return;
+  const keys=getAllKeys();
+  const total=keys.length;
+  const scores=keys.map(k=>Object.values(ld(k,{checks:{}}).checks||{}).filter(Boolean).length);
+  const avg=total?Math.round(scores.reduce((a,b)=>a+b,0)/total):0;
+  const med=ld('gm-med',{});
+  const medDays=Object.values(med).filter(v=>v&&v.done).length;
+  const manDays=Object.keys(ld('gm-manifest',{})).length;
+  const MSE2=getTargetDate(),diff=MSE2-new Date(),daysLeft=Math.max(0,Math.floor(diff/86400000));
+  el.innerHTML=[
+    ['Days Logged',total,'var(--blue)'],
+    ['Avg Score',avg+'/7','var(--green)'],
+    ['Meditations',medDays+'🕉️','#c4b5fd'],
+    ['Days Left',daysLeft,'var(--yellow)'],
+  ].map(([l,v,c])=>`<div style="background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:12px;text-align:center;"><div style="font-size:22px;font-weight:900;color:${c}">${v}</div><div style="font-size:9px;color:var(--muted);margin-top:2px;">${l}</div></div>`).join('');
 }
 
 // THEME
@@ -703,7 +988,39 @@ function doReset(){
   const inp=document.getElementById('r-inp').value.trim(),msg=document.getElementById('r-msg');
   if(inp!=='DELETE'){msg.style.color='#ea4335';msg.textContent='❌ Type DELETE exactly.';return;}
   const sel=document.querySelector('input[name="rr"]:checked').value,now=new Date();let count=0,toDelete=[];
-  try{for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(!k||k.includes('gm-theme'))continue;const dm=k.match(/\d{4}-\d{2}-\d{2}/);if(sel==='all'){toDelete.push(k);}else if(dm){const d=new Date(dm[0]+'T12:00:00');if(sel==='today'&&dm[0]===TK)toDelete.push(k);else if(sel==='week'){const ws=new Date(now);const dy=ws.getDay();ws.setDate(ws.getDate()-dy+(dy===0?-6:1));ws.setHours(0,0,0,0);if(d>=ws)toDelete.push(k);}else if(sel==='month'&&d.getMonth()===now.getMonth()&&d.getFullYear()===now.getFullYear())toDelete.push(k);}}toDelete.forEach(k=>{localStorage.removeItem(k);count++;});}catch{}
+  try{
+    for(let i=0;i<localStorage.length;i++){
+      const k=localStorage.key(i);
+      if(!k||k.includes('gm-theme'))continue;
+      const dm=k.match(/\d{4}-\d{2}-\d{2}/);
+      if(sel==='all'){toDelete.push(k);}
+      else if(dm){
+        const d=new Date(dm[0]+'T12:00:00');
+        if(sel==='today'&&dm[0]===TK)toDelete.push(k);
+        else if(sel==='week'){const ws=new Date(now);const dy=ws.getDay();ws.setDate(ws.getDate()-dy+(dy===0?-6:1));ws.setHours(0,0,0,0);if(d>=ws)toDelete.push(k);}
+        else if(sel==='month'&&d.getMonth()===now.getMonth()&&d.getFullYear()===now.getFullYear())toDelete.push(k);
+      }
+    }
+    toDelete.forEach(k=>{localStorage.removeItem(k);count++;});
+    // Also clean date entries inside gm-manifest and gm-med (stored as {date: value})
+    const innerKeys=['gm-manifest','gm-med','gm-sun-popup-'+TK];
+    innerKeys.forEach(key=>{
+      if(key==='gm-manifest'||key==='gm-med'){
+        const obj=ld(key,{});
+        let changed=false;
+        Object.keys(obj).forEach(dateKey=>{
+          const d=new Date(dateKey+'T12:00:00');
+          let shouldDelete=false;
+          if(sel==='all')shouldDelete=true;
+          else if(sel==='today'&&dateKey===TK)shouldDelete=true;
+          else if(sel==='week'){const ws=new Date(now);const dy=ws.getDay();ws.setDate(ws.getDate()-dy+(dy===0?-6:1));ws.setHours(0,0,0,0);if(d>=ws)shouldDelete=true;}
+          else if(sel==='month'&&d.getMonth()===now.getMonth()&&d.getFullYear()===now.getFullYear())shouldDelete=true;
+          if(shouldDelete){delete obj[dateKey];changed=true;count++;}
+        });
+        if(changed)sv(key,obj);
+      }
+    });
+  }catch{}
   msg.style.color='#34a853';msg.textContent=`✅ Deleted ${count}. Reloading...`;
   setTimeout(()=>{document.getElementById('reset-ov').classList.remove('open');location.reload();},1500);
 }
@@ -735,7 +1052,7 @@ renderChecklist();
 renderStreak();
 renderRoadmap();
 loadSaved();
-loadManifest();
+loadManifest();renderMissionStats();renderWhyList();
 loadMedStatus();
 updTimer();
 applyTheme(ld('gm-theme','dark'));
