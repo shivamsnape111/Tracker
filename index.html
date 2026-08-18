@@ -9,12 +9,131 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#060d1f;color:#e2eaf8;min-height:100vh;}
-body.light{background:#f0f4ff;color:#1a2340;}
-body.light .card{background:#fff;border-color:#d0daf0;}
-body.light .j-area{background:#fff;border-color:#d0daf0;color:#1a2340;}
-body.light .ci{background:#fff;border-color:#d0daf0;}
-body.light .ci.checked{background:rgba(52,168,83,.08);border-color:#34a853;}
-body.light .tag{background:#f0f4ff;border-color:#d0daf0;}
+body.light{background:#f5f8ff;color:#1a2340;}
+body.light .card{background:#fff;border-color:#dbe4f5;box-shadow:0 1px 3px rgba(0,0,0,.04);}
+body.light .j-area{background:#fff;border-color:#dbe4f5;color:#1a2340;}
+body.light .j-area::placeholder{color:#94a8c4;}
+body.light .ci{background:#fff;border-color:#dbe4f5;}
+body.light .ci.checked{background:#e8f8ed;border-color:#34a853;}
+body.light .ci-text{color:#1a2340;}
+body.light .ci-box{background:#f5f8ff;border-color:#dbe4f5;}
+body.light .tag{background:#f0f4ff;border-color:#dbe4f5;color:#5a7099;}
+body.light .hero{background:linear-gradient(160deg,#dce8ff,#f5f8ff);}
+body.light .hero h1{background:linear-gradient(135deg,#1a2340,#4285f4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+body.light .hero-sub{color:#5a7099;}
+body.light .tab-btn{background:#fff;border-color:#dbe4f5;color:#5a7099;}
+body.light .tab-btn.active{background:#4285f4;border-color:#4285f4;color:#fff;}
+body.light .qotd{background:linear-gradient(135deg,#e3edff,#eee9ff);border-color:#c3d4f5;color:#2a3f6a;}
+body.light .qotd-a{background:#dbe8ff;color:#1a56db;border-color:#b8d0f5;}
+body.light .cd{background:#fff;border-color:#dbe4f5;}
+body.light .cd-l{color:#7a8fb0;}
+body.light .sec{color:#7a8fb0;}
+body.light .prog-track{background:#dbe4f5;}
+body.light .streak-bar{background:#fff;border-color:#dbe4f5;}
+body.light .mood-btn{background:#fff;border-color:#dbe4f5;}
+body.light .mood-btn.sel{background:#f0eaff;border-color:#7c3aed;}
+body.light .mood-lbl{color:#7a8fb0;}
+body.light .day-head{background:#fff;border-color:#dbe4f5;}
+body.light .score-box{background:#fff;border-color:#dbe4f5;}
+body.light .s-bar-w{background:#dbe4f5;}
+body.light .s-lbl{color:#7a8fb0;}
+body.light .j-lbl{color:#7a8fb0;}
+body.light .btn-ghost{background:#fff;border-color:#dbe4f5;color:#1a2340;}
+body.light .med-hero{background:linear-gradient(160deg,#ede9fe,#f8f5ff);border-color:#d8ccf5;}
+body.light .chant-card{background:#fff;border-color:#dbe4f5;}
+body.light .chant-text{color:#3a5080;}
+body.light .chant-m{color:#7a8fb0;}
+body.light .timer-display{color:#5b21b6;}
+body.light .preset-btn{background:#f0eaff;color:#5b21b6;border-color:#d8ccf5;}
+body.light .preset-btn.ap{background:#7c3aed;color:#fff;border-color:#7c3aed;}
+body.light .phase{background:#fff;border-color:#dbe4f5;}
+body.light .ph-title{color:#1a2340;}
+body.light .ph-dates{color:#7a8fb0;}
+body.light .wcard{background:#fff;border-color:#dbe4f5;}
+body.light .wcard-t{color:#7a8fb0;}
+body.light .wd{background:#f5f8ff;border-color:#dbe4f5;color:#7a8fb0;}
+body.light .stat-card{background:#fff;border-color:#dbe4f5;}
+body.light .stat-l{color:#7a8fb0;}
+body.light .mh-dot{background:#fff;border-color:#dbe4f5;}
+body.light .hist-card{background:#fff;border-color:#dbe4f5;}
+body.light .hist-key{color:#7a8fb0;}
+body.light .hist-row{color:#1a2340;}
+body.light .ji{background:#fff;border-color:#dbe4f5;}
+body.light .ji-top{color:#5a7099;}
+body.light .ji-k{color:#7a8fb0;}
+body.light .ji-row{color:#1a2340;}
+body.light .manif-card{background:linear-gradient(160deg,#e3edff,#f5f8ff);border-color:#c3d4f5;color:#3a5080;}
+body.light .promise-card{background:#fff5f5;border-color:#f5c3c3;}
+body.light .empty-s{color:#94a8c4;}
+body.light .modal-box{background:#fff;border-color:#dbe4f5;}
+body.light .msec{background:#f5f8ff;border-color:#dbe4f5;}
+body.light .msec-t{color:#7a8fb0;}
+body.light .r-opt{background:#f5f8ff;border-color:#dbe4f5;}
+body.light .text-inp{background:#fff;border-color:#dbe4f5;color:#1a2340;}
+body.light .icon-btn{background:#fff;border-color:#dbe4f5;}
+body.light .modal-close{color:#7a8fb0;}
+body.light .modal-sub{color:#7a8fb0;}
+body.light select.j-area{background:#fff;border-color:#dbe4f5;color:#1a2340;}
+body.light .rev-card{background:#fff !important;border-color:#dbe4f5 !important;}
+body.light .rev-card-name{color:#1a2340 !important;}
+body.light .rev-detail{color:#3a5080 !important;}
+body.light .rev-label{color:#7a8fb0 !important;}
+body.light .rev-notes-box{background:#f5f8ff !important;border-color:#dbe4f5 !important;}
+body.light .rev-btn-ghost{background:#f5f8ff !important;color:#5a7099 !important;border-color:#dbe4f5 !important;}
+/* RICH TEXT EDITOR */
+.rte-wrap{border:1px solid var(--border);border-radius:9px;background:var(--card);margin-bottom:7px;overflow:hidden;}
+.rte-toolbar{display:flex;gap:2px;padding:5px 6px;border-bottom:1px solid var(--border);background:rgba(255,255,255,.02);flex-wrap:wrap;}
+.rte-btn{width:26px;height:26px;border:none;background:transparent;color:var(--muted);border-radius:5px;cursor:pointer;font-size:12px;font-family:inherit;display:flex;align-items:center;justify-content:center;}
+.rte-btn:hover{background:rgba(255,255,255,.06);color:var(--text);}
+.rte-btn.on{background:rgba(66,133,244,.2);color:#8ab4f8;}
+.rte-sep{width:1px;background:var(--border);margin:3px 3px;}
+.rte-body{min-height:64px;padding:9px 11px;font-size:12px;color:var(--text);outline:none;line-height:1.6;font-family:inherit;}
+.rte-body:empty:before{content:attr(data-ph);color:var(--muted);opacity:.6;}
+.rte-body b,.rte-body strong{font-weight:800;color:#fff;}
+.rte-body i,.rte-body em{font-style:italic;}
+.rte-body h3{font-size:13px;font-weight:800;color:#8ab4f8;margin:6px 0 3px;}
+.rte-body ul{margin:4px 0 4px 18px;}
+.rte-body li{margin-bottom:2px;}
+.rte-body code{background:rgba(66,133,244,.15);color:#8ab4f8;padding:1px 5px;border-radius:4px;font-family:monospace;font-size:11px;}
+.rte-body pre{background:rgba(0,0,0,.3);border:1px solid var(--border);border-radius:6px;padding:8px 10px;margin:5px 0;overflow-x:auto;font-family:monospace;font-size:11px;color:#8ab4f8;}
+.rte-body mark{background:rgba(251,188,5,.3);color:#fbbf24;padding:1px 3px;border-radius:3px;}
+.rte-body mark.hl-yellow{background:rgba(251,188,5,.3);color:#fbbf24;}
+.rte-body mark.hl-green{background:rgba(52,168,83,.25);color:#4ade80;}
+.rte-body mark.hl-blue{background:rgba(66,133,244,.25);color:#8ab4f8;}
+.rte-body mark.hl-red{background:rgba(234,67,53,.22);color:#fca5a5;}
+.rte-body mark.hl-purple{background:rgba(124,58,237,.25);color:#c4b5fd;}
+body.light .rte-body mark.hl-yellow{background:#fff3c4;color:#8a6d00;}
+body.light .rte-body mark.hl-green{background:#d6f5e0;color:#166534;}
+body.light .rte-body mark.hl-blue{background:#dbe8ff;color:#1a56db;}
+body.light .rte-body mark.hl-red{background:#ffe0e0;color:#b91c1c;}
+body.light .rte-body mark.hl-purple{background:#ede4ff;color:#5b21b6;}
+.hl-swatch{width:18px;height:18px;border-radius:4px;border:1px solid rgba(255,255,255,.2);cursor:pointer;display:inline-block;margin:0 1px;}
+.hl-swatch:hover{transform:scale(1.15);}
+/* Revision slot checkboxes */
+.rev-slot{display:flex;align-items:center;gap:8px;padding:9px 11px;border-radius:9px;border:1px solid var(--border);background:rgba(255,255,255,.02);margin-bottom:5px;cursor:pointer;transition:all .2s;}
+.rev-slot.done{background:rgba(52,168,83,.1);border-color:rgba(52,168,83,.4);}
+.rev-slot.overdue{border-color:rgba(251,188,5,.5);background:rgba(251,188,5,.06);}
+.rev-slot-box{width:18px;height:18px;border:2px solid var(--border);border-radius:5px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;color:transparent;}
+.rev-slot.done .rev-slot-box{background:#34a853;border-color:#34a853;color:#fff;}
+.rev-slot-label{font-size:11px;flex:1;}
+.rev-slot-date{font-size:9px;color:var(--muted);}
+body.light .rev-slot{background:#f5f8ff;border-color:#dbe4f5;}
+body.light .rev-slot.done{background:#e8f8ed;border-color:#34a853;}
+.extra-rev-chip{display:inline-flex;align-items:center;gap:4px;font-size:9px;padding:3px 9px;border-radius:99px;background:rgba(124,58,237,.15);color:#c4b5fd;border:1px solid rgba(124,58,237,.3);margin:2px;font-weight:700;}
+body.light .extra-rev-chip{background:#f0eaff;color:#5b21b6;border-color:#d8ccf5;}
+body.light .rte-wrap{background:#fff;border-color:#dbe4f5;}
+body.light .rte-toolbar{background:#f5f8ff;border-color:#dbe4f5;}
+body.light .rte-btn{color:#7a8fb0;}
+body.light .rte-btn:hover{background:#e8effd;color:#1a2340;}
+body.light .rte-body{color:#1a2340;}
+body.light .rte-body b,body.light .rte-body strong{color:#000;}
+body.light .rte-body pre{background:#f0f4ff;border-color:#dbe4f5;color:#1a56db;}
+body.light .rte-body code{background:#e8effd;color:#1a56db;}
+/* Revision buckets */
+.rev-bucket{border-radius:12px;padding:12px;text-align:center;border:1px solid var(--border);background:var(--card);cursor:pointer;transition:all .2s;}
+.rev-bucket.active-bucket{border-color:var(--blue);background:rgba(66,133,244,.1);}
+.rev-bucket-n{font-size:22px;font-weight:900;line-height:1;}
+.rev-bucket-l{font-size:9px;color:var(--muted);margin-top:3px;text-transform:uppercase;letter-spacing:.5px;}
 :root{--blue:#4285f4;--green:#34a853;--yellow:#fbbc05;--red:#ea4335;--purple:#7c3aed;--card:#111e33;--border:#1a2f50;--muted:#6b8ab0;--bg:#060d1f;--r:13px;}
 .card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);}
 /* HERO */
@@ -168,7 +287,7 @@ body.light .tag{background:#f0f4ff;border-color:#d0daf0;}
 <!-- TOP BAR -->
 <div class="top-bar">
   <button class="icon-btn" onclick="toggleTheme()" id="theme-btn">🌙</button>
-  <button class="icon-btn" onclick="document.getElementById('backup-ov').classList.add('open')">💾</button>
+  <button class="icon-btn" onclick="document.getElementById('backup-ov').classList.add('open');renderBackupSummary();">💾</button>
   <button class="icon-btn" style="border-color:rgba(234,67,53,.3);background:rgba(234,67,53,.08);" onclick="openReset()">🗑️</button>
 </div>
 
@@ -243,12 +362,38 @@ body.light .tag{background:#f0f4ff;border-color:#d0daf0;}
   <div class="prog-row"><span>Mission Progress</span><span id="prog-pct">0%</span></div>
   <div class="prog-track"><div class="prog-fill" id="prog-fill" style="width:0%"></div></div>
 </div>
-<div class="streak-bar card">
-  <div style="display:flex;align-items:center;gap:10px;">
-    <div style="font-size:26px;">🔥</div>
-    <div><div style="font-size:22px;font-weight:900;color:var(--yellow);" id="streak-num">0</div><div style="font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;">Day Streak</div></div>
+<div class="card" style="margin:11px 16px 0;padding:12px 14px;cursor:pointer;" onclick="toggleStreakView()">
+  <div style="display:flex;justify-content:space-between;align-items:center;">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <div style="font-size:26px;">🔥</div>
+      <div>
+        <div style="font-size:22px;font-weight:900;color:var(--yellow);" id="streak-num">0</div>
+        <div style="font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;">Current Streak</div>
+      </div>
+      <div style="border-left:1px solid var(--border);padding-left:12px;margin-left:4px;">
+        <div style="font-size:16px;font-weight:900;color:#4ade80;" id="streak-total">0</div>
+        <div style="font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;">Active / <span id="streak-elapsed">0</span> days</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <div class="streak-dots" id="streak-dots"></div>
+      <div style="font-size:12px;color:var(--muted);" id="streak-arrow">▼</div>
+    </div>
   </div>
-  <div class="streak-dots" id="streak-dots"></div>
+  <!-- Expanded grid -->
+  <div id="streak-grid-wrap" style="display:none;margin-top:14px;padding-top:12px;border-top:1px solid var(--border);">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+      <div style="font-size:9px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:1px;">Mission Activity</div>
+      <div style="display:flex;gap:8px;align-items:center;font-size:9px;color:var(--muted);">
+        <span style="display:flex;align-items:center;gap:3px;"><span style="width:9px;height:9px;border-radius:2px;background:#1a2f50;display:inline-block;"></span>None</span>
+        <span style="display:flex;align-items:center;gap:3px;"><span style="width:9px;height:9px;border-radius:2px;background:#f97316;display:inline-block;"></span>1-2</span>
+        <span style="display:flex;align-items:center;gap:3px;"><span style="width:9px;height:9px;border-radius:2px;background:#fbbc05;display:inline-block;"></span>3-4</span>
+        <span style="display:flex;align-items:center;gap:3px;"><span style="width:9px;height:9px;border-radius:2px;background:#34a853;display:inline-block;"></span>5-7</span>
+      </div>
+    </div>
+    <div id="streak-grid" style="display:flex;flex-wrap:wrap;gap:3px;"></div>
+    <div id="streak-stats" style="display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:12px;"></div>
+  </div>
 </div>
 
 <!-- TABS -->
@@ -257,6 +402,7 @@ body.light .tag{background:#f0f4ff;border-color:#d0daf0;}
   <button class="tab-btn"        id="tab-meditation"  onclick="switchTab('meditation')">🕉️ Meditate</button>
   <button class="tab-btn"        id="tab-roadmap"     onclick="switchTab('roadmap')">🗺️ Roadmap</button>
   <button class="tab-btn"        id="tab-weekly"      onclick="switchTab('weekly')">📊 Weekly</button>
+  <button class="tab-btn"        id="tab-revision"    onclick="switchTab('revision')">🔁 Revision</button>
   <button class="tab-btn"        id="tab-history"     onclick="switchTab('history')">📅 History</button>
   <button class="tab-btn"        id="tab-journal"     onclick="switchTab('journal')">📓 Journal</button>
   <button class="tab-btn"        id="tab-manifest"    onclick="switchTab('manifest')">🌟 Mission</button>
@@ -349,6 +495,148 @@ body.light .tag{background:#f0f4ff;border-color:#d0daf0;}
   <div class="wgrid" id="weekly-grid"></div>
   <div class="sec">Sunday Extras</div>
   <div id="sunday-checks"></div>
+</div>
+
+<!-- REVISION -->
+<div class="panel" id="panel-revision">
+
+  <!-- Due banner -->
+  <div id="rev-due-banner"></div>
+
+  <!-- Revision buckets - tap to filter -->
+  <div class="sec">Revision Schedule</div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:12px;" id="rev-buckets"></div>
+
+  <!-- Log a problem -->
+  <div class="card" style="padding:14px;margin-bottom:12px;">
+    <div class="sec" style="margin-top:0;">➕ Log a Problem</div>
+    <input id="rev-name" class="j-area" placeholder="Problem name (e.g. Two Sum)" style="margin-bottom:7px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:7px;">
+      <select id="rev-topic" class="j-area" style="margin-bottom:0;" onchange="toggleCustomTopic()">
+        <option value="Array">Array</option><option value="String">String</option>
+        <option value="Hashing">Hashing</option><option value="Two Pointers">Two Pointers</option>
+        <option value="Sliding Window">Sliding Window</option><option value="Prefix Sum">Prefix Sum</option>
+        <option value="Binary Search">Binary Search</option><option value="Stack">Stack</option>
+        <option value="Queue">Queue</option><option value="Linked List">Linked List</option>
+        <option value="Tree">Tree</option><option value="BST">BST</option>
+        <option value="Heap">Heap</option><option value="Graph">Graph</option>
+        <option value="DP">DP</option><option value="Backtracking">Backtracking</option>
+        <option value="Greedy">Greedy</option><option value="Bit Manipulation">Bit Manipulation</option>
+        <option value="Math">Math</option><option value="Trie">Trie</option>
+        <option value="Union Find">Union Find</option><option value="Intervals">Intervals</option>
+        <option value="Matrix">Matrix</option><option value="Concurrency">Concurrency</option>
+        <option value="Other">Other (type below)</option>
+      </select>
+      <select id="rev-diff" class="j-area" style="margin-bottom:0;">
+        <option value="Easy">🟢 Easy</option>
+        <option value="Medium" selected>🟡 Medium</option>
+        <option value="Hard">🔴 Hard</option>
+      </select>
+    </div>
+    <input id="rev-custom-topic" class="j-area" placeholder="Type your custom topic name..." style="margin-bottom:7px;display:none;">
+    <input id="rev-link" class="j-area" placeholder="🔗 Problem link (LeetCode / GFG / any URL)" style="margin-bottom:7px;">
+
+    <div class="j-lbl">🧩 Pattern Used</div>
+    <div class="rte-wrap">
+      <div class="rte-toolbar">
+        <button class="rte-btn" onclick="rteCmd('bold','rte-pattern')" title="Bold"><b>B</b></button>
+        <button class="rte-btn" onclick="rteCmd('italic','rte-pattern')" title="Italic"><i>I</i></button>
+        <div class="rte-sep"></div>
+        <button class="rte-btn" onclick="rteHeading('rte-pattern')" title="Heading">H</button>
+        <button class="rte-btn" onclick="rteCmd('insertUnorderedList','rte-pattern')" title="Bullets">•</button>
+        <div class="rte-sep"></div>
+        <span class="hl-swatch" style="background:rgba(251,188,5,.5)" onclick="rteHighlight('rte-pattern','hl-yellow')" title="Yellow highlight"></span>
+        <span class="hl-swatch" style="background:rgba(52,168,83,.5)" onclick="rteHighlight('rte-pattern','hl-green')" title="Green highlight"></span>
+        <span class="hl-swatch" style="background:rgba(66,133,244,.5)" onclick="rteHighlight('rte-pattern','hl-blue')" title="Blue highlight"></span>
+        <span class="hl-swatch" style="background:rgba(234,67,53,.5)" onclick="rteHighlight('rte-pattern','hl-red')" title="Red highlight"></span>
+        <span class="hl-swatch" style="background:rgba(124,58,237,.5)" onclick="rteHighlight('rte-pattern','hl-purple')" title="Purple highlight"></span>
+        <div class="rte-sep"></div>
+        <button class="rte-btn" onclick="rteCode('rte-pattern')" title="Inline code">&lt;&gt;</button>
+        <button class="rte-btn" onclick="rteCodeBlock('rte-pattern')" title="Code block">▤</button>
+        <div class="rte-sep"></div>
+        <button class="rte-btn" onclick="rteCmd('removeFormat','rte-pattern')" title="Clear">✕</button>
+      </div>
+      <div class="rte-body" id="rte-pattern" contenteditable="true" data-ph="e.g. Sliding Window + HashMap"></div>
+    </div>
+
+    <div class="j-lbl">💡 Why This Pattern?</div>
+    <div class="rte-wrap">
+      <div class="rte-toolbar">
+        <button class="rte-btn" onclick="rteCmd('bold','rte-why')"><b>B</b></button>
+        <button class="rte-btn" onclick="rteCmd('italic','rte-why')"><i>I</i></button>
+        <div class="rte-sep"></div>
+        <button class="rte-btn" onclick="rteHeading('rte-why')">H</button>
+        <button class="rte-btn" onclick="rteCmd('insertUnorderedList','rte-why')">•</button>
+        <div class="rte-sep"></div>
+        <span class="hl-swatch" style="background:rgba(251,188,5,.5)" onclick="rteHighlight('rte-why','hl-yellow')" title="Yellow highlight"></span>
+        <span class="hl-swatch" style="background:rgba(52,168,83,.5)" onclick="rteHighlight('rte-why','hl-green')" title="Green highlight"></span>
+        <span class="hl-swatch" style="background:rgba(66,133,244,.5)" onclick="rteHighlight('rte-why','hl-blue')" title="Blue highlight"></span>
+        <span class="hl-swatch" style="background:rgba(234,67,53,.5)" onclick="rteHighlight('rte-why','hl-red')" title="Red highlight"></span>
+        <span class="hl-swatch" style="background:rgba(124,58,237,.5)" onclick="rteHighlight('rte-why','hl-purple')" title="Purple highlight"></span>
+        <div class="rte-sep"></div>
+        <button class="rte-btn" onclick="rteCode('rte-why')">&lt;&gt;</button>
+        <button class="rte-btn" onclick="rteCodeBlock('rte-why')">▤</button>
+        <div class="rte-sep"></div>
+        <button class="rte-btn" onclick="rteCmd('removeFormat','rte-why')">✕</button>
+      </div>
+      <div class="rte-body" id="rte-why" contenteditable="true" data-ph="What signal in the question told you to use this?"></div>
+    </div>
+
+    <div class="j-lbl">🔑 Key Trick / Insight</div>
+    <div class="rte-wrap">
+      <div class="rte-toolbar">
+        <button class="rte-btn" onclick="rteCmd('bold','rte-trick')"><b>B</b></button>
+        <button class="rte-btn" onclick="rteCmd('italic','rte-trick')"><i>I</i></button>
+        <div class="rte-sep"></div>
+        <button class="rte-btn" onclick="rteHeading('rte-trick')">H</button>
+        <button class="rte-btn" onclick="rteCmd('insertUnorderedList','rte-trick')">•</button>
+        <div class="rte-sep"></div>
+        <span class="hl-swatch" style="background:rgba(251,188,5,.5)" onclick="rteHighlight('rte-trick','hl-yellow')" title="Yellow highlight"></span>
+        <span class="hl-swatch" style="background:rgba(52,168,83,.5)" onclick="rteHighlight('rte-trick','hl-green')" title="Green highlight"></span>
+        <span class="hl-swatch" style="background:rgba(66,133,244,.5)" onclick="rteHighlight('rte-trick','hl-blue')" title="Blue highlight"></span>
+        <span class="hl-swatch" style="background:rgba(234,67,53,.5)" onclick="rteHighlight('rte-trick','hl-red')" title="Red highlight"></span>
+        <span class="hl-swatch" style="background:rgba(124,58,237,.5)" onclick="rteHighlight('rte-trick','hl-purple')" title="Purple highlight"></span>
+        <div class="rte-sep"></div>
+        <button class="rte-btn" onclick="rteCode('rte-trick')">&lt;&gt;</button>
+        <button class="rte-btn" onclick="rteCodeBlock('rte-trick')">▤</button>
+        <div class="rte-sep"></div>
+        <button class="rte-btn" onclick="rteCmd('removeFormat','rte-trick')">✕</button>
+      </div>
+      <div class="rte-body" id="rte-trick" contenteditable="true" data-ph="The one insight you must not forget"></div>
+    </div>
+
+    <button class="btn btn-blue" id="rev-save-btn" onclick="addRevProblem()">+ Add Problem</button>
+    <button class="btn btn-ghost" id="rev-cancel-btn" onclick="cancelRevEdit()" style="display:none;">Cancel Edit</button>
+  </div>
+
+  <!-- Difficulty filters -->
+  <div style="display:flex;gap:5px;margin-bottom:10px;overflow-x:auto;-webkit-overflow-scrolling:touch;">
+    <button class="rev-filter tab-btn active" onclick="setRevFilter('all',this)">All</button>
+    <button class="rev-filter tab-btn" onclick="setRevFilter('Easy',this)">🟢 Easy</button>
+    <button class="rev-filter tab-btn" onclick="setRevFilter('Medium',this)">🟡 Medium</button>
+    <button class="rev-filter tab-btn" onclick="setRevFilter('Hard',this)">🔴 Hard</button>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats-grid" id="rev-stats"></div>
+
+  <!-- Topics -->
+  <div class="sec">By Topic</div>
+  <div id="rev-topics" style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px;"></div>
+
+  <!-- List -->
+  <div class="sec" id="rev-list-title">Problems</div>
+  <div id="rev-list"></div>
+
+  <!-- Import / Export -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px;">
+    <button class="btn btn-ghost" onclick="exportRevisionCSV()" style="margin:0;">📊 Export CSV</button>
+    <label class="btn btn-ghost" style="margin:0;text-align:center;cursor:pointer;">
+      📥 Import CSV
+      <input type="file" accept=".csv" style="display:none" onchange="importRevisionCSV(this)">
+    </label>
+  </div>
+  <div id="rev-import-msg" style="font-size:11px;text-align:center;margin-top:8px;font-weight:700;"></div>
 </div>
 
 <!-- HISTORY -->
@@ -488,19 +776,31 @@ const QUOTES=[
   {q:"Success usually comes to those too busy to be looking for it.",a:"Henry David Thoreau"},
 ];
 const DL=['M','T','W','T','F','S','S'];
-function getTargetDate(){return new Date(ld('gm-target','2027-02-15'));}
-function getMissionStart(){return new Date(ld('gm-mstart','2026-08-18'));}
-const MSS=getMissionStart(),MSE=getTargetDate();
-const NOW=new Date(),TK=fmt(NOW);
-const _m={};
-function ld(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d;}catch{return _m[k]!==undefined?_m[k]:d;}}
-function sv(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch{_m[k]=v;}}
+
+// ── STORAGE LAYER (must be declared before anything calls it) ──
+var _m={};
+function ld(k,d){
+  try{
+    const v=localStorage.getItem(k);
+    if(v===null||v===undefined)return (_m&&_m[k]!==undefined)?_m[k]:d;
+    const parsed=JSON.parse(v);
+    if(parsed&&typeof parsed==='object'&&parsed.__rawString!==undefined)return d;
+    return parsed;
+  }catch(e){return (_m&&_m[k]!==undefined)?_m[k]:d;}
+}
+function sv(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){_m[k]=v;}}
 function fmt(d){
   const y=d.getFullYear();
   const m=String(d.getMonth()+1).padStart(2,'0');
   const day=String(d.getDate()).padStart(2,'0');
   return y+'-'+m+'-'+day;
 }
+
+// ── DATES (safe to compute now that ld/fmt exist) ──
+function getTargetDate(){return new Date(ld('gm-target','2027-02-15'));}
+function getMissionStart(){return new Date(ld('gm-mstart','2026-08-18'));}
+const MSS=getMissionStart(),MSE=getTargetDate();
+const NOW=new Date(),TK=fmt(NOW);
 function wkOf(dateStr){
   const d=dateStr?new Date(dateStr+'T12:00:00'):new Date(NOW);
   const day=d.getDay(),diff=d.getDate()-day+(day===0?-6:1);
@@ -508,7 +808,14 @@ function wkOf(dateStr){
 }
 function getAllKeys(){
   const keys=[];
-  try{for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(k&&k.startsWith('gm-day-'))keys.push(k);}}catch{}
+  try{
+    const n=localStorage.length;
+    for(let i=0;i<n;i++){
+      let k=null;
+      try{k=localStorage.key(i);}catch(e){continue;}
+      if(k&&k.startsWith('gm-day-'))keys.push(k);
+    }
+  }catch(e){}
   Object.keys(_m).forEach(k=>{if(k.startsWith('gm-day-')&&!keys.includes(k))keys.push(k);});
   return keys;
 }
@@ -523,6 +830,7 @@ function switchTab(name){
   const pn=document.getElementById('panel-'+name);
   if(tb)tb.classList.add('active');
   if(pn)pn.classList.add('active');
+  if(name==='revision')renderRevision();
   if(name==='history')renderHistory();
   if(name==='journal')renderJournal();
   if(name==='weekly')renderWeekly();
@@ -534,11 +842,18 @@ function switchTab(name){
 
 // COUNTDOWN
 function renderCountdown(){
-  const MSE2=getTargetDate(),diff=MSE2-new Date(),days=Math.max(0,Math.floor(diff/86400000));
+  const MSE2=getTargetDate(),MSS2=getMissionStart(),now=new Date();
+  const daysLeft=Math.max(0,Math.floor((MSE2-now)/86400000));
+  const daysDone=Math.max(0,Math.floor((now-MSS2)/86400000));
+  const totalDays=Math.max(1,Math.floor((MSE2-MSS2)/86400000));
   document.getElementById('countdown').innerHTML=
-    [['Days',days],['Weeks',Math.floor(days/7)],['Months',Math.floor(days/30)],['Total','182']]
-    .map(([l,v])=>`<div class="cd"><div class="cd-n">${v}</div><div class="cd-l">${l}</div></div>`).join('');
-  const pct=Math.min(100,Math.max(0,Math.round((new Date()-MSS)/(MSE-MSS)*100)));
+    [
+      ['Days Left',daysLeft,'#4285f4'],
+      ['Weeks Left',Math.floor(daysLeft/7),'#8ab4f8'],
+      ['Days Done',daysDone,'#34a853'],
+      ['Total Days',totalDays,'#6b8ab0'],
+    ].map(([l,v,c])=>`<div class="cd"><div class="cd-n" style="color:${c}">${v}</div><div class="cd-l">${l}</div></div>`).join('');
+  const pct=Math.min(100,Math.max(0,Math.round(daysDone/totalDays*100)));
   document.getElementById('prog-fill').style.width=pct+'%';
   document.getElementById('prog-pct').textContent=pct+'%';
 }
@@ -554,11 +869,70 @@ function calcStreak(){
   }
   return s;
 }
+function toggleStreakView(){
+  const w=document.getElementById('streak-grid-wrap');
+  const a=document.getElementById('streak-arrow');
+  if(!w)return;
+  const open=w.style.display!=='none';
+  w.style.display=open?'none':'block';
+  if(a)a.textContent=open?'▼':'▲';
+  if(!open)renderStreakGrid();
+}
+function dayScore(dateStr){
+  return Object.values(ld('gm-day-'+dateStr,{checks:{}}).checks||{}).filter(Boolean).length;
+}
+function scoreColor(sc){
+  return sc>=5?'#34a853':sc>=3?'#fbbc05':sc>=1?'#f97316':'#1a2f50';
+}
 function renderStreak(){
   document.getElementById('streak-num').textContent=calcStreak();
+  // last 7 mini dots
   const dots=[];
-  for(let i=6;i>=0;i--){const d=new Date(NOW);d.setDate(d.getDate()-i);const sc=Object.values(ld('gm-day-'+fmt(d),{checks:{}}).checks||{}).filter(Boolean).length;dots.push(`<div class="streak-dot" style="background:${sc>=5?'#34a853':sc>=3?'#fbbc05':sc>=1?'#f97316':'#1a2f50'}"></div>`);}
+  for(let i=6;i>=0;i--){
+    const d=new Date(NOW);d.setDate(d.getDate()-i);
+    const sc=dayScore(fmt(d));
+    dots.push(`<div class="streak-dot" style="background:${scoreColor(sc)}"></div>`);
+  }
   document.getElementById('streak-dots').innerHTML=dots.join('');
+  // totals
+  const start=getMissionStart();
+  const today=new Date();
+  const elapsed=Math.max(1,Math.floor((today-start)/86400000)+1);
+  let active=0;
+  for(let i=0;i<elapsed;i++){
+    const d=new Date(start);d.setDate(d.getDate()+i);
+    if(d>today)break;
+    if(dayScore(fmt(d))>=1)active++;
+  }
+  const el1=document.getElementById('streak-total');if(el1)el1.textContent=active;
+  const el2=document.getElementById('streak-elapsed');if(el2)el2.textContent=elapsed;
+}
+function renderStreakGrid(){
+  const grid=document.getElementById('streak-grid');
+  if(!grid)return;
+  const start=getMissionStart();
+  const today=new Date();
+  const elapsed=Math.max(1,Math.floor((today-start)/86400000)+1);
+  let cells='',active=0,zeroDays=0,perfect=0,best=0,run=0;
+  for(let i=0;i<elapsed;i++){
+    const d=new Date(start);d.setDate(d.getDate()+i);
+    if(d>today)break;
+    const ds=fmt(d);
+    const sc=dayScore(ds);
+    if(sc>=1){active++;run++;if(run>best)best=run;}else{zeroDays++;run=0;}
+    if(sc===7)perfect++;
+    const label=d.toLocaleDateString('en-IN',{day:'numeric',month:'short'})+' · '+sc+'/7';
+    cells+=`<div title="${label}" style="width:13px;height:13px;border-radius:3px;background:${scoreColor(sc)};border:1px solid rgba(255,255,255,.04);"></div>`;
+  }
+  grid.innerHTML=cells;
+  const st=document.getElementById('streak-stats');
+  if(st){
+    st.innerHTML=[
+      ['Active Days',active+'/'+elapsed,'#4ade80'],
+      ['Zero Days',zeroDays,zeroDays?'#f87171':'#4ade80'],
+      ['Best Streak',best+'🔥','#fbbf24'],
+    ].map(([l,v,c])=>`<div style="background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:9px;padding:9px;text-align:center;"><div style="font-size:15px;font-weight:900;color:${c}">${v}</div><div style="font-size:9px;color:var(--muted);margin-top:2px;">${l}</div></div>`).join('');
+  }
 }
 
 // DAILY
@@ -956,15 +1330,131 @@ function applyTheme(t){document.body.classList.toggle('light',t==='light');docum
 function toggleTheme(){applyTheme(ld('gm-theme','dark')==='dark'?'light':'dark');}
 
 // EXPORT / IMPORT
+function backupSummary(){
+  let days=0,med=0,man=0,rev=0,sun=0,journals=0,moods=0;
+  try{
+    const n=localStorage.length;
+    for(let i=0;i<n;i++){
+      let k=null;
+      try{k=localStorage.key(i);}catch(e){continue;}
+      if(!k)continue;
+      if(k.startsWith('gm-day-')){
+        days++;
+        const d=ld(k,{});
+        if(d.mood)moods++;
+        if(d.journal&&(d.journal.c||d.journal.t||d.journal.g||d.journal.n))journals++;
+      }
+      else if(k.startsWith('gm-sun-')&&k.indexOf('popup')===-1)sun++;
+    }
+  }catch(e){}
+  try{med=Object.keys(ld('gm-med',{})||{}).length;}catch(e){}
+  try{man=Object.keys(ld('gm-manifest',{})||{}).length;}catch(e){}
+  try{rev=(ld('gm-revision',[])||[]).length;}catch(e){}
+  return {days,med,man,rev,sun,journals,moods};
+}
+function renderBackupSummary(){
+  const el=document.getElementById('backup-summary');if(!el)return;
+  const s=backupSummary();
+  const rows=[
+    ['📋 Daily entries (7-point checks)',s.days],
+    ['😊 Mood records',s.moods],
+    ['📓 Journal entries',s.journals],
+    ['🕉️ Meditation sessions',s.med],
+    ['🌟 Manifestation days',s.man],
+    ['🔁 Revision problems',s.rev],
+    ['📅 Weekly (Sunday) records',s.sun],
+  ];
+  const total=s.days+s.med+s.man+s.rev+s.sun;
+  el.innerHTML=`
+    <div style="font-size:9px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:7px;">What's in your backup</div>
+    ${rows.map(([l,v])=>`<div style="display:flex;justify-content:space-between;font-size:11px;padding:4px 0;color:${v?'var(--text)':'var(--muted)'};"><span>${l}</span><span style="font-weight:800;color:${v?'#4ade80':'#f87171'};">${v}</span></div>`).join('')}
+    ${total===0?`<div style="margin-top:8px;padding:9px;background:rgba(234,67,53,.1);border:1px solid rgba(234,67,53,.25);border-radius:8px;font-size:11px;color:#fca5a5;">⚠️ Nothing tracked yet on this device. Tick something on the Daily tab first.</div>`:''}`;
+}
 function exportData(){
-  const data={};try{for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(k)data[k]=JSON.parse(localStorage.getItem(k));}}catch{}
+  const s=backupSummary();
+  const total=s.days+s.med+s.man+s.rev+s.sun;
+  if(total===0&&!confirm('This backup has no tracked history yet (0 daily entries, 0 meditations, 0 problems).\n\nDownload anyway?'))return;
+  // Snapshot ALL keys first, then read each one independently.
+  // A single bad key must never abort the whole export.
+  const data={};
+  const allKeys=[];
+  try{
+    const _en=localStorage.length;
+    for(let i=0;i<_en;i++){
+      let k=null;
+      try{k=localStorage.key(i);}catch(e){continue;}
+      if(k)allKeys.push(k);
+    }
+  }catch(e){}
+  let skipped=0;
+  allKeys.forEach(k=>{
+    let raw=null;
+    try{raw=localStorage.getItem(k);}catch(e){skipped++;return;}
+    if(raw===null)return;
+    try{data[k]=JSON.parse(raw);}
+    catch(e){data[k]={__rawString:raw};}   // preserve non-JSON values instead of dropping them
+  });
+  data.__backupInfo={
+    savedOn:fmt(new Date()),
+    dailyEntries:s.days, moods:s.moods, journals:s.journals,
+    meditations:s.med, manifestations:s.man, revisionProblems:s.rev, weeklyRecords:s.sun,
+    totalKeys:Object.keys(data).length
+  };
+
+  // ── VERIFY the file actually contains everything before download ──
+  const inFile={
+    days:Object.keys(data).filter(k=>k.startsWith('gm-day-')).length,
+    med:Object.keys(data['gm-med']||{}).length,
+    man:Object.keys(data['gm-manifest']||{}).length,
+    rev:(data['gm-revision']||[]).length,
+    sun:Object.keys(data).filter(k=>k.startsWith('gm-sun-')&&k.indexOf('popup')===-1).length
+  };
+  const mismatches=[];
+  if(inFile.days!==s.days)mismatches.push('daily entries ('+inFile.days+' vs '+s.days+')');
+  if(inFile.med!==s.med)mismatches.push('meditations ('+inFile.med+' vs '+s.med+')');
+  if(inFile.man!==s.man)mismatches.push('manifestations ('+inFile.man+' vs '+s.man+')');
+  if(inFile.rev!==s.rev)mismatches.push('revision problems ('+inFile.rev+' vs '+s.rev+')');
+  if(mismatches.length){
+    if(!confirm('⚠️ WARNING — backup may be incomplete!\n\nMismatch in: '+mismatches.join(', ')+'\n\nDownload anyway?'))return;
+  }
+
   const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');
   a.href=url;a.download='google-mission-backup-'+TK+'.json';document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(url);
-  const msg=document.getElementById('backup-msg');msg.style.color='#34a853';msg.textContent='✅ Downloaded!';
+  const msg=document.getElementById('backup-msg');msg.style.color='#34a853';
+  msg.innerHTML=`✅ Verified backup — ${inFile.days} days · ${inFile.med} meditations · ${inFile.man} manifestations · ${inFile.rev} problems<br><span style="font-weight:400;color:var(--muted);">${Object.keys(data).length} keys saved</span>`;
 }
 function importData(input){
   const msg=document.getElementById('backup-msg'),file=input.files[0];if(!file)return;
-  const r=new FileReader();r.onload=e=>{try{const data=JSON.parse(e.target.result);let c=0;for(const[k,v]of Object.entries(data)){localStorage.setItem(k,JSON.stringify(v));c++;}msg.style.color='#34a853';msg.textContent='✅ Imported '+c+' records! Reloading...';setTimeout(()=>location.reload(),1500);}catch{msg.style.color='#ea4335';msg.textContent='❌ Invalid file.';}};
+  const r=new FileReader();
+  r.onload=e=>{
+    try{
+      const data=JSON.parse(e.target.result);
+      const info=data.__backupInfo,cur=backupSummary();
+      let cm='Import this backup?\n\n';
+      if(info)cm+='Backup has: '+(info.dailyEntries||0)+' daily entries, '+(info.meditations||0)+' meditations, '+(info.revisionProblems||0)+' problems (saved '+(info.savedOn||'?')+').\n\n';
+      cm+='This device has: '+cur.days+' daily entries, '+cur.med+' meditations, '+cur.rev+' problems.\n\nData will be MERGED. Nothing on this device is deleted.';
+      if(!confirm(cm))return;
+      let c=0;
+      for(const[k,v]of Object.entries(data)){
+        if(k==='__backupInfo')continue;
+        if(k==='gm-med'||k==='gm-manifest'){
+          const ex=ld(k,{});
+          Object.keys(v||{}).forEach(d=>{if(ex[d]===undefined)ex[d]=v[d];});
+          sv(k,ex);c++;
+        } else if(k==='gm-revision'){
+          const ex=ld(k,[]);
+          (v||[]).forEach(p=>{if(!ex.some(x=>x.name&&p.name&&x.name.toLowerCase()===p.name.toLowerCase()))ex.push(p);});
+          sv(k,ex);c++;
+        } else if(k.startsWith('gm-day-')){
+          if(localStorage.getItem(k)===null){localStorage.setItem(k,JSON.stringify(v));c++;}
+        } else {
+          localStorage.setItem(k,JSON.stringify(v));c++;
+        }
+      }
+      msg.style.color='#34a853';msg.textContent='✅ Merged '+c+' records! Reloading...';
+      setTimeout(()=>location.reload(),1600);
+    }catch(err){msg.style.color='#ea4335';msg.textContent='❌ Invalid file.';}
+  };
   r.readAsText(file);
 }
 
@@ -989,9 +1479,11 @@ function doReset(){
   if(inp!=='DELETE'){msg.style.color='#ea4335';msg.textContent='❌ Type DELETE exactly.';return;}
   const sel=document.querySelector('input[name="rr"]:checked').value,now=new Date();let count=0,toDelete=[];
   try{
-    for(let i=0;i<localStorage.length;i++){
-      const k=localStorage.key(i);
-      if(!k||k.includes('gm-theme'))continue;
+    const _n=localStorage.length;
+    for(let i=0;i<_n;i++){
+      let k=null;
+      try{k=localStorage.key(i);}catch(e){continue;}
+      if(!k||k.indexOf('gm-theme')!==-1)continue;
       const dm=k.match(/\d{4}-\d{2}-\d{2}/);
       if(sel==='all'){toDelete.push(k);}
       else if(dm){
@@ -1038,11 +1530,527 @@ function checkSundayPopup(){
   setTimeout(()=>document.getElementById('sun-ov').classList.add('open'),900);
 }
 
+// ── REVISION TAB BLINK ──
+function pulseRevisionTab(color){
+  const btn=document.getElementById('tab-revision');if(!btn)return;
+  let on=false,count=0;
+  const iv=setInterval(()=>{
+    on=!on;
+    if(on){btn.style.background=color;btn.style.color='#fff';btn.style.borderColor=color;}
+    else{btn.style.background='';btn.style.color='';btn.style.borderColor='';}
+    if(++count>=16){clearInterval(iv);btn.style.background='';btn.style.color='';btn.style.borderColor='';}
+  },280);
+}
+function checkRevisionReminders(){
+  const problems=getRevProblems();
+  if(!problems.length)return;
+  const today=fmt(new Date());
+  const isSunday=new Date().getDay()===0;
+  const isMonthEnd=today===monthEndOf(today);
+  problems.forEach(p=>{if(!p.slots)p.slots=buildSlots(p.solved,p.diff);});
+  const dueToday=problems.filter(p=>(p.slots||[]).some(s=>!s.done&&s.date<=today));
+  if(isMonthEnd){
+    setTimeout(()=>pulseRevisionTab('#22c55e'),1000);
+    setTimeout(()=>pulseRevisionTab('#22c55e'),6000);
+  } else if(isSunday){
+    setTimeout(()=>pulseRevisionTab('#7c3aed'),1000);
+    setTimeout(()=>pulseRevisionTab('#7c3aed'),6000);
+  } else if(dueToday.length){
+    setTimeout(()=>pulseRevisionTab('#fbbc05'),1400);
+  }
+}
+
 // QUOTE
 function renderQuote(){
   const q=QUOTES[NOW.getDate()%QUOTES.length];
   document.getElementById('qotd').innerHTML=`${q.q}<br><span class="qotd-a">— ${q.a}</span>`;
 }
+
+// ══════════════════════════════════════════════
+// REVISION SYSTEM — Slot based (no auto-advance)
+// ══════════════════════════════════════════════
+// Rules:
+//   Hard   → Next Day + Upcoming Sunday + Month End
+//   Medium → Next Day + Upcoming Sunday + Month End
+//   Easy   → Upcoming Sunday + Month End (no next day)
+// Each slot is an explicit checkbox. Nothing auto-advances.
+
+let revFilter='all', revBucket='all', revTopic='all', revEditId=null;
+
+function getRevProblems(){return ld('gm-revision',[]);}
+function saveRevProblems(p){sv('gm-revision',p);}
+
+// ── DATE HELPERS ──
+function addDays(dateStr,n){const d=new Date(dateStr+'T12:00:00');d.setDate(d.getDate()+n);return fmt(d);}
+function sundayAfter(dateStr){
+  const d=new Date(dateStr+'T12:00:00');
+  const day=d.getDay();
+  const add=day===0?7:7-day;   // always the NEXT Sunday, never same day
+  d.setDate(d.getDate()+add);
+  return fmt(d);
+}
+function monthEndOf(dateStr){
+  const d=new Date(dateStr+'T12:00:00');
+  return fmt(new Date(d.getFullYear(),d.getMonth()+1,0));
+}
+
+// Build revision slots for a problem based on difficulty
+function buildSlots(solvedDate,diff){
+  const slots=[];
+  if(diff==='Hard'||diff==='Medium'){
+    slots.push({key:'nextday',label:'Next Day',date:addDays(solvedDate,1),done:false,doneOn:null});
+  }
+  slots.push({key:'sunday',label:'Weekly (Sunday)',date:sundayAfter(solvedDate),done:false,doneOn:null});
+  slots.push({key:'monthend',label:'Month End',date:monthEndOf(solvedDate),done:false,doneOn:null});
+  return slots;
+}
+
+// ── RICH TEXT ──
+function rteCmd(cmd,id){const el=document.getElementById(id);if(!el)return;el.focus();document.execCommand(cmd,false,null);}
+function rteHeading(id){
+  const el=document.getElementById(id);if(!el)return;el.focus();
+  const sel=window.getSelection();
+  if(sel.rangeCount){
+    const n=sel.anchorNode,p=n.nodeType===3?n.parentElement:n;
+    document.execCommand('formatBlock',false,p.tagName==='H3'?'div':'h3');
+  }
+}
+function rteHighlight(id,cls){
+  const el=document.getElementById(id);if(!el)return;el.focus();
+  const sel=window.getSelection();
+  if(!sel.rangeCount||sel.isCollapsed){alert('Select some text first, then tap a colour');return;}
+  const txt=sel.toString();
+  document.execCommand('insertHTML',false,'<mark class="'+(cls||'hl-yellow')+'">'+txt+'</mark>&nbsp;');
+}
+function rteCode(id){
+  const el=document.getElementById(id);if(!el)return;el.focus();
+  const sel=window.getSelection();
+  if(!sel.rangeCount||sel.isCollapsed)return;
+  document.execCommand('insertHTML',false,'<code>'+sel.toString()+'</code>&nbsp;');
+}
+function rteCodeBlock(id){
+  const el=document.getElementById(id);if(!el)return;el.focus();
+  const sel=window.getSelection();
+  const t=sel.rangeCount&&!sel.isCollapsed?sel.toString():'// code here';
+  document.execCommand('insertHTML',false,'<pre>'+t+'</pre><div><br></div>');
+}
+function rteGet(id){const el=document.getElementById(id);return el?el.innerHTML.trim():'';}
+function rteSet(id,h){const el=document.getElementById(id);if(el)el.innerHTML=h||'';}
+function rteClear(id){const el=document.getElementById(id);if(el)el.innerHTML='';}
+
+// ── ADD / EDIT ──
+function toggleCustomTopic(){
+  const s=document.getElementById('rev-topic'),c=document.getElementById('rev-custom-topic');
+  if(!s||!c)return;c.style.display=s.value==='Other'?'block':'none';if(s.value==='Other')c.focus();
+}
+function addRevProblem(){
+  const name=document.getElementById('rev-name').value.trim();
+  if(!name){alert('Enter problem name');return;}
+  const topic=document.getElementById('rev-topic').value;
+  const customTopic=document.getElementById('rev-custom-topic').value.trim();
+  if(topic==='Other'&&!customTopic){alert('Type the custom topic name');return;}
+  const diff=document.getElementById('rev-diff').value;
+  const problems=getRevProblems();
+  if(revEditId){
+    const p=problems.find(x=>x.id===revEditId);
+    if(p){
+      const diffChanged=p.diff!==diff;
+      p.name=name;p.topic=topic;p.customTopic=topic==='Other'?customTopic:'';p.diff=diff;
+      p.link=document.getElementById('rev-link').value.trim();
+      p.pattern=rteGet('rte-pattern');p.why=rteGet('rte-why');p.trick=rteGet('rte-trick');
+      if(diffChanged){
+        // rebuild slots but keep done states where key matches
+        const old=p.slots||[];
+        p.slots=buildSlots(p.solved,diff).map(s=>{
+          const prev=old.find(o=>o.key===s.key);
+          return prev?{...s,done:prev.done,doneOn:prev.doneOn}:s;
+        });
+      }
+    }
+    revEditId=null;
+    document.getElementById('rev-save-btn').textContent='+ Add Problem';
+    document.getElementById('rev-cancel-btn').style.display='none';
+  } else {
+    const solved=fmt(new Date());
+    problems.push({
+      id:Date.now(),name,topic,customTopic:topic==='Other'?customTopic:'',diff,
+      link:document.getElementById('rev-link').value.trim(),
+      pattern:rteGet('rte-pattern'),why:rteGet('rte-why'),trick:rteGet('rte-trick'),
+      solved,slots:buildSlots(solved,diff)
+    });
+  }
+  saveRevProblems(problems);clearRevForm();renderRevision();
+}
+function clearRevForm(){
+  document.getElementById('rev-name').value='';
+  document.getElementById('rev-link').value='';
+  const c=document.getElementById('rev-custom-topic');c.value='';c.style.display='none';
+  ['rte-pattern','rte-why','rte-trick'].forEach(rteClear);
+}
+function cancelRevEdit(){
+  revEditId=null;clearRevForm();
+  document.getElementById('rev-save-btn').textContent='+ Add Problem';
+  document.getElementById('rev-cancel-btn').style.display='none';
+}
+function editRevProblem(id){
+  const p=getRevProblems().find(x=>x.id===id);if(!p)return;
+  revEditId=id;
+  document.getElementById('rev-name').value=p.name;
+  document.getElementById('rev-topic').value=p.topic;
+  document.getElementById('rev-diff').value=p.diff;
+  document.getElementById('rev-link').value=p.link||'';
+  if(p.topic==='Other'){const c=document.getElementById('rev-custom-topic');c.style.display='block';c.value=p.customTopic||'';}
+  rteSet('rte-pattern',p.pattern);rteSet('rte-why',p.why);rteSet('rte-trick',p.trick);
+  document.getElementById('rev-save-btn').textContent='💾 Save Changes';
+  document.getElementById('rev-cancel-btn').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function deleteRevProblem(id){
+  if(!confirm('Delete this problem?'))return;
+  saveRevProblems(getRevProblems().filter(p=>p.id!==id));renderRevision();
+}
+// Toggle a specific revision slot — fully reversible, no auto-advance
+function toggleSlot(pid,key){
+  const problems=getRevProblems();
+  const p=problems.find(x=>x.id===pid);if(!p)return;
+  if(!p.slots)p.slots=buildSlots(p.solved,p.diff);
+  const s=p.slots.find(x=>x.key===key);if(!s)return;
+  s.done=!s.done;
+  s.doneOn=s.done?fmt(new Date()):null;
+  saveRevProblems(problems);renderRevision();
+}
+// Log an extra revision (beyond the scheduled slots)
+function addExtraRevision(pid){
+  const problems=getRevProblems();
+  const p=problems.find(x=>x.id===pid);if(!p)return;
+  if(!p.extraRevs)p.extraRevs=[];
+  const today=fmt(new Date());
+  if(p.extraRevs.includes(today)){
+    if(!confirm('Already logged a revision today. Log another?'))return;
+  }
+  p.extraRevs.push(today);
+  saveRevProblems(problems);renderRevision();
+}
+function removeExtraRevision(pid,idx){
+  const problems=getRevProblems();
+  const p=problems.find(x=>x.id===pid);if(!p||!p.extraRevs)return;
+  p.extraRevs.splice(idx,1);
+  saveRevProblems(problems);renderRevision();
+}
+function setRevFilter(f,btn){
+  revFilter=f;
+  document.querySelectorAll('.rev-filter').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');renderRevision();
+}
+function setRevBucket(b){revBucket=revBucket===b?'all':b;renderRevision();}
+function setRevTopic(t){revTopic=revTopic===t?'all':t;renderRevision();}
+function toggleRevExpand(id){
+  const e=ld('gm-rev-expanded',{});e[id]=!e[id];sv('gm-rev-expanded',e);renderRevision();
+}
+function copyProblemLink(link,btn){
+  const done=()=>{const t=btn.textContent;btn.textContent='✅ Copied';setTimeout(()=>btn.textContent=t,1600);};
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(link).then(done).catch(()=>fallbackCopy(link,done));
+  } else fallbackCopy(link,done);
+}
+function fallbackCopy(text,cb){
+  const ta=document.createElement('textarea');
+  ta.value=text;ta.style.position='fixed';ta.style.opacity='0';
+  document.body.appendChild(ta);ta.select();
+  try{document.execCommand('copy');cb();}catch(e){}
+  document.body.removeChild(ta);
+}
+
+// ── RENDER ──
+function renderRevision(){
+  const problems=getRevProblems();
+  const today=fmt(new Date());
+  const tomorrow=addDays(today,1);
+  const expanded=ld('gm-rev-expanded',{});
+  const isSunday=new Date().getDay()===0;
+  const monthEnd=monthEndOf(today);
+  const isMonthEnd=today===monthEnd;
+
+  // ensure all have slots
+  let changed=false;
+  problems.forEach(p=>{if(!p.slots){p.slots=buildSlots(p.solved,p.diff);changed=true;}});
+  if(changed)saveRevProblems(problems);
+
+  // Pending slot helper
+  const pendingSlots=p=>(p.slots||[]).filter(s=>!s.done);
+  const isDueToday=p=>(p.slots||[]).some(s=>!s.done&&s.date<=today);
+  const isDueTomorrow=p=>(p.slots||[]).some(s=>!s.done&&s.date===tomorrow);
+  const dueSundayThisWeek=p=>(p.slots||[]).some(s=>!s.done&&s.key==='sunday'&&s.date<=sundayAfter(addDays(today,-7)));
+
+  const dueToday=problems.filter(isDueToday);
+  const dueTomorrow=problems.filter(isDueTomorrow);
+  // Sunday bucket: all problems whose sunday slot is not done and its date is this coming Sunday or earlier
+  const thisSunday=isSunday?today:sundayAfter(today);
+  const sundayList=problems.filter(p=>(p.slots||[]).some(s=>!s.done&&s.key==='sunday'&&s.date<=thisSunday));
+  const monthList=problems.filter(p=>(p.slots||[]).some(s=>!s.done&&s.key==='monthend'&&s.date<=monthEnd));
+
+  // Banner
+  const banner=document.getElementById('rev-due-banner');
+  if(banner){
+    let b='';
+    if(isSunday&&sundayList.length){
+      b+=`<div style="background:linear-gradient(135deg,rgba(124,58,237,.18),rgba(66,133,244,.1));border:1px solid rgba(124,58,237,.4);border-radius:14px;padding:14px;margin-bottom:8px;">
+        <div style="font-size:13px;font-weight:800;color:#c4b5fd;margin-bottom:3px;">🗓️ Sunday — Weekly Revision</div>
+        <div style="font-size:11px;color:var(--muted);">${sundayList.length} problem${sundayList.length!==1?'s':''} pending weekly revision. Tap "This Sunday" below.</div>
+      </div>`;
+    }
+    if(isMonthEnd&&monthList.length){
+      b+=`<div style="background:linear-gradient(135deg,rgba(52,168,83,.18),rgba(20,184,166,.1));border:1px solid rgba(52,168,83,.4);border-radius:14px;padding:14px;margin-bottom:8px;">
+        <div style="font-size:13px;font-weight:800;color:#4ade80;margin-bottom:3px;">📅 Month End — Full Revision</div>
+        <div style="font-size:11px;color:var(--muted);">${monthList.length} problem${monthList.length!==1?'s':''} pending month-end revision.</div>
+      </div>`;
+    }
+    b+=dueToday.length
+      ?`<div style="background:linear-gradient(135deg,rgba(251,188,5,.15),rgba(245,158,11,.1));border:1px solid rgba(251,188,5,.35);border-radius:14px;padding:14px;margin-bottom:12px;">
+          <div style="font-size:13px;font-weight:800;color:#fbbf24;margin-bottom:3px;">🔔 ${dueToday.length} due for revision today</div>
+          <div style="font-size:11px;color:var(--muted);">${dueToday.slice(0,4).map(p=>p.name).join(' · ')}${dueToday.length>4?' +'+(dueToday.length-4):''}</div>
+        </div>`
+      :`<div style="background:rgba(52,168,83,.1);border:1px solid rgba(52,168,83,.25);border-radius:14px;padding:12px;margin-bottom:12px;text-align:center;font-size:12px;color:#4ade80;font-weight:700;">✅ Nothing due today — you're on track!</div>`;
+    banner.innerHTML=b;
+  }
+
+  // Buckets
+  const bk=document.getElementById('rev-buckets');
+  if(bk){
+    const buckets=[
+      {id:'today',n:dueToday.length,l:'Due Today',c:'#fbbf24'},
+      {id:'tomorrow',n:dueTomorrow.length,l:'Tomorrow',c:'#8ab4f8'},
+      {id:'sunday',n:sundayList.length,l:'This Sunday',c:'#c4b5fd'},
+      {id:'monthend',n:monthList.length,l:'Month End',c:'#4ade80'},
+    ];
+    bk.innerHTML=buckets.map(b=>`<div class="rev-bucket ${revBucket===b.id?'active-bucket':''}" onclick="setRevBucket('${b.id}')">
+      <div class="rev-bucket-n" style="color:${b.c}">${b.n}</div>
+      <div class="rev-bucket-l">${b.l}</div>
+    </div>`).join('');
+  }
+
+  // Stats
+  const st=document.getElementById('rev-stats');
+  if(st){
+    const bd={Easy:0,Medium:0,Hard:0};
+    problems.forEach(p=>{if(bd[p.diff]!==undefined)bd[p.diff]++;});
+    const fullyDone=problems.filter(p=>(p.slots||[]).every(s=>s.done)).length;
+    st.innerHTML=[
+      ['Total Solved',problems.length,'var(--blue)'],
+      ['Fully Revised',fullyDone,'#4ade80'],
+      ['Medium',bd.Medium,'#fbbf24'],
+      ['Hard',bd.Hard,'#f87171'],
+    ].map(([l,v,c])=>`<div class="stat-card"><div class="stat-n" style="color:${c}">${v}</div><div class="stat-l">${l}</div></div>`).join('');
+  }
+
+  // Topics — clickable filters
+  const tp=document.getElementById('rev-topics');
+  if(tp){
+    const byT={};
+    problems.forEach(p=>{const t=p.topic==='Other'&&p.customTopic?p.customTopic:p.topic;byT[t]=(byT[t]||0)+1;});
+    const s=Object.entries(byT).sort((a,b)=>b[1]-a[1]);
+    if(!s.length){tp.innerHTML=`<span style="font-size:10px;color:var(--muted);font-style:italic;">No problems yet</span>`;}
+    else{
+      let chips=`<span onclick="setRevTopic('all')" style="font-size:10px;padding:4px 11px;border-radius:99px;cursor:pointer;background:${revTopic==='all'?'#4285f4':'rgba(66,133,244,.12)'};color:${revTopic==='all'?'#fff':'#8ab4f8'};border:1px solid ${revTopic==='all'?'#4285f4':'rgba(66,133,244,.25)'};font-weight:700;">All · ${problems.length}</span>`;
+      chips+=s.map(([t,c])=>{
+        const on=revTopic===t;
+        return `<span onclick="setRevTopic('${t.replace(/'/g,"\\'")}')" style="font-size:10px;padding:4px 11px;border-radius:99px;cursor:pointer;background:${on?'#4285f4':'rgba(66,133,244,.12)'};color:${on?'#fff':'#8ab4f8'};border:1px solid ${on?'#4285f4':'rgba(66,133,244,.25)'};font-weight:700;">${t} · ${c}</span>`;
+      }).join('');
+      tp.innerHTML=chips;
+    }
+  }
+
+  // Filter
+  let filtered=problems;
+  if(revBucket==='today')filtered=dueToday;
+  else if(revBucket==='tomorrow')filtered=dueTomorrow;
+  else if(revBucket==='sunday')filtered=sundayList;
+  else if(revBucket==='monthend')filtered=monthList;
+  if(['Easy','Medium','Hard'].includes(revFilter))filtered=filtered.filter(p=>p.diff===revFilter);
+  if(revTopic!=='all')filtered=filtered.filter(p=>{const t=p.topic==='Other'&&p.customTopic?p.customTopic:p.topic;return t===revTopic;});
+
+  const title=document.getElementById('rev-list-title');
+  if(title){
+    const bl={all:'All Problems',today:'Due Today',tomorrow:'Due Tomorrow',sunday:'Pending Sunday Revision',monthend:'Pending Month-End Revision'};
+    let t=(bl[revBucket]||'Problems');
+    if(revTopic!=='all')t+=' · '+revTopic;
+    if(revFilter!=='all')t+=' · '+revFilter;
+    title.textContent=t+' ('+filtered.length+')';
+  }
+
+  const list=document.getElementById('rev-list');
+  if(!list)return;
+  if(!filtered.length){list.innerHTML='<div class="empty-s">Nothing here yet.<br>Log your first problem above! 📝</div>';return;}
+  filtered=filtered.slice().sort((a,b)=>{
+    const aD=isDueToday(a)?0:1,bD=isDueToday(b)?0:1;
+    if(aD!==bD)return aD-bD;
+    return b.solved.localeCompare(a.solved);
+  });
+
+  list.innerHTML=filtered.map(p=>{
+    const slots=p.slots||[];
+    const open=expanded[p.id];
+    const due=isDueToday(p);
+    const allDone=slots.every(s=>s.done);
+    const doneCount=slots.filter(s=>s.done).length;
+    const dc=p.diff==='Easy'?'#4ade80':p.diff==='Medium'?'#fbbf24':'#f87171';
+    const db=p.diff==='Easy'?'rgba(52,168,83,.15)':p.diff==='Medium'?'rgba(251,188,5,.15)':'rgba(234,67,53,.15)';
+    const tn=p.topic==='Other'&&p.customTopic?p.customTopic:p.topic;
+    const sd=new Date(p.solved+'T12:00:00').toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'});
+
+    // Slot rows
+    const slotRows=slots.map(s=>{
+      const overdue=!s.done&&s.date<=today;
+      const dt=new Date(s.date+'T12:00:00').toLocaleDateString('en-IN',{day:'numeric',month:'short'});
+      const doneDt=s.doneOn?new Date(s.doneOn+'T12:00:00').toLocaleDateString('en-IN',{day:'numeric',month:'short'}):'';
+      return `<div class="rev-slot ${s.done?'done':''} ${overdue?'overdue':''}" onclick="toggleSlot(${p.id},'${s.key}')">
+        <div class="rev-slot-box">${s.done?'✓':''}</div>
+        <div class="rev-slot-label">${s.label}</div>
+        <div class="rev-slot-date">${s.done?'✓ '+doneDt:overdue?'🔔 due '+dt:dt}</div>
+      </div>`;
+    }).join('');
+
+    return `<div class="rev-card" style="background:var(--card);border:1px solid ${allDone?'rgba(52,168,83,.35)':due?'rgba(251,188,5,.4)':'var(--border)'};border-radius:14px;padding:14px;margin-bottom:9px;">
+      <div onclick="toggleRevExpand(${p.id})" style="cursor:pointer;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;">
+          <div style="flex:1;min-width:0;">
+            <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
+              <div class="rev-card-name" style="font-size:14px;font-weight:800;word-break:break-word;">${allDone?'✅ ':''}${p.name}</div>
+              ${p.link?`<a href="${p.link}" target="_blank" rel="noopener" onclick="event.stopPropagation();" style="font-size:12px;text-decoration:none;flex-shrink:0;" title="Open problem">🔗</a>`:''}
+            </div>
+            <div style="display:flex;gap:5px;flex-wrap:wrap;align-items:center;">
+              <span style="font-size:9px;padding:3px 9px;border-radius:99px;background:${db};color:${dc};font-weight:800;">${p.diff}</span>
+              <span style="font-size:9px;padding:3px 9px;border-radius:99px;background:rgba(66,133,244,.12);color:#8ab4f8;font-weight:700;">${tn}</span>
+              <span class="rev-label" style="font-size:9px;color:${allDone?'#4ade80':'var(--muted)'};font-weight:700;">${doneCount}/${slots.length} scheduled</span>
+              ${(p.extraRevs&&p.extraRevs.length)?`<span style="font-size:9px;padding:3px 8px;border-radius:99px;background:rgba(124,58,237,.15);color:#c4b5fd;font-weight:700;">+${p.extraRevs.length} extra</span>`:''}
+            </div>
+          </div>
+          <div style="text-align:right;flex-shrink:0;">
+            <div style="font-size:13px;color:var(--muted);">${open?'▲':'▼'}</div>
+          </div>
+        </div>
+      </div>
+
+      ${open?`
+      <!-- Revision Slots -->
+      <div style="margin-top:12px;">
+        <div style="font-size:9px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Scheduled Revisions — tap to tick / untick</div>
+        ${slotRows}
+      </div>
+
+      <!-- Extra Revisions -->
+      <div style="margin-top:12px;padding:11px;background:rgba(124,58,237,.06);border:1px solid rgba(124,58,237,.2);border-radius:11px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:${(p.extraRevs&&p.extraRevs.length)?'8':'0'}px;">
+          <div style="font-size:9px;font-weight:800;color:#c4b5fd;text-transform:uppercase;letter-spacing:1px;">🔁 Extra Revisions (${(p.extraRevs||[]).length})</div>
+          <button onclick="event.stopPropagation();addExtraRevision(${p.id})" style="padding:4px 11px;background:rgba(124,58,237,.25);color:#c4b5fd;border:1px solid rgba(124,58,237,.4);border-radius:99px;font-size:10px;font-weight:800;cursor:pointer;">+ Revised Today</button>
+        </div>
+        ${(p.extraRevs&&p.extraRevs.length)?`<div style="display:flex;flex-wrap:wrap;">${p.extraRevs.slice().reverse().map((d,i)=>{
+          const realIdx=p.extraRevs.length-1-i;
+          const dt=new Date(d+'T12:00:00').toLocaleDateString('en-IN',{day:'numeric',month:'short'});
+          return `<span class="extra-rev-chip">${dt}<span onclick="event.stopPropagation();removeExtraRevision(${p.id},${realIdx})" style="opacity:.5;cursor:pointer;margin-left:2px;">✕</span></span>`;
+        }).join('')}</div>`:`<div style="font-size:10px;color:var(--muted);font-style:italic;margin-top:4px;">No extra revisions logged yet</div>`}
+      </div>
+
+      ${(p.pattern||p.why||p.trick)?`<div class="rev-notes-box" style="margin-top:10px;padding:12px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:11px;">
+        ${p.pattern?`<div style="margin-bottom:10px;"><div style="font-size:9px;font-weight:800;color:#8ab4f8;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">🧩 Pattern</div><div class="rte-body rev-detail" style="padding:0;min-height:0;font-size:12px;">${p.pattern}</div></div>`:''}
+        ${p.why?`<div style="margin-bottom:10px;"><div style="font-size:9px;font-weight:800;color:#c4b5fd;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">💡 Why This Pattern</div><div class="rte-body rev-detail" style="padding:0;min-height:0;font-size:12px;">${p.why}</div></div>`:''}
+        ${p.trick?`<div><div style="font-size:9px;font-weight:800;color:#fbbf24;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">🔑 Key Trick</div><div class="rte-body rev-detail" style="padding:0;min-height:0;font-size:12px;">${p.trick}</div></div>`:''}
+      </div>`:''}
+      ${p.link?`<div style="margin-top:10px;display:flex;gap:6px;align-items:center;">
+        <a href="${p.link}" target="_blank" rel="noopener" onclick="event.stopPropagation();" style="flex:1;padding:8px 11px;background:rgba(66,133,244,.1);border:1px solid rgba(66,133,244,.25);border-radius:8px;font-size:11px;color:#8ab4f8;text-decoration:none;font-weight:700;display:block;text-align:center;">🔗 Open Problem</a>
+        <button onclick="event.stopPropagation();copyProblemLink('${p.link.replace(/'/g,"\\'")}',this)" style="padding:8px 12px;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:8px;font-size:11px;color:var(--muted);cursor:pointer;">📋 Copy</button>
+      </div>`:''}
+      <div style="font-size:9px;color:var(--muted);margin-top:8px;">Solved: ${sd}</div>
+      `:''}
+
+      <div style="display:flex;gap:6px;margin-top:10px;">
+        <button onclick="editRevProblem(${p.id})" style="flex:1;padding:8px;background:rgba(66,133,244,.1);color:#8ab4f8;border:1px solid rgba(66,133,244,.25);border-radius:8px;font-size:11px;font-weight:700;cursor:pointer;">✏️ Edit</button>
+        <button onclick="deleteRevProblem(${p.id})" style="padding:8px 14px;background:rgba(234,67,53,.08);color:#f87171;border:1px solid rgba(234,67,53,.2);border-radius:8px;font-size:11px;cursor:pointer;">🗑</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ── CSV ──
+function stripHTML(h){const d=document.createElement('div');d.innerHTML=h||'';return d.textContent||'';}
+function exportRevisionCSV(){
+  const problems=getRevProblems();
+  if(!problems.length){alert('No problems to export yet.');return;}
+  const rows=[['Problem','Link','Topic','Difficulty','Pattern','Why This Pattern','Key Trick','Date Solved','NextDay Done','Sunday Done','MonthEnd Done']];
+  problems.forEach(p=>{
+    const s=p.slots||[];
+    const g=k=>{const x=s.find(y=>y.key===k);return x?(x.done?'Yes ('+(x.doneOn||'')+')':'No ('+x.date+')'):'N/A';};
+    rows.push([p.name,p.link||'',p.topic==='Other'&&p.customTopic?p.customTopic:p.topic,p.diff,stripHTML(p.pattern),stripHTML(p.why),stripHTML(p.trick),p.solved,g('nextday'),g('sunday'),g('monthend')]);
+  });
+  const csv=rows.map(r=>r.map(c=>'"'+String(c).replace(/"/g,'""')+'"').join(',')).join('\n');
+  const blob=new Blob([csv],{type:'text/csv'}),url=URL.createObjectURL(blob),a=document.createElement('a');
+  a.href=url;a.download='revision-log-'+fmt(new Date())+'.csv';
+  document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(url);
+}
+function importRevisionCSV(input){
+  const msg=document.getElementById('rev-import-msg'),file=input.files[0];if(!file)return;
+  const r=new FileReader();
+  r.onload=e=>{
+    try{
+      const lines=e.target.result.split(/\r?\n/).filter(l=>l.trim());
+      if(lines.length<2){msg.style.color='#ea4335';msg.textContent='❌ No data rows.';return;}
+      function pl(line){const o=[];let c='',q=false;for(let i=0;i<line.length;i++){const ch=line[i];if(ch==='"'){if(q&&line[i+1]==='"'){c+='"';i++;}else q=!q;}else if(ch===','&&!q){o.push(c);c='';}else c+=ch;}o.push(c);return o;}
+      const h=pl(lines[0]).map(x=>x.trim().toLowerCase());
+      const ix=n=>h.findIndex(x=>x.includes(n));
+      const iN=ix('problem'),iL=ix('link'),iT=ix('topic'),iD=ix('difficulty'),iP=ix('pattern'),iW=ix('why'),iK=ix('trick'),iS=ix('solved');
+      if(iN<0){msg.style.color='#ea4335';msg.textContent='❌ No "Problem" column.';return;}
+      const ex=getRevProblems();let added=0;
+      for(let i=1;i<lines.length;i++){
+        const c=pl(lines[i]),name=(c[iN]||'').trim();
+        if(!name||ex.some(p=>p.name.toLowerCase()===name.toLowerCase()))continue;
+        const d=(c[iD]||'Medium').trim();
+        const diff=['Easy','Medium','Hard'].includes(d)?d:'Medium';
+        const solved=(c[iS]||fmt(new Date())).trim();
+        ex.push({id:Date.now()+i,name,link:iL>=0?(c[iL]||'').trim():'',topic:(c[iT]||'Other').trim(),customTopic:'',diff,
+          pattern:(c[iP]||'').trim(),why:(c[iW]||'').trim(),trick:(c[iK]||'').trim(),
+          solved,slots:buildSlots(solved,diff)});
+        added++;
+      }
+      saveRevProblems(ex);
+      msg.style.color='#34a853';msg.textContent='✅ Imported '+added+' problems!';
+      renderRevision();setTimeout(()=>msg.textContent='',4000);
+    }catch(err){msg.style.color='#ea4335';msg.textContent='❌ Could not read CSV.';}
+  };
+  r.readAsText(file);input.value='';
+}
+
+// ── ONE-TIME MIGRATION of old g4- keys → gm- keys ──
+(function migrateOldKeys(){
+  if(ld('gm-migrated-v3',false))return;
+  try{
+    const oldKeys=[];
+    const _mn=localStorage.length;
+    for(let i=0;i<_mn;i++){
+      let k=null;
+      try{k=localStorage.key(i);}catch(e){continue;}
+      if(k&&k.startsWith('g4-'))oldKeys.push(k);
+    }
+    oldKeys.forEach(k=>{
+      let val;
+      try{val=JSON.parse(localStorage.getItem(k));}catch(e){return;}
+      if(k==='g4-med'||k==='g4-manifest'){
+        // merge date-keyed objects into gm- equivalent
+        const target=k==='g4-med'?'gm-med':'gm-manifest';
+        const cur=ld(target,{});
+        Object.keys(val||{}).forEach(d=>{if(cur[d]===undefined)cur[d]=val[d];});
+        sv(target,cur);
+      } else if(k.startsWith('g4-sun-')){
+        const nk='gm-sun-'+k.replace('g4-sun-','');
+        if(localStorage.getItem(nk)===null)sv(nk,val);
+      } else if(/^g4-\d{4}-\d{2}-\d{2}$/.test(k)){
+        const nk='gm-day-'+k.replace('g4-','');
+        if(localStorage.getItem(nk)===null)sv(nk,val);
+      }
+      localStorage.removeItem(k);
+    });
+  }catch(e){}
+  sv('gm-migrated-v3',true);
+})();
 
 // INIT
 renderQuote();
@@ -1056,7 +2064,9 @@ loadManifest();renderMissionStats();renderWhyList();
 loadMedStatus();
 updTimer();
 applyTheme(ld('gm-theme','dark'));
+renderRevision();
 checkSundayPopup();
+checkRevisionReminders();
 </script>
 </body>
 </html>
