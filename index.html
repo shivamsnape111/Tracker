@@ -540,22 +540,22 @@ body.light .rte-body code{background:#e8effd;color:#1a56db;}
     <div class="j-lbl">🧩 Pattern Used</div>
     <div class="rte-wrap">
       <div class="rte-toolbar">
-        <button class="rte-btn" onclick="rteCmd('bold','rte-pattern')" title="Bold"><b>B</b></button>
-        <button class="rte-btn" onclick="rteCmd('italic','rte-pattern')" title="Italic"><i>I</i></button>
+        <button class="rte-btn" onmousedown="event.preventDefault()" onclick="rteCmd('bold','rte-pattern')" title="Bold"><b>B</b></button>
+        <button class="rte-btn" onmousedown="event.preventDefault()" onclick="rteCmd('italic','rte-pattern')" title="Italic"><i>I</i></button>
         <div class="rte-sep"></div>
-        <button class="rte-btn" onclick="rteHeading('rte-pattern')" title="Heading">H</button>
-        <button class="rte-btn" onclick="rteCmd('insertUnorderedList','rte-pattern')" title="Bullets">•</button>
+        <button class="rte-btn" onmousedown="event.preventDefault()" onclick="rteHeading('rte-pattern')" title="Heading">H</button>
+        <button class="rte-btn" onmousedown="event.preventDefault()" onclick="rteCmd('insertUnorderedList','rte-pattern')" title="Bullets">•</button>
         <div class="rte-sep"></div>
-        <span class="hl-swatch" style="background:rgba(251,188,5,.5)" onclick="rteHighlight('rte-pattern','hl-yellow')" title="Yellow highlight"></span>
-        <span class="hl-swatch" style="background:rgba(52,168,83,.5)" onclick="rteHighlight('rte-pattern','hl-green')" title="Green highlight"></span>
-        <span class="hl-swatch" style="background:rgba(66,133,244,.5)" onclick="rteHighlight('rte-pattern','hl-blue')" title="Blue highlight"></span>
-        <span class="hl-swatch" style="background:rgba(234,67,53,.5)" onclick="rteHighlight('rte-pattern','hl-red')" title="Red highlight"></span>
-        <span class="hl-swatch" style="background:rgba(124,58,237,.5)" onclick="rteHighlight('rte-pattern','hl-purple')" title="Purple highlight"></span>
+        <span class="hl-swatch" style="background:rgba(251,188,5,.5)" onmousedown="event.preventDefault()" onclick="rteHighlight('rte-pattern','hl-yellow')" title="Yellow highlight"></span>
+        <span class="hl-swatch" style="background:rgba(52,168,83,.5)" onmousedown="event.preventDefault()" onclick="rteHighlight('rte-pattern','hl-green')" title="Green highlight"></span>
+        <span class="hl-swatch" style="background:rgba(66,133,244,.5)" onmousedown="event.preventDefault()" onclick="rteHighlight('rte-pattern','hl-blue')" title="Blue highlight"></span>
+        <span class="hl-swatch" style="background:rgba(234,67,53,.5)" onmousedown="event.preventDefault()" onclick="rteHighlight('rte-pattern','hl-red')" title="Red highlight"></span>
+        <span class="hl-swatch" style="background:rgba(124,58,237,.5)" onmousedown="event.preventDefault()" onclick="rteHighlight('rte-pattern','hl-purple')" title="Purple highlight"></span>
         <div class="rte-sep"></div>
-        <button class="rte-btn" onclick="rteCode('rte-pattern')" title="Inline code">&lt;&gt;</button>
-        <button class="rte-btn" onclick="rteCodeBlock('rte-pattern')" title="Code block">▤</button>
+        <button class="rte-btn" onmousedown="event.preventDefault()" onclick="rteCode('rte-pattern')" title="Inline code">&lt;&gt;</button>
+        <button class="rte-btn" onmousedown="event.preventDefault()" onclick="rteCodeBlock('rte-pattern')" title="Code block">▤</button>
         <div class="rte-sep"></div>
-        <button class="rte-btn" onclick="rteCmd('removeFormat','rte-pattern')" title="Clear">✕</button>
+        <button class="rte-btn" onmousedown="event.preventDefault()" onclick="rteCmd('removeFormat','rte-pattern')" title="Clear">✕</button>
       </div>
       <div class="rte-body" id="rte-pattern" contenteditable="true" data-ph="e.g. Sliding Window + HashMap"></div>
     </div>
@@ -563,22 +563,22 @@ body.light .rte-body code{background:#e8effd;color:#1a56db;}
     <div class="j-lbl">💡 Why This Pattern?</div>
     <div class="rte-wrap">
       <div class="rte-toolbar">
-        <button class="rte-btn" onclick="rteCmd('bold','rte-why')"><b>B</b></button>
-        <button class="rte-btn" onclick="rteCmd('italic','rte-why')"><i>I</i></button>
+        <button class="rte-btn" onmousedown="event.preventDefault()" onclick="rteCmd('bold','rte-why')"><b>B</b></button>
+        <button class="rte-btn" onmousedown="event.preventDefault()" onclick="rteCmd('italic','rte-why')"><i>I</i></button>
         <div class="rte-sep"></div>
-        <button class="rte-btn" onclick="rteHeading('rte-why')">H</button>
-        <button class="rte-btn" onclick="rteCmd('insertUnorderedList','rte-why')">•</button>
+        <button class="rte-btn" onmousedown="event.preventDefault()" onclick="rteHeading('rte-why')">H</button>
+        <button class="rte-btn" onmousedown="event.preventDefault()" onclick="rteCmd('insertUnorderedList','rte-why')">•</button>
         <div class="rte-sep"></div>
-        <span class="hl-swatch" style="background:rgba(251,188,5,.5)" onclick="rteHighlight('rte-why','hl-yellow')" title="Yellow highlight"></span>
-        <span class="hl-swatch" style="background:rgba(52,168,83,.5)" onclick="rteHighlight('rte-why','hl-green')" title="Green highlight"></span>
-        <span class="hl-swatch" style="background:rgba(66,133,244,.5)" onclick="rteHighlight('rte-why','hl-blue')" title="Blue highlight"></span>
-        <span class="hl-swatch" style="background:rgba(234,67,53,.5)" onclick="rteHighlight('rte-why','hl-red')" title="Red highlight"></span>
-        <span class="hl-swatch" style="background:rgba(124,58,237,.5)" onclick="rteHighlight('rte-why','hl-purple')" title="Purple highlight"></span>
+        <span class="hl-swatch" style="background:rgba(251,188,5,.5)" onmousedown="event.preventDefault()" onclick="rteHighlight('rte-why','hl-yellow')" title="Yellow highlight"></span>
+        <span class="hl-swatch" style="background:rgba(52,168,83,.5)" onmousedown="event.preventDefault()" onclick="rteHighlight('rte-why','hl-green')" title="Green highlight"></span>
+        <span class="hl-swatch" style="background:rgba(66,133,244,.5)" onmousedown="event.preventDefault()" onclick="rteHighlight('rte-why','hl-blue')" title="Blue highlight"></span>
+        <span class="hl-swatch" style="background:rgba(234,67,53,.5)" onmousedown="event.preventDefault()" onclick="rteHighlight('rte-why','hl-red')" title="Red highlight"></span>
+        <span class="hl-swatch" style="background:rgba(124,58,237,.5)" onmousedown="event.preventDefault()" onclick="rteHighlight('rte-why','hl-purple')" title="Purple highlight"></span>
         <div class="rte-sep"></div>
-        <button class="rte-btn" onclick="rteCode('rte-why')">&lt;&gt;</button>
-        <button class="rte-btn" onclick="rteCodeBlock('rte-why')">▤</button>
+        <button class="rte-btn" onmousedown="event.preventDefault()" onclick="rteCode('rte-why')">&lt;&gt;</button>
+        <button class="rte-btn" onmousedown="event.preventDefault()" onclick="rteCodeBlock('rte-why')">▤</button>
         <div class="rte-sep"></div>
-        <button class="rte-btn" onclick="rteCmd('removeFormat','rte-why')">✕</button>
+        <button class="rte-btn" onmousedown="event.preventDefault()" onclick="rteCmd('removeFormat','rte-why')">✕</button>
       </div>
       <div class="rte-body" id="rte-why" contenteditable="true" data-ph="What signal in the question told you to use this?"></div>
     </div>
@@ -586,22 +586,22 @@ body.light .rte-body code{background:#e8effd;color:#1a56db;}
     <div class="j-lbl">🔑 Key Trick / Insight</div>
     <div class="rte-wrap">
       <div class="rte-toolbar">
-        <button class="rte-btn" onclick="rteCmd('bold','rte-trick')"><b>B</b></button>
-        <button class="rte-btn" onclick="rteCmd('italic','rte-trick')"><i>I</i></button>
+        <button class="rte-btn" onmousedown="event.preventDefault()" onclick="rteCmd('bold','rte-trick')"><b>B</b></button>
+        <button class="rte-btn" onmousedown="event.preventDefault()" onclick="rteCmd('italic','rte-trick')"><i>I</i></button>
         <div class="rte-sep"></div>
-        <button class="rte-btn" onclick="rteHeading('rte-trick')">H</button>
-        <button class="rte-btn" onclick="rteCmd('insertUnorderedList','rte-trick')">•</button>
+        <button class="rte-btn" onmousedown="event.preventDefault()" onclick="rteHeading('rte-trick')">H</button>
+        <button class="rte-btn" onmousedown="event.preventDefault()" onclick="rteCmd('insertUnorderedList','rte-trick')">•</button>
         <div class="rte-sep"></div>
-        <span class="hl-swatch" style="background:rgba(251,188,5,.5)" onclick="rteHighlight('rte-trick','hl-yellow')" title="Yellow highlight"></span>
-        <span class="hl-swatch" style="background:rgba(52,168,83,.5)" onclick="rteHighlight('rte-trick','hl-green')" title="Green highlight"></span>
-        <span class="hl-swatch" style="background:rgba(66,133,244,.5)" onclick="rteHighlight('rte-trick','hl-blue')" title="Blue highlight"></span>
-        <span class="hl-swatch" style="background:rgba(234,67,53,.5)" onclick="rteHighlight('rte-trick','hl-red')" title="Red highlight"></span>
-        <span class="hl-swatch" style="background:rgba(124,58,237,.5)" onclick="rteHighlight('rte-trick','hl-purple')" title="Purple highlight"></span>
+        <span class="hl-swatch" style="background:rgba(251,188,5,.5)" onmousedown="event.preventDefault()" onclick="rteHighlight('rte-trick','hl-yellow')" title="Yellow highlight"></span>
+        <span class="hl-swatch" style="background:rgba(52,168,83,.5)" onmousedown="event.preventDefault()" onclick="rteHighlight('rte-trick','hl-green')" title="Green highlight"></span>
+        <span class="hl-swatch" style="background:rgba(66,133,244,.5)" onmousedown="event.preventDefault()" onclick="rteHighlight('rte-trick','hl-blue')" title="Blue highlight"></span>
+        <span class="hl-swatch" style="background:rgba(234,67,53,.5)" onmousedown="event.preventDefault()" onclick="rteHighlight('rte-trick','hl-red')" title="Red highlight"></span>
+        <span class="hl-swatch" style="background:rgba(124,58,237,.5)" onmousedown="event.preventDefault()" onclick="rteHighlight('rte-trick','hl-purple')" title="Purple highlight"></span>
         <div class="rte-sep"></div>
-        <button class="rte-btn" onclick="rteCode('rte-trick')">&lt;&gt;</button>
-        <button class="rte-btn" onclick="rteCodeBlock('rte-trick')">▤</button>
+        <button class="rte-btn" onmousedown="event.preventDefault()" onclick="rteCode('rte-trick')">&lt;&gt;</button>
+        <button class="rte-btn" onmousedown="event.preventDefault()" onclick="rteCodeBlock('rte-trick')">▤</button>
         <div class="rte-sep"></div>
-        <button class="rte-btn" onclick="rteCmd('removeFormat','rte-trick')">✕</button>
+        <button class="rte-btn" onmousedown="event.preventDefault()" onclick="rteCmd('removeFormat','rte-trick')">✕</button>
       </div>
       <div class="rte-body" id="rte-trick" contenteditable="true" data-ph="The one insight you must not forget"></div>
     </div>
@@ -1718,33 +1718,64 @@ function buildSlots(solvedDate,diff){
 }
 
 // ── RICH TEXT ──
-function rteCmd(cmd,id){const el=document.getElementById(id);if(!el)return;el.focus();document.execCommand(cmd,false,null);}
-function rteHeading(id){
-  const el=document.getElementById(id);if(!el)return;el.focus();
+// ── RTE helpers ──
+// Selection must be READ before we touch focus, and the click target must
+// preventDefault on mousedown (done in the HTML) or the browser clears it first.
+function rteEscape(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function rteSelectionIn(id){
+  const el=document.getElementById(id);
+  if(!el)return null;
   const sel=window.getSelection();
-  if(sel.rangeCount){
-    const n=sel.anchorNode,p=n.nodeType===3?n.parentElement:n;
-    document.execCommand('formatBlock',false,p.tagName==='H3'?'div':'h3');
+  if(!sel||!sel.rangeCount)return null;
+  const r=sel.getRangeAt(0);
+  // selection must actually live inside this editor
+  if(!el.contains(r.commonAncestorContainer))return null;
+  return {sel,range:r,text:sel.toString(),collapsed:sel.isCollapsed};
+}
+function rteRestore(id,s){
+  const el=document.getElementById(id);if(!el)return;
+  el.focus();
+  if(s&&s.range){
+    const sel=window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(s.range);
   }
 }
-function rteHighlight(id,cls){
-  const el=document.getElementById(id);if(!el)return;el.focus();
+function rteCmd(cmd,id){
+  const s=rteSelectionIn(id);
+  rteRestore(id,s);
+  document.execCommand(cmd,false,null);
+}
+function rteHeading(id){
+  const s=rteSelectionIn(id);
+  rteRestore(id,s);
   const sel=window.getSelection();
-  if(!sel.rangeCount||sel.isCollapsed){alert('Select some text first, then tap a colour');return;}
-  const txt=sel.toString();
+  let tag='div';
+  if(sel.rangeCount){
+    const n=sel.anchorNode,p=n&&n.nodeType===3?n.parentElement:n;
+    tag=(p&&p.tagName==='H3')?'div':'h3';
+  }else tag='h3';
+  document.execCommand('formatBlock',false,tag);
+}
+function rteHighlight(id,cls){
+  const s=rteSelectionIn(id);
+  if(!s||s.collapsed||!s.text){alert('Select the text you want to highlight first, then tap a colour.');return;}
+  const txt=rteEscape(s.text);
+  rteRestore(id,s);
   document.execCommand('insertHTML',false,'<mark class="'+(cls||'hl-yellow')+'">'+txt+'</mark>&nbsp;');
 }
 function rteCode(id){
-  const el=document.getElementById(id);if(!el)return;el.focus();
-  const sel=window.getSelection();
-  if(!sel.rangeCount||sel.isCollapsed)return;
-  document.execCommand('insertHTML',false,'<code>'+sel.toString()+'</code>&nbsp;');
+  const s=rteSelectionIn(id);
+  if(!s||s.collapsed||!s.text){alert('Select the text you want as inline code first.');return;}
+  const txt=rteEscape(s.text);
+  rteRestore(id,s);
+  document.execCommand('insertHTML',false,'<code>'+txt+'</code>&nbsp;');
 }
 function rteCodeBlock(id){
-  const el=document.getElementById(id);if(!el)return;el.focus();
-  const sel=window.getSelection();
-  const t=sel.rangeCount&&!sel.isCollapsed?sel.toString():'// code here';
-  document.execCommand('insertHTML',false,'<pre>'+t+'</pre><div><br></div>');
+  const s=rteSelectionIn(id);
+  const txt=(s&&!s.collapsed&&s.text)?rteEscape(s.text):'// code here';
+  rteRestore(id,s);
+  document.execCommand('insertHTML',false,'<pre>'+txt+'</pre><div><br></div>');
 }
 function rteGet(id){const el=document.getElementById(id);return el?el.innerHTML.trim():'';}
 function rteSet(id,h){const el=document.getElementById(id);if(el)el.innerHTML=h||'';}
