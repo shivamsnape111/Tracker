@@ -979,6 +979,7 @@ function renderChecklist(){
 }
 function toggleCheck(id){
   DS.checks[id]=!DS.checks[id];DS._s=true;persist();renderChecklist();
+  renderCountdown();renderStreak();
   const el=document.getElementById('autosave-tag');el.style.opacity='1';clearTimeout(window._at);window._at=setTimeout(()=>el.style.opacity='0',1800);
 }
 function renderScore(){
@@ -1264,8 +1265,9 @@ function collapseAllHistory(){
 }
 function renderHistory(){
   let keys=getAllKeys();
-  const total=keys.length;
-  const scores=keys.map(k=>Object.values(ld(k,{checks:{}}).checks||{}).filter(Boolean).length);
+  const workedK=keys.filter(k=>Object.values(ld(k,{checks:{}}).checks||{}).filter(Boolean).length>=1);
+  const total=workedK.length;
+  const scores=workedK.map(k=>Object.values(ld(k,{checks:{}}).checks||{}).filter(Boolean).length);
   const avg=total?Math.round(scores.reduce((a,b)=>a+b,0)/total):0;
   const perfect=scores.filter(s=>s===7).length;
   document.getElementById('stats-grid').innerHTML=
@@ -1408,21 +1410,30 @@ function updateWhyText(i,val){const r=getWhyReasons();r[i].text=val;sv('gm-why',
 function removeWhyReason(i){const r=getWhyReasons();r.splice(i,1);sv('gm-why',r);renderWhyList();}
 function addWhyReason(){const r=getWhyReasons();r.push({emoji:'⭐',text:'My reason...'});sv('gm-why',r);renderWhyList();}
 
+function daysLeftCount(){
+  // Same midnight-normalised maths used by renderCountdown so the two never disagree
+  const MSE2=getTargetDate(),now=new Date(),dayMs=86400000;
+  const t0=new Date(now.getFullYear(),now.getMonth(),now.getDate()).getTime();
+  const e0=new Date(MSE2.getFullYear(),MSE2.getMonth(),MSE2.getDate()).getTime();
+  return Math.max(0,Math.round((e0-t0)/dayMs));
+}
+function workedDaysCount(){
+  // Only days that actually have at least one check ticked
+  return getAllKeys().filter(k=>Object.values(ld(k,{checks:{}}).checks||{}).filter(Boolean).length>=1).length;
+}
 function renderMissionStats(){
   const el=document.getElementById('mission-stats');if(!el)return;
-  const keys=getAllKeys();
-  const total=keys.length;
-  const scores=keys.map(k=>Object.values(ld(k,{checks:{}}).checks||{}).filter(Boolean).length);
-  const avg=total?Math.round(scores.reduce((a,b)=>a+b,0)/total):0;
-  const med=ld('gm-med',{});
-  const medDays=Object.values(med).filter(v=>v&&v.done).length;
-  const manDays=Object.keys(ld('gm-manifest',{})).length;
-  const MSE2=getTargetDate(),diff=MSE2-new Date(),daysLeft=Math.max(0,Math.floor(diff/86400000));
+  // Average is over WORKED days only — an untouched day must not drag the average down
+  const workedKeys=getAllKeys().filter(k=>Object.values(ld(k,{checks:{}}).checks||{}).filter(Boolean).length>=1);
+  const worked=workedKeys.length;
+  const scores=workedKeys.map(k=>Object.values(ld(k,{checks:{}}).checks||{}).filter(Boolean).length);
+  const avg=worked?Math.round(scores.reduce((a,b)=>a+b,0)/worked):0;
+  const medDays=Object.values(ld('gm-med',{})||{}).filter(v=>v&&v.done).length;
   el.innerHTML=[
-    ['Days Logged',total,'var(--blue)'],
+    ['Days Worked',worked,'var(--blue)'],
     ['Avg Score',avg+'/7','var(--green)'],
     ['Meditations',medDays+'🕉️','#c4b5fd'],
-    ['Days Left',daysLeft,'var(--yellow)'],
+    ['Days Left',daysLeftCount(),'var(--yellow)'],
   ].map(([l,v,c])=>`<div style="background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:12px;text-align:center;"><div style="font-size:22px;font-weight:900;color:${c}">${v}</div><div style="font-size:9px;color:var(--muted);margin-top:2px;">${l}</div></div>`).join('');
 }
 
