@@ -446,6 +446,7 @@ body.light .rte-body code{background:#e8effd;color:#1a56db;}
   <div class="sec">💭 Free Notes — Write Anything</div>
   <textarea class="j-area" id="j-notes" rows="4" placeholder="Frustration, thoughts, fears — no filter. Just for you."></textarea>
   <button class="btn btn-blue" id="save-btn" onclick="saveDay()">✅ Save Today's Entry</button>
+  <div id="save-status" style="font-size:10px;color:var(--muted);text-align:center;margin-top:-2px;"></div>
 </div>
 
 <!-- MEDITATION -->
@@ -645,13 +646,25 @@ body.light .rte-body code{background:#e8effd;color:#1a56db;}
   <div class="stats-grid" id="stats-grid"></div>
   <div class="sec">Mood — Last 14 Days</div>
   <div class="mood-hist" id="mood-hist"></div>
-  <div class="sec">Daily Log — Everything Date-wise</div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin:14px 0 7px;">
+    <div style="font-size:9px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;">Daily Log — tap a day to expand</div>
+    <div style="display:flex;gap:5px;">
+      <button onclick="expandAllHistory()" style="padding:3px 10px;background:rgba(66,133,244,.12);color:#8ab4f8;border:1px solid rgba(66,133,244,.25);border-radius:99px;font-size:9px;font-weight:700;cursor:pointer;">Expand all</button>
+      <button onclick="collapseAllHistory()" style="padding:3px 10px;background:rgba(255,255,255,.05);color:var(--muted);border:1px solid var(--border);border-radius:99px;font-size:9px;font-weight:700;cursor:pointer;">Collapse all</button>
+    </div>
+  </div>
   <div id="history-list"></div>
 </div>
 
 <!-- JOURNAL -->
 <div class="panel" id="panel-journal">
-  <div class="sec">Journal Log</div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin:14px 0 7px;">
+    <div style="font-size:9px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;">Journal Log — tap to expand</div>
+    <div style="display:flex;gap:5px;">
+      <button onclick="expandAllJournal()" style="padding:3px 10px;background:rgba(66,133,244,.12);color:#8ab4f8;border:1px solid rgba(66,133,244,.25);border-radius:99px;font-size:9px;font-weight:700;cursor:pointer;">Expand all</button>
+      <button onclick="collapseAllJournal()" style="padding:3px 10px;background:rgba(255,255,255,.05);color:var(--muted);border:1px solid var(--border);border-radius:99px;font-size:9px;font-weight:700;cursor:pointer;">Collapse all</button>
+    </div>
+  </div>
   <div id="journal-list"></div>
 </div>
 
@@ -843,29 +856,43 @@ function switchTab(name){
 // COUNTDOWN
 function renderCountdown(){
   const MSE2=getTargetDate(),MSS2=getMissionStart(),now=new Date();
-  const daysLeft=Math.max(0,Math.floor((MSE2-now)/86400000));
-  const daysDone=Math.max(0,Math.floor((now-MSS2)/86400000));
-  const totalDays=Math.max(1,Math.floor((MSE2-MSS2)/86400000));
+  // Normalise to midnight so partial days don't skew the counts
+  const dayMs=86400000;
+  const t0=new Date(now.getFullYear(),now.getMonth(),now.getDate()).getTime();
+  const s0=new Date(MSS2.getFullYear(),MSS2.getMonth(),MSS2.getDate()).getTime();
+  const e0=new Date(MSE2.getFullYear(),MSE2.getMonth(),MSE2.getDate()).getTime();
+  const daysLeft=Math.max(0,Math.round((e0-t0)/dayMs));
+  const elapsed=t0>=s0?Math.round((t0-s0)/dayMs)+1:0;   // mission start day = Day 1
+  const totalDays=Math.max(1,Math.round((e0-s0)/dayMs)+1);
+  // Days Worked = calendar days that actually have at least one check ticked
+  let worked=0;
+  for(let i=0;i<elapsed;i++){
+    const d=new Date(s0+i*dayMs);
+    if(dayScore(fmt(d))>=1)worked++;
+  }
   document.getElementById('countdown').innerHTML=
     [
       ['Days Left',daysLeft,'#4285f4'],
       ['Weeks Left',Math.floor(daysLeft/7),'#8ab4f8'],
-      ['Days Done',daysDone,'#34a853'],
+      ['Days Worked',worked,'#34a853'],
       ['Total Days',totalDays,'#6b8ab0'],
     ].map(([l,v,c])=>`<div class="cd"><div class="cd-n" style="color:${c}">${v}</div><div class="cd-l">${l}</div></div>`).join('');
-  const pct=Math.min(100,Math.max(0,Math.round(daysDone/totalDays*100)));
+  const pct=Math.min(100,Math.max(0,Math.round(elapsed/totalDays*100)));
   document.getElementById('prog-fill').style.width=pct+'%';
   document.getElementById('prog-pct').textContent=pct+'%';
 }
 
 // STREAK
 function calcStreak(){
-  let s=0,d=new Date(NOW);
-  for(let i=0;i<200;i++){
-    if(i===0){d.setDate(d.getDate()-1);continue;}
-    if(Object.values(ld('gm-day-'+fmt(d),{checks:{}}).checks||{}).filter(Boolean).length>=1)s++;
+  // Counts consecutive active days ending today.
+  // If today has activity it counts; if not, the streak is measured up to yesterday.
+  let s=0;
+  const d=new Date(NOW);
+  const todayActive=dayScore(fmt(d))>=1;
+  if(!todayActive)d.setDate(d.getDate()-1);   // today blank → look back from yesterday
+  for(let i=0;i<400;i++){
+    if(dayScore(fmt(d))>=1){s++;d.setDate(d.getDate()-1);}
     else break;
-    d.setDate(d.getDate()-1);
   }
   return s;
 }
@@ -897,11 +924,12 @@ function renderStreak(){
   // totals
   const start=getMissionStart();
   const today=new Date();
-  const elapsed=Math.max(1,Math.floor((today-start)/86400000)+1);
+  const s0=new Date(start.getFullYear(),start.getMonth(),start.getDate());
+  const t0=new Date(today.getFullYear(),today.getMonth(),today.getDate());
+  const elapsed=t0>=s0?Math.round((t0-s0)/86400000)+1:0;
   let active=0;
   for(let i=0;i<elapsed;i++){
-    const d=new Date(start);d.setDate(d.getDate()+i);
-    if(d>today)break;
+    const d=new Date(s0);d.setDate(d.getDate()+i);
     if(dayScore(fmt(d))>=1)active++;
   }
   const el1=document.getElementById('streak-total');if(el1)el1.textContent=active;
@@ -912,11 +940,12 @@ function renderStreakGrid(){
   if(!grid)return;
   const start=getMissionStart();
   const today=new Date();
-  const elapsed=Math.max(1,Math.floor((today-start)/86400000)+1);
+  const s0=new Date(start.getFullYear(),start.getMonth(),start.getDate());
+  const t0=new Date(today.getFullYear(),today.getMonth(),today.getDate());
+  const elapsed=t0>=s0?Math.round((t0-s0)/86400000)+1:0;
   let cells='',active=0,zeroDays=0,perfect=0,best=0,run=0;
   for(let i=0;i<elapsed;i++){
-    const d=new Date(start);d.setDate(d.getDate()+i);
-    if(d>today)break;
+    const d=new Date(s0);d.setDate(d.getDate()+i);
     const ds=fmt(d);
     const sc=dayScore(ds);
     if(sc>=1){active++;run++;if(run>best)best=run;}else{zeroDays++;run=0;}
@@ -960,14 +989,36 @@ function renderScore(){
 }
 function saveDay(){
   DS.journal={c:document.getElementById('j1').value,t:document.getElementById('j2').value,g:document.getElementById('j3').value,n:document.getElementById('j-notes').value};
-  DS._s=true;persist();renderStreak();
-  const btn=document.getElementById('save-btn');btn.textContent='🎉 Saved! Keep going, Shivam!';btn.className='btn btn-green';
-  setTimeout(()=>{btn.textContent="✅ Save Today's Entry";btn.className='btn btn-blue';},2200);
+  DS._s=true;
+  DS.savedAt=new Date().toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit'});
+  persist();renderStreak();
+  const btn=document.getElementById('save-btn');
+  btn.textContent='🎉 Saved! Keep going, Shivam!';btn.className='btn btn-green';
+  setTimeout(()=>{updateSaveButton();},2200);
+}
+function hasJournalContent(){
+  const j=DS.journal||{};
+  return !!(j.c||j.t||j.g||j.n);
+}
+function updateSaveButton(){
+  const btn=document.getElementById('save-btn');
+  const status=document.getElementById('save-status');
+  if(!btn)return;
+  if(hasJournalContent()){
+    btn.textContent='💾 Update Entry';
+    btn.className='btn btn-ghost';
+    if(status)status.textContent=DS.savedAt?'Saved at '+DS.savedAt+' — edit above and tap Update':'Entry saved — edit above and tap Update';
+  } else {
+    btn.textContent="✅ Save Today's Entry";
+    btn.className='btn btn-blue';
+    if(status)status.textContent='';
+  }
 }
 function loadSaved(){
   if(DS.mood)document.querySelectorAll('.mood-btn').forEach(b=>{if(b.querySelector('.mood-lbl')&&b.querySelector('.mood-lbl').textContent===DS.mood.label)b.classList.add('sel');});
   if(DS.dayType){const i={green:0,yellow:1,red:2}[DS.dayType];if(i!==undefined)document.querySelectorAll('.dt-btn')[i].classList.add('sel');}
   if(DS.journal){['j1','j2','j3','j-notes'].forEach((id,i)=>{const el=document.getElementById(id);if(el)el.value=[DS.journal.c,DS.journal.t,DS.journal.g,DS.journal.n][i]||'';});}
+  updateSaveButton();
 }
 
 // MEDITATION
@@ -1196,6 +1247,21 @@ function renderWeekly(){
 function toggleSun(id){const wk=wkOf(),ss=ld('gm-sun-'+wk,{});ss[id]=!ss[id];sv('gm-sun-'+wk,ss);renderWeekly();}
 
 // HISTORY
+function toggleHistExpand(date){
+  const e=ld('gm-hist-expanded',{});
+  e[date]=!e[date];
+  sv('gm-hist-expanded',e);
+  renderHistory();
+}
+function expandAllHistory(){
+  const keys=getAllKeys();
+  const e={};
+  keys.forEach(k=>{e[k.replace('gm-day-','')]=true;});
+  sv('gm-hist-expanded',e);renderHistory();
+}
+function collapseAllHistory(){
+  sv('gm-hist-expanded',{});renderHistory();
+}
 function renderHistory(){
   let keys=getAllKeys();
   const total=keys.length;
@@ -1210,6 +1276,7 @@ function renderHistory(){
   }).join('');
   if(!total){document.getElementById('history-list').innerHTML='<div class="empty-s">No history yet.<br>Tick any check on the Daily tab — auto-saves! 🚀</div>';return;}
   const med=ld('gm-med',{}),man=ld('gm-manifest',{});
+  const histExpanded=ld('gm-hist-expanded',{});
   const CIDS=['dsa','topic','english','revision','focus','sleep','growth'];
   const CLBLS=['DSA','Topic','Eng','Revise','Focus','Sleep','Mindset'];
   const SUN_MAP={puzzle:'🧩 Puzzles',behavioral:'🎭 Behavioral',mock:'🎤 Mock',review:'📊 Review'};
@@ -1232,16 +1299,39 @@ function renderHistory(){
       d.journal&&d.journal.g?`<div class="hist-row" style="color:#fbbf24"><span class="hist-key">🙏 Grateful:</span>${d.journal.g}</div>`:'',
       d.journal&&d.journal.n?`<div class="hist-row" style="color:#c4b5fd;font-style:italic"><span class="hist-key" style="font-style:normal">💭 Notes:</span>${d.journal.n}</div>`:'',
     ].filter(Boolean).join('');
-    return `<div class="hist-card"><div class="hist-top"><div style="font-size:12px;font-weight:800;">${em} ${dt} ${d.mood?d.mood.emoji:''}</div><div style="font-size:22px;font-weight:900;color:${col}">${sc}/7</div></div><div class="hist-dots">${dots}</div>${extras?`<div class="hist-details">${extras}</div>`:''}</div>`;
+    const hOpen=histExpanded[date];
+    return `<div class="hist-card">
+      <div onclick="toggleHistExpand('${date}')" style="cursor:pointer;">
+        <div class="hist-top">
+          <div style="font-size:12px;font-weight:800;">${em} ${dt} ${d.mood?d.mood.emoji:''}</div>
+          <div style="display:flex;align-items:center;gap:9px;">
+            <div style="font-size:22px;font-weight:900;color:${col}">${sc}/7</div>
+            ${extras?`<div style="font-size:12px;color:var(--muted);">${hOpen?'▲':'▼'}</div>`:''}
+          </div>
+        </div>
+        <div class="hist-dots">${dots}</div>
+      </div>
+      ${extras&&hOpen?`<div class="hist-details">${extras}</div>`:''}
+    </div>`;
   }).join('');
 }
 
 // JOURNAL
+function toggleJourExpand(date){
+  const e=ld('gm-jour-expanded',{});e[date]=!e[date];sv('gm-jour-expanded',e);renderJournal();
+}
+function expandAllJournal(){
+  const keys=getAllKeys();const e={};
+  keys.forEach(k=>{e[k.replace('gm-day-','')]=true;});
+  sv('gm-jour-expanded',e);renderJournal();
+}
+function collapseAllJournal(){sv('gm-jour-expanded',{});renderJournal();}
 function renderJournal(){
   let keys=getAllKeys().filter(k=>{const d=ld(k,{});return d.journal&&(d.journal.c||d.journal.t||d.journal.g||d.journal.n);});
   const el=document.getElementById('journal-list');
   if(!keys.length){el.innerHTML='<div class="empty-s">No journal entries yet.<br>Fill the Night Journal on the Daily tab! 📓</div>';return;}
   const med=ld('gm-med',{}),man=ld('gm-manifest',{});
+  const jExpanded=ld('gm-jour-expanded',{});
   el.innerHTML=keys.slice().sort().reverse().map(k=>{
     const d=ld(k,{}),date=k.replace('gm-day-','');
     const dt=new Date(date+'T12:00:00').toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
@@ -1249,11 +1339,22 @@ function renderJournal(){
     const col=sc<=2?'#ea4335':sc<=4?'#fbbc05':'#34a853';
     const em=d.dayType==='green'?'🟢':d.dayType==='yellow'?'🟡':d.dayType==='red'?'🔴':'';
     const me=med[date],mf=man[date];
-    return `<div class="ji"><div class="ji-top">${em} ${dt} ${d.mood?d.mood.emoji:''} · Score: <span style="color:${col};font-weight:800;">${sc}/7</span>${mf?' · 🌟':''}${me&&me.done?' · 🕉️ '+me.mins+'min':''}</div>
-      ${d.journal.c?`<div class="ji-row"><span class="ji-k">✅ Done:</span>${d.journal.c}</div>`:''}
-      ${d.journal.t?`<div class="ji-row"><span class="ji-k">🎯 Tomorrow:</span>${d.journal.t}</div>`:''}
-      ${d.journal.g?`<div class="ji-row" style="color:#fbbf24"><span class="ji-k">🙏 Grateful:</span>${d.journal.g}</div>`:''}
-      ${d.journal.n?`<div class="ji-row" style="color:#c4b5fd;font-style:italic;margin-top:6px;padding-top:6px;border-top:1px solid var(--border)"><span class="ji-k" style="font-style:normal">💭 Notes:</span>${d.journal.n}</div>`:''}
+    const jOpen=jExpanded[date];
+    const preview=(d.journal.c||d.journal.t||d.journal.g||d.journal.n||'').replace(/<[^>]*>/g,'').slice(0,70);
+    return `<div class="ji">
+      <div onclick="toggleJourExpand('${date}')" style="cursor:pointer;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;">
+          <div class="ji-top" style="margin-bottom:0;flex:1;">${em} ${dt} ${d.mood?d.mood.emoji:''} · Score: <span style="color:${col};font-weight:800;">${sc}/7</span>${mf?' · 🌟':''}${me&&me.done?' · 🕉️ '+me.mins+'min':''}</div>
+          <div style="font-size:12px;color:var(--muted);flex-shrink:0;">${jOpen?'▲':'▼'}</div>
+        </div>
+        ${!jOpen?`<div style="font-size:11px;color:var(--muted);margin-top:5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${preview}${preview.length>=70?'…':''}</div>`:''}
+      </div>
+      ${jOpen?`<div style="margin-top:9px;padding-top:9px;border-top:1px solid var(--border);">
+        ${d.journal.c?`<div class="ji-row"><span class="ji-k">✅ Done:</span>${d.journal.c}</div>`:''}
+        ${d.journal.t?`<div class="ji-row"><span class="ji-k">🎯 Tomorrow:</span>${d.journal.t}</div>`:''}
+        ${d.journal.g?`<div class="ji-row" style="color:#fbbf24"><span class="ji-k">🙏 Grateful:</span>${d.journal.g}</div>`:''}
+        ${d.journal.n?`<div class="ji-row" style="color:#c4b5fd;font-style:italic;margin-top:6px;padding-top:6px;border-top:1px solid var(--border)"><span class="ji-k" style="font-style:normal">💭 Notes:</span>${d.journal.n}</div>`:''}
+      </div>`:''}
     </div>`;
   }).join('');
 }
