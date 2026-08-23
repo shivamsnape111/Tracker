@@ -109,6 +109,54 @@ body.light .rte-body mark.hl-red{background:#ffe0e0;color:#b91c1c;}
 body.light .rte-body mark.hl-purple{background:#ede4ff;color:#5b21b6;}
 .hl-swatch{width:18px;height:18px;border-radius:4px;border:1px solid rgba(255,255,255,.2);cursor:pointer;display:inline-block;margin:0 1px;}
 .hl-swatch:hover{transform:scale(1.15);}
+/* Revision table view */
+.rev-tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--border);border-radius:var(--r);background:var(--card);}
+.rev-tbl{width:100%;border-collapse:collapse;font-size:11px;min-width:640px;}
+.rev-tbl th{background:rgba(255,255,255,.04);color:var(--muted);font-size:9px;text-transform:uppercase;letter-spacing:.8px;font-weight:800;padding:9px 10px;text-align:left;border-bottom:1px solid var(--border);white-space:nowrap;}
+.rev-tbl td{padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text);}
+.rev-tbl tr:last-child td{border-bottom:none;}
+.rev-tbl tr:hover td{background:rgba(66,133,244,.04);}
+.rev-tbl a{color:#8ab4f8;text-decoration:none;}
+.rev-tbl a:hover{text-decoration:underline;}
+.rev-pill{display:inline-block;font-size:9px;padding:2px 8px;border-radius:99px;font-weight:800;white-space:nowrap;}
+.rev-slot-dot{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:3px;}
+body.light .rev-tbl-wrap{background:#fff;border-color:#dbe4f5;}
+body.light .rev-tbl th{background:#f5f8ff;color:#7a8fb0;border-color:#dbe4f5;}
+body.light .rev-tbl td{border-color:#dbe4f5;color:#1a2340;}
+body.light .rev-tbl tr:hover td{background:#f0f4ff;}
+.rev-tbl th.sortable{cursor:pointer;user-select:none;-webkit-user-select:none;}
+.rev-tbl th.sortable:hover{color:#8ab4f8;}
+.rev-tbl th .sort-ar{font-size:8px;margin-left:3px;opacity:.4;}
+.rev-tbl th.sorted .sort-ar{opacity:1;color:#4285f4;}
+.rev-tbl tr.notes-row td{background:rgba(66,133,244,.04);border-top:none;padding:0 10px 12px;}
+.rev-note-box{padding:11px 13px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:10px;}
+.rev-note-sec{margin-bottom:9px;}
+.rev-note-sec:last-child{margin-bottom:0;}
+.rev-note-lbl{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;}
+.rev-note-body{font-size:11px;line-height:1.6;color:var(--text);}
+.rev-note-body b,.rev-note-body strong{font-weight:800;}
+.rev-note-body ul{margin:3px 0 3px 16px;}
+.rev-note-body h3{font-size:12px;font-weight:800;color:#8ab4f8;margin:5px 0 2px;}
+.rev-note-body code{background:rgba(66,133,244,.15);color:#8ab4f8;padding:1px 5px;border-radius:4px;font-family:monospace;font-size:10px;}
+.rev-note-body pre{background:rgba(0,0,0,.3);border:1px solid var(--border);border-radius:6px;padding:7px 9px;margin:4px 0;overflow-x:auto;font-family:monospace;font-size:10px;color:#8ab4f8;}
+.rev-note-body mark{padding:1px 3px;border-radius:3px;}
+.rev-note-body mark.hl-yellow{background:rgba(251,188,5,.3);color:#fbbf24;}
+.rev-note-body mark.hl-green{background:rgba(52,168,83,.25);color:#4ade80;}
+.rev-note-body mark.hl-blue{background:rgba(66,133,244,.25);color:#8ab4f8;}
+.rev-note-body mark.hl-red{background:rgba(234,67,53,.22);color:#fca5a5;}
+.rev-note-body mark.hl-purple{background:rgba(124,58,237,.25);color:#c4b5fd;}
+.rev-note-btn{background:none;border:none;cursor:pointer;font-size:13px;padding:0 4px;color:var(--muted);}
+.rev-note-btn:hover{color:#8ab4f8;}
+body.light .rev-tbl tr.notes-row td{background:#f7faff;}
+body.light .rev-note-box{background:#fff;border-color:#dbe4f5;}
+body.light .rev-note-body{color:#1a2340;}
+body.light .rev-note-body pre{background:#f0f4ff;border-color:#dbe4f5;color:#1a56db;}
+body.light .rev-note-body code{background:#e8effd;color:#1a56db;}
+body.light .rev-note-body mark.hl-yellow{background:#fff3c4;color:#8a6d00;}
+body.light .rev-note-body mark.hl-green{background:#d6f5e0;color:#166534;}
+body.light .rev-note-body mark.hl-blue{background:#dbe8ff;color:#1a56db;}
+body.light .rev-note-body mark.hl-red{background:#ffe0e0;color:#b91c1c;}
+body.light .rev-note-body mark.hl-purple{background:#ede4ff;color:#5b21b6;}
 /* Revision slot checkboxes */
 .rev-slot{display:flex;align-items:center;gap:8px;padding:9px 11px;border-radius:9px;border:1px solid var(--border);background:rgba(255,255,255,.02);margin-bottom:5px;cursor:pointer;transition:all .2s;}
 .rev-slot.done{background:rgba(52,168,83,.1);border-color:rgba(52,168,83,.4);}
@@ -626,8 +674,15 @@ body.light .rte-body code{background:#e8effd;color:#1a56db;}
   <div id="rev-topics" style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px;"></div>
 
   <!-- List -->
-  <div class="sec" id="rev-list-title">Problems</div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin:14px 0 7px;">
+    <div style="font-size:9px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;" id="rev-list-title">Problems</div>
+    <div style="display:flex;gap:5px;">
+      <button id="rev-view-cards" onclick="revSetView('cards')" style="padding:3px 11px;background:#4285f4;color:#fff;border:1px solid #4285f4;border-radius:99px;font-size:9px;font-weight:700;cursor:pointer;">▤ Cards</button>
+      <button id="rev-view-table" onclick="revSetView('table')" style="padding:3px 11px;background:rgba(255,255,255,.05);color:var(--muted);border:1px solid var(--border);border-radius:99px;font-size:9px;font-weight:700;cursor:pointer;">▦ Table</button>
+    </div>
+  </div>
   <div id="rev-list"></div>
+  <div id="rev-table" style="display:none;"></div>
 
   <!-- Import / Export -->
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px;">
@@ -654,6 +709,11 @@ body.light .rte-body code{background:#e8effd;color:#1a56db;}
     </div>
   </div>
   <div id="history-list"></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px;">
+    <button class="btn btn-ghost" onclick="histExportCSV()" style="margin:0;">📊 Export History CSV</button>
+    <button class="btn btn-ghost" onclick="histExportReport()" style="margin:0;">📄 Export Full Report</button>
+  </div>
+  <div id="hist-export-msg" style="font-size:11px;text-align:center;margin-top:8px;font-weight:700;"></div>
 </div>
 
 <!-- JOURNAL -->
@@ -2112,6 +2172,8 @@ function renderRevision(){
       </div>
     </div>`;
   }).join('');
+  // keep the table view in sync (additive — cards logic above untouched)
+  if(typeof revViewMode!=='undefined'&&revViewMode==='table'&&typeof revRenderTable==='function')revRenderTable();
 }
 
 // ── CSV ──
@@ -2194,6 +2256,269 @@ function importRevisionCSV(input){
   }catch(e){}
   sv('gm-migrated-v3',true);
 })();
+
+// ══════════════════════════════════════════════
+// HISTORY EXPORT  (additive — nothing existing changed)
+// ══════════════════════════════════════════════
+function histCsvCell(v){return '"'+String(v==null?'':v).replace(/"/g,'""')+'"';}
+function histPlain(h){
+  // strip HTML tags so notes export as readable text
+  const d=document.createElement('div');d.innerHTML=h||'';
+  return (d.textContent||'').replace(/\s+/g,' ').trim();
+}
+function histCollectRows(){
+  const keys=getAllKeys().slice().sort().reverse();
+  const med=ld('gm-med',{})||{}, man=ld('gm-manifest',{})||{};
+  const SUNMAP={puzzle:'Puzzles',behavioral:'Behavioral',mock:'Mock Interview',review:'Progress Review'};
+  const CIDS=['dsa','topic','english','revision','focus','sleep','growth'];
+  const CLBL=['DSA','Topic','English','Revision','Focus','Sleep','Mindset'];
+  return keys.map(k=>{
+    const d=ld(k,{checks:{}})||{}, date=k.replace('gm-day-','');
+    const checks=d.checks||{}, j=d.journal||{};
+    const score=Object.values(checks).filter(Boolean).length;
+    const me=med[date], mf=man[date];
+    const ss=ld('gm-sun-'+wkOf(date),{})||{};
+    const sun=Object.keys(SUNMAP).filter(id=>ss[id]).map(id=>SUNMAP[id]).join('; ');
+    const dt=new Date(date+'T12:00:00');
+    return {
+      date, weekday:dt.toLocaleDateString('en-IN',{weekday:'long'}),
+      pretty:dt.toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'}),
+      score, dayType:d.dayType||'', mood:d.mood?d.mood.label:'', moodEmoji:d.mood?d.mood.emoji:'',
+      checks, checkList:CIDS.map((id,i)=>({label:CLBL[i],done:!!checks[id]})),
+      manifest:mf?'Yes':'No',
+      medMins:(me&&me.done)?me.mins:'', medTime:(me&&me.done)?me.time:'',
+      weekly:sun,
+      done:histPlain(j.c), tomorrow:histPlain(j.t), grateful:histPlain(j.g), notes:histPlain(j.n)
+    };
+  });
+}
+function histExportCSV(){
+  const rows=histCollectRows();
+  const msg=document.getElementById('hist-export-msg');
+  if(!rows.length){if(msg){msg.style.color='#ea4335';msg.textContent='Nothing to export yet.';}return;}
+  const head=['Date','Weekday','Score','Day Type','Mood','DSA','Topic','English','Revision','Focus','Sleep','Mindset','Manifestation','Meditation (min)','Meditation Time','Weekly Tasks','Completed','Tomorrow','Grateful','Notes'];
+  const lines=[head.map(histCsvCell).join(',')];
+  rows.forEach(r=>{
+    lines.push([r.date,r.weekday,r.score+'/7',r.dayType,r.mood,
+      ...r.checkList.map(c=>c.done?'Yes':'No'),
+      r.manifest,r.medMins,r.medTime,r.weekly,r.done,r.tomorrow,r.grateful,r.notes
+    ].map(histCsvCell).join(','));
+  });
+  const blob=new Blob(['\ufeff'+lines.join('\n')],{type:'text/csv;charset=utf-8;'});
+  const url=URL.createObjectURL(blob),a=document.createElement('a');
+  a.href=url;a.download='mission-history-'+fmt(new Date())+'.csv';
+  document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(url);
+  if(msg){msg.style.color='#34a853';msg.textContent='✅ Exported '+rows.length+' days to CSV';setTimeout(()=>msg.textContent='',4000);}
+}
+function histEsc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function histExportReport(){
+  const rows=histCollectRows();
+  const msg=document.getElementById('hist-export-msg');
+  if(!rows.length){if(msg){msg.style.color='#ea4335';msg.textContent='Nothing to export yet.';}return;}
+  const worked=rows.filter(r=>r.score>=1).length;
+  const perfect=rows.filter(r=>r.score===7).length;
+  const avg=worked?Math.round(rows.filter(r=>r.score>=1).reduce((a,r)=>a+r.score,0)/worked):0;
+  const meds=rows.filter(r=>r.medMins!=='').length;
+  const mans=rows.filter(r=>r.manifest==='Yes').length;
+  const revs=(ld('gm-revision',[])||[]).length;
+
+  const body=rows.map(r=>{
+    const tags=r.checkList.map(c=>'<span class="tag '+(c.done?'on':'off')+'">'+histEsc(c.label)+'</span>').join('');
+    const bits=[];
+    if(r.manifest==='Yes')bits.push('<div class="row"><b>Manifestation:</b> Done</div>');
+    if(r.medMins!=='')bits.push('<div class="row"><b>Meditation:</b> '+histEsc(r.medMins)+' min at '+histEsc(r.medTime)+'</div>');
+    if(r.weekly)bits.push('<div class="row"><b>Weekly:</b> '+histEsc(r.weekly)+'</div>');
+    if(r.done)bits.push('<div class="row"><b>Completed:</b> '+histEsc(r.done)+'</div>');
+    if(r.tomorrow)bits.push('<div class="row"><b>Tomorrow:</b> '+histEsc(r.tomorrow)+'</div>');
+    if(r.grateful)bits.push('<div class="row grateful"><b>Grateful:</b> '+histEsc(r.grateful)+'</div>');
+    if(r.notes)bits.push('<div class="row notes"><b>Notes:</b> '+histEsc(r.notes)+'</div>');
+    const em=r.dayType==='green'?'&#128994;':r.dayType==='yellow'?'&#128993;':r.dayType==='red'?'&#128308;':'';
+    const sc=r.score<=2?'red':r.score<=4?'amber':'green';
+    return '<div class="day"><div class="dayhead"><div class="daydate">'+em+' '+histEsc(r.pretty)+' '+histEsc(r.moodEmoji)+'</div>'+
+      '<div class="score '+sc+'">'+r.score+'/7</div></div><div class="tags">'+tags+'</div>'+
+      (bits.length?'<div class="details">'+bits.join('')+'</div>':'')+'</div>';
+  }).join('');
+
+  const doc='<!DOCTYPE html><html><head><meta charset="utf-8"><title>Google Mission — History Report</title>'+
+  '<style>'+
+  'body{font-family:-apple-system,Segoe UI,Arial,sans-serif;background:#fff;color:#1a2340;margin:0;padding:28px;}'+
+  '.hd{text-align:center;border-bottom:3px solid #4285f4;padding-bottom:16px;margin-bottom:20px;}'+
+  '.hd h1{margin:0;font-size:24px;}.hd .sub{color:#6b7c99;font-size:12px;margin-top:5px;}'+
+  '.stats{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px;}'+
+  '.stat{flex:1;min-width:110px;border:1px solid #dbe4f5;border-radius:10px;padding:12px;text-align:center;}'+
+  '.stat .n{font-size:22px;font-weight:800;color:#4285f4;}.stat .l{font-size:10px;color:#6b7c99;text-transform:uppercase;letter-spacing:.6px;margin-top:3px;}'+
+  '.day{border:1px solid #dbe4f5;border-radius:10px;padding:14px;margin-bottom:12px;page-break-inside:avoid;}'+
+  '.dayhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}'+
+  '.daydate{font-weight:800;font-size:14px;}'+
+  '.score{font-size:20px;font-weight:800;}.score.green{color:#188038;}.score.amber{color:#b06000;}.score.red{color:#c5221f;}'+
+  '.tags{margin-bottom:8px;}'+
+  '.tag{display:inline-block;font-size:10px;padding:3px 9px;border-radius:99px;margin:0 4px 4px 0;border:1px solid;}'+
+  '.tag.on{background:#e6f4ea;color:#188038;border-color:#a8dab5;}'+
+  '.tag.off{background:#f5f6f8;color:#9aa5b5;border-color:#e0e4ea;}'+
+  '.details{border-top:1px solid #eef1f6;padding-top:9px;}'+
+  '.row{font-size:12px;line-height:1.6;margin-bottom:4px;}.row b{color:#5f6c85;}'+
+  '.grateful{color:#8a6d00;}.notes{color:#5b21b6;font-style:italic;}'+
+  '.ft{text-align:center;color:#9aa5b5;font-size:11px;margin-top:26px;border-top:1px solid #eef1f6;padding-top:12px;}'+
+  '@media print{body{padding:12px;}.day{border-color:#ccc;}}'+
+  '</style></head><body>'+
+  '<div class="hd"><h1>Google Mission 2027 — History Report</h1>'+
+  '<div class="sub">Shivam Chauhan &middot; generated '+histEsc(new Date().toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'}))+'</div></div>'+
+  '<div class="stats">'+
+  '<div class="stat"><div class="n">'+worked+'</div><div class="l">Days Worked</div></div>'+
+  '<div class="stat"><div class="n">'+avg+'/7</div><div class="l">Avg Score</div></div>'+
+  '<div class="stat"><div class="n">'+perfect+'</div><div class="l">Perfect Days</div></div>'+
+  '<div class="stat"><div class="n">'+meds+'</div><div class="l">Meditations</div></div>'+
+  '<div class="stat"><div class="n">'+mans+'</div><div class="l">Manifestations</div></div>'+
+  '<div class="stat"><div class="n">'+revs+'</div><div class="l">Problems Logged</div></div>'+
+  '</div>'+body+
+  '<div class="ft">Open this file in any browser. Use Ctrl/Cmd+P to save as PDF.</div>'+
+  '</body></html>';
+
+  const blob=new Blob([doc],{type:'text/html;charset=utf-8;'});
+  const url=URL.createObjectURL(blob),a=document.createElement('a');
+  a.href=url;a.download='mission-history-report-'+fmt(new Date())+'.html';
+  document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(url);
+  if(msg){msg.style.color='#34a853';msg.textContent='✅ Report with '+rows.length+' days downloaded';setTimeout(()=>msg.textContent='',4000);}
+}
+
+// ══════════════════════════════════════════════
+// REVISION TABLE VIEW  (additive — cards view untouched)
+// ══════════════════════════════════════════════
+var revViewMode='cards';
+function revSetView(mode){
+  revViewMode=mode;
+  const cardsBtn=document.getElementById('rev-view-cards');
+  const tableBtn=document.getElementById('rev-view-table');
+  const list=document.getElementById('rev-list');
+  const tbl=document.getElementById('rev-table');
+  if(!list||!tbl)return;
+  const on='background:#4285f4;color:#fff;border:1px solid #4285f4;';
+  const off='background:rgba(255,255,255,.05);color:var(--muted);border:1px solid var(--border);';
+  const base='padding:3px 11px;border-radius:99px;font-size:9px;font-weight:700;cursor:pointer;';
+  if(mode==='table'){
+    list.style.display='none'; tbl.style.display='block';
+    if(cardsBtn)cardsBtn.style.cssText=base+off;
+    if(tableBtn)tableBtn.style.cssText=base+on;
+    revRenderTable();
+  } else {
+    list.style.display='block'; tbl.style.display='none';
+    if(cardsBtn)cardsBtn.style.cssText=base+on;
+    if(tableBtn)tableBtn.style.cssText=base+off;
+  }
+}
+var revSortKey='solved', revSortDir='desc';
+function revSort(key){
+  if(revSortKey===key){revSortDir=(revSortDir==='asc')?'desc':'asc';}
+  else{revSortKey=key;revSortDir=(key==='name'||key==='topic'||key==='pattern')?'asc':'desc';}
+  revRenderTable();
+}
+function revToggleNote(id){
+  const e=ld('gm-rev-tblnote',{});e[id]=!e[id];sv('gm-rev-tblnote',e);revRenderTable();
+}
+function revExpandAllNotes(){
+  const e={};getRevProblems().forEach(p=>{e[p.id]=true;});sv('gm-rev-tblnote',e);revRenderTable();
+}
+function revCollapseAllNotes(){sv('gm-rev-tblnote',{});revRenderTable();}
+function revRenderTable(){
+  const tbl=document.getElementById('rev-table');
+  if(!tbl)return;
+  const problems=getRevProblems();
+  if(!problems.length){tbl.innerHTML='<div class="empty-s">No problems logged yet.</div>';return;}
+  const today=fmt(new Date());
+  const openNotes=ld('gm-rev-tblnote',{});
+
+  // respect the same filters the cards view uses
+  let rows=problems.slice();
+  if(['Easy','Medium','Hard'].indexOf(revFilter)!==-1)rows=rows.filter(p=>p.diff===revFilter);
+  if(revTopic!=='all')rows=rows.filter(p=>{const t=(p.topic==='Other'&&p.customTopic)?p.customTopic:p.topic;return t===revTopic;});
+  if(!rows.length){tbl.innerHTML='<div class="empty-s">No problems match the current filter.</div>';return;}
+
+  const topicOf=p=>(p.topic==='Other'&&p.customTopic)?p.customTopic:p.topic;
+  const diffRank={Easy:1,Medium:2,Hard:3};
+  const doneCount=p=>(p.slots||[]).filter(s=>s.done).length;
+  const val=(p,k)=>{
+    if(k==='name')return String(p.name||'').toLowerCase();
+    if(k==='topic')return String(topicOf(p)||'').toLowerCase();
+    if(k==='level')return diffRank[p.diff]||0;
+    if(k==='pattern')return stripHTML(p.pattern||'').toLowerCase();
+    if(k==='revisions')return (p.slots||[]).length?doneCount(p)/(p.slots||[]).length:0;
+    if(k==='extra')return (p.extraRevs||[]).length;
+    return String(p.solved||'');   // solved
+  };
+  rows.sort((a,b)=>{
+    const x=val(a,revSortKey),y=val(b,revSortKey);
+    let c = (typeof x==='number'&&typeof y==='number') ? (x-y) : String(x).localeCompare(String(y));
+    if(c===0)c=String(b.solved||'').localeCompare(String(a.solved||''));
+    return revSortDir==='asc'?c:-c;
+  });
+
+  const dcol=d=>d==='Easy'?['#4ade80','rgba(52,168,83,.15)']:d==='Medium'?['#fbbf24','rgba(251,188,5,.15)']:['#f87171','rgba(234,67,53,.15)'];
+  const arrow=k=>revSortKey===k?(revSortDir==='asc'?'▲':'▼'):'⇅';
+  const th=(k,label)=>'<th class="sortable'+(revSortKey===k?' sorted':'')+'" onclick="revSort(\''+k+'\')">'+label+'<span class="sort-ar">'+arrow(k)+'</span></th>';
+
+  const body=rows.map((p,i)=>{
+    const slots=p.slots||[];
+    const [dc,db]=dcol(p.diff);
+    const tn=topicOf(p);
+    const done=slots.filter(s=>s.done).length;
+    const dots=slots.map(s=>{
+      const overdue=!s.done&&s.date<=today;
+      const c=s.done?'#34a853':overdue?'#fbbc05':'#1a2f50';
+      const lbl=s.key==='nextday'?'Next Day':s.key==='sunday'?'Sunday':'Month End';
+      return '<span class="rev-slot-dot" style="background:'+c+'" title="'+lbl+' — '+(s.done?'done '+(s.doneOn||''):'due '+s.date)+'"></span>';
+    }).join('');
+    const extra=(p.extraRevs||[]).length;
+    const link=p.link?'<a href="'+p.link+'" target="_blank" rel="noopener">Open ↗</a>':'<span style="color:var(--muted);">—</span>';
+    const pat=stripHTML(p.pattern||'')||'—';
+    const solvedDt=p.solved?new Date(p.solved+'T12:00:00').toLocaleDateString('en-IN',{day:'numeric',month:'short'}):'—';
+    const hasNotes=!!(p.pattern||p.why||p.trick);
+    const isOpen=!!openNotes[p.id];
+    const noteBtn=hasNotes
+      ? '<button class="rev-note-btn" onclick="revToggleNote('+p.id+')" title="Show notes">'+(isOpen?'▲':'📝')+'</button>'
+      : '';
+
+    let tr='<tr>'+
+      '<td style="color:var(--muted);">'+(i+1)+'</td>'+
+      '<td style="font-weight:700;max-width:190px;">'+stripHTML(p.name)+' '+noteBtn+'</td>'+
+      '<td>'+link+'</td>'+
+      '<td><span class="rev-pill" style="background:rgba(66,133,244,.12);color:#8ab4f8;">'+stripHTML(tn)+'</span></td>'+
+      '<td><span class="rev-pill" style="background:'+db+';color:'+dc+';">'+p.diff+'</span></td>'+
+      '<td style="max-width:200px;color:var(--muted);">'+pat+'</td>'+
+      '<td style="white-space:nowrap;">'+dots+' <span style="color:var(--muted);font-size:10px;">'+done+'/'+slots.length+'</span></td>'+
+      '<td style="text-align:center;color:'+(extra?'#c4b5fd':'var(--muted)')+';">'+(extra||'—')+'</td>'+
+      '<td style="white-space:nowrap;color:var(--muted);">'+solvedDt+'</td>'+
+      '</tr>';
+
+    if(hasNotes&&isOpen){
+      let n='<div class="rev-note-box">';
+      if(p.pattern)n+='<div class="rev-note-sec"><div class="rev-note-lbl" style="color:#8ab4f8;">🧩 Pattern</div><div class="rev-note-body">'+p.pattern+'</div></div>';
+      if(p.why)n+='<div class="rev-note-sec"><div class="rev-note-lbl" style="color:#c4b5fd;">💡 Why This Pattern</div><div class="rev-note-body">'+p.why+'</div></div>';
+      if(p.trick)n+='<div class="rev-note-sec"><div class="rev-note-lbl" style="color:#fbbf24;">🔑 Key Trick</div><div class="rev-note-body">'+p.trick+'</div></div>';
+      n+='</div>';
+      tr+='<tr class="notes-row"><td colspan="9">'+n+'</td></tr>';
+    }
+    return tr;
+  }).join('');
+
+  tbl.innerHTML=
+    '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:7px;flex-wrap:wrap;gap:6px;">'+
+      '<div style="font-size:9px;color:var(--muted);">Tap a column header to sort · tap 📝 to read notes</div>'+
+      '<div style="display:flex;gap:5px;">'+
+        '<button onclick="revExpandAllNotes()" style="padding:3px 10px;background:rgba(66,133,244,.12);color:#8ab4f8;border:1px solid rgba(66,133,244,.25);border-radius:99px;font-size:9px;font-weight:700;cursor:pointer;">Show all notes</button>'+
+        '<button onclick="revCollapseAllNotes()" style="padding:3px 10px;background:rgba(255,255,255,.05);color:var(--muted);border:1px solid var(--border);border-radius:99px;font-size:9px;font-weight:700;cursor:pointer;">Hide all</button>'+
+      '</div>'+
+    '</div>'+
+    '<div class="rev-tbl-wrap"><table class="rev-tbl">'+
+    '<thead><tr><th>#</th>'+th('name','Problem')+'<th>Link</th>'+th('topic','Topic')+th('level','Level')+
+    th('pattern','Pattern')+th('revisions','Revisions')+th('extra','Extra')+th('solved','Solved')+'</tr></thead>'+
+    '<tbody>'+body+'</tbody></table></div>'+
+    '<div style="font-size:9px;color:var(--muted);margin-top:7px;display:flex;gap:12px;flex-wrap:wrap;">'+
+    '<span><span class="rev-slot-dot" style="background:#34a853"></span>Done</span>'+
+    '<span><span class="rev-slot-dot" style="background:#fbbc05"></span>Due now</span>'+
+    '<span><span class="rev-slot-dot" style="background:#1a2f50"></span>Upcoming</span>'+
+    '<span>Order: Next Day &middot; Sunday &middot; Month End</span></div>';
+}
+
 
 // INIT
 renderQuote();
