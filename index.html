@@ -89,13 +89,71 @@ body.light .rev-btn-ghost{background:#f5f8ff !important;color:#5a7099 !important
 .rte-sep{width:1px;background:var(--border);margin:3px 3px;}
 .rte-body{min-height:64px;padding:9px 11px;font-size:12px;color:var(--text);outline:none;line-height:1.6;font-family:inherit;}
 .rte-body:empty:before{content:attr(data-ph);color:var(--muted);opacity:.6;}
+/* Notes text: was a dim blue-grey. Now near-white so it reads on the dark card. */
+.rte-body{color:#f1f6ff;}
 .rte-body b,.rte-body strong{font-weight:800;color:#fff;}
+body.light .rte-body{color:#16203a;}
+body.light .rte-body b,body.light .rte-body strong{color:#0b1220;}
+/* Subject Library note bodies sit on a light "paper" sheet — long passages are
+   much easier on the eye than white-on-dark. */
+.sl-paper{background:#fbfaf6;color:#1f2430;border:1px solid #d9d3c6;border-radius:9px;
+  padding:13px 15px;font-size:12.5px;line-height:1.8;}
+.sl-paper b,.sl-paper strong{color:#0b1020;}
+.sl-paper h3{color:#1a56db;}
+.sl-paper code{background:#eaf0fb;color:#1a56db;}
+.sl-paper blockquote{background:#f1f5ff;color:#1f2430;border-left-color:#1a56db;}
+.sl-paper th{background:#eef2fa;color:#1a56db;border-color:#d7dfee;}
+.sl-paper td{color:#1f2430;border-color:#d7dfee;}
+.sl-paper hr{border-top-color:#ded8cb;}
+.sl-paper a{color:#1a56db;}
+.sl-paper mark.hl-yellow{background:#fff3c4;color:#8a6d00;}
+.sl-paper mark.hl-green{background:#d6f5e0;color:#166534;}
+.sl-paper mark.hl-blue{background:#dbe8ff;color:#1a56db;}
+.sl-paper mark.hl-red{background:#ffe0e0;color:#b91c1c;}
+.sl-paper mark.hl-purple{background:#ece2ff;color:#5b21b6;}
+.sl-paper-wrap{background:#fbfaf6;border-color:#d9d3c6;}
+.sl-paper-wrap .rte-toolbar{background:#f0ece1;border-bottom-color:#ded8cb;}
+.sl-paper-wrap .rte-btn{color:#5a6377;}
+.sl-paper-wrap .rte-btn:hover{background:rgba(0,0,0,.06);color:#0b1020;}
+.sl-paper-wrap .rte-sep{background:#ded8cb;}
+.sl-paper-wrap .sl-paper{border:none;border-radius:0;}
+/* markdown pasted into a note */
+.rte-body h3{color:#93c5fd;font-size:14px;font-weight:800;margin:10px 0 4px;}
+.rte-body p{margin:5px 0;}
+.rte-body hr{border:none;border-top:1px solid var(--border);margin:10px 0;}
+.rte-body blockquote{margin:6px 0;padding:5px 11px;border-left:3px solid #8ab4f8;background:rgba(66,133,244,.08);color:#dce8ff;}
+.rte-body table{border-collapse:collapse;width:100%;margin:7px 0;font-size:11.5px;}
+.rte-body th{background:rgba(66,133,244,.14);color:#a8c7fa;text-align:left;font-weight:800;
+  padding:6px 9px;border:1px solid var(--border);}
+.rte-body td{padding:6px 9px;border:1px solid var(--border);color:#e8eefb;}
+.rte-body a{color:#8ab4f8;}
+body.light .rte-body h3{color:#1a56db;}
+body.light .rte-body blockquote{background:#eef4ff;color:#1a2340;}
+body.light .rte-body th{background:#e8effd;color:#1a56db;}
+body.light .rte-body td{color:#1a2340;}
+/* Notes bodies on a problem card. Only the plain text colour is set here so
+   bold / code / highlight keep their own colours. */
+.rev-detail{color:#dbe4f5;}
+.rev-detail h3{color:#8ab4f8;}
+/* the mistakes box sits on a red panel, so its text needs to stay bright */
+.mk-box{color:#ffe1e3;}
+.mk-box b,.mk-box strong{color:#fff;}
+.mk-box code{background:rgba(0,0,0,.35);color:#fecaca;}
+.mk-box h3{color:#fca5a5;}
+body.light .rev-detail{color:#3a5080;}
+body.light .mk-box{color:#7f1d1d;}
+body.light .mk-box b,body.light .mk-box strong{color:#450a0a;}
+body.light .mk-box code{background:#fee2e2;color:#991b1b;}
+body.light .mk-box h3{color:#991b1b;}
 .rte-body i,.rte-body em{font-style:italic;}
 .rte-body h3{font-size:13px;font-weight:800;color:#8ab4f8;margin:6px 0 3px;}
 .rte-body ul{margin:4px 0 4px 18px;}
 .rte-body li{margin-bottom:2px;}
 .rte-body code{background:rgba(66,133,244,.15);color:#8ab4f8;padding:1px 5px;border-radius:4px;font-family:monospace;font-size:11px;}
-.rte-body pre{background:rgba(0,0,0,.3);border:1px solid var(--border);border-radius:6px;padding:8px 10px;margin:5px 0;overflow-x:auto;font-family:monospace;font-size:11px;color:#8ab4f8;}
+/* Code blocks keep the white editor background — pasted syntax colours are
+   light-theme colours, so they only read correctly against white. */
+.rte-body pre{background:#ffffff;border:1px solid #cfd8e6;border-radius:7px;padding:10px 12px;margin:7px 0;overflow-x:auto;font-family:Consolas,'Courier New',monospace;font-size:12px;line-height:1.55;color:#1f2328;}
+.rte-body pre code{background:none;color:inherit;padding:0;font-size:inherit;}
 .rte-body mark{background:rgba(251,188,5,.3);color:#fbbf24;padding:1px 3px;border-radius:3px;}
 .rte-body mark.hl-yellow{background:rgba(251,188,5,.3);color:#fbbf24;}
 .rte-body mark.hl-green{background:rgba(52,168,83,.25);color:#4ade80;}
@@ -109,6 +167,29 @@ body.light .rte-body mark.hl-red{background:#ffe0e0;color:#b91c1c;}
 body.light .rte-body mark.hl-purple{background:#ede4ff;color:#5b21b6;}
 .hl-swatch{width:18px;height:18px;border-radius:4px;border:1px solid rgba(255,255,255,.2);cursor:pointer;display:inline-block;margin:0 1px;}
 .hl-swatch:hover{transform:scale(1.15);}
+/* text colour swatches (hollow ring = text colour, filled = highlight) */
+.tc-swatch{width:18px;height:18px;border-radius:4px;cursor:pointer;display:inline-block;margin:0 1px;
+  border:2px solid;background:transparent;position:relative;}
+.tc-swatch:after{content:'A';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:900;line-height:1;}
+.tc-swatch:hover{transform:scale(1.15);}
+/* text colour classes — used inside every rich-text editor */
+.tc-red{color:#f87171 !important;}
+.tc-orange{color:#fb923c !important;}
+.tc-yellow{color:#fbbf24 !important;}
+.tc-green{color:#4ade80 !important;}
+.tc-blue{color:#60a5fa !important;}
+.tc-violet{color:#c4b5fd !important;}
+/* black + white, for writing on the light paper sheets */
+.tc-black{color:#0b1020 !important;}
+.tc-white{color:#ffffff !important;}
+body.light .tc-white{color:#0b1020 !important;}
+body.light .tc-red{color:#b91c1c !important;}
+body.light .tc-orange{color:#c2410c !important;}
+body.light .tc-yellow{color:#a16207 !important;}
+body.light .tc-green{color:#15803d !important;}
+body.light .tc-blue{color:#1d4ed8 !important;}
+body.light .tc-violet{color:#6d28d9 !important;}
 /* Revision table view */
 .rev-tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--border);border-radius:var(--r);background:var(--card);}
 .rev-tbl{width:100%;border-collapse:collapse;font-size:11px;min-width:640px;}
@@ -157,6 +238,43 @@ body.light .rev-note-body mark.hl-green{background:#d6f5e0;color:#166534;}
 body.light .rev-note-body mark.hl-blue{background:#dbe8ff;color:#1a56db;}
 body.light .rev-note-body mark.hl-red{background:#ffe0e0;color:#b91c1c;}
 body.light .rev-note-body mark.hl-purple{background:#ede4ff;color:#5b21b6;}
+/* MY NOTES */
+.mn-card{border-radius:12px;border:1px solid;margin-bottom:8px;overflow:hidden;}
+.mn-head{display:flex;align-items:center;gap:8px;padding:10px 12px;cursor:pointer;}
+.mn-arrow{font-size:10px;flex-shrink:0;opacity:.7;width:12px;}
+.mn-title{flex:1;font-size:13px;font-weight:800;background:transparent;border:none;outline:none;font-family:inherit;padding:2px 0;min-width:0;}
+.mn-actions{display:flex;gap:4px;flex-shrink:0;}
+.mn-btn{background:rgba(255,255,255,.06);border:none;border-radius:6px;width:24px;height:24px;cursor:pointer;font-size:11px;display:flex;align-items:center;justify-content:center;color:inherit;opacity:.7;}
+.mn-btn:hover{opacity:1;}
+.mn-body-wrap{padding:0 12px 12px;}
+.mn-sw{width:17px;height:17px;border-radius:5px;cursor:pointer;border:1px solid rgba(255,255,255,.2);display:inline-block;}
+.mn-sw:hover{transform:scale(1.15);}
+.mn-sw.on{outline:2px solid #fff;outline-offset:1px;}
+.mn-c-gold{background:rgba(245,158,11,.10);border-color:rgba(245,158,11,.45);}
+.mn-c-gold .mn-title,.mn-c-gold .mn-arrow{color:#fcd34d;}
+.mn-c-green{background:rgba(34,197,94,.09);border-color:rgba(34,197,94,.4);}
+.mn-c-green .mn-title,.mn-c-green .mn-arrow{color:#4ade80;}
+.mn-c-blue{background:rgba(66,133,244,.10);border-color:rgba(66,133,244,.4);}
+.mn-c-blue .mn-title,.mn-c-blue .mn-arrow{color:#8ab4f8;}
+.mn-c-rose{background:rgba(239,68,68,.08);border-color:rgba(239,68,68,.35);}
+.mn-c-rose .mn-title,.mn-c-rose .mn-arrow{color:#fca5a5;}
+.mn-c-violet{background:rgba(124,58,237,.10);border-color:rgba(124,58,237,.4);}
+.mn-c-violet .mn-title,.mn-c-violet .mn-arrow{color:#c4b5fd;}
+.mn-c-grey{background:rgba(255,255,255,.04);border-color:var(--border);}
+.mn-c-grey .mn-title,.mn-c-grey .mn-arrow{color:var(--muted);}
+body.light .mn-c-gold{background:#fff8e6;border-color:#f0d089;}
+body.light .mn-c-gold .mn-title,body.light .mn-c-gold .mn-arrow{color:#8a6d00;}
+body.light .mn-c-green{background:#eafaf0;border-color:#a8dab5;}
+body.light .mn-c-green .mn-title,body.light .mn-c-green .mn-arrow{color:#166534;}
+body.light .mn-c-blue{background:#eaf2ff;border-color:#b8d0f5;}
+body.light .mn-c-blue .mn-title,body.light .mn-c-blue .mn-arrow{color:#1a56db;}
+body.light .mn-c-rose{background:#fff0f0;border-color:#f5c3c3;}
+body.light .mn-c-rose .mn-title,body.light .mn-c-rose .mn-arrow{color:#b91c1c;}
+body.light .mn-c-violet{background:#f4efff;border-color:#d8ccf5;}
+body.light .mn-c-violet .mn-title,body.light .mn-c-violet .mn-arrow{color:#5b21b6;}
+body.light .mn-c-grey{background:#f7faff;border-color:#dbe4f5;}
+body.light .mn-c-grey .mn-title,body.light .mn-c-grey .mn-arrow{color:#5a7099;}
+body.light .mn-btn{background:rgba(0,0,0,.05);}
 /* Revision slot checkboxes */
 .rev-slot{display:flex;align-items:center;gap:8px;padding:9px 11px;border-radius:9px;border:1px solid var(--border);background:rgba(255,255,255,.02);margin-bottom:5px;cursor:pointer;transition:all .2s;}
 .rev-slot.done{background:rgba(52,168,83,.1);border-color:rgba(52,168,83,.4);}
@@ -182,7 +300,12 @@ body.light .rte-body code{background:#e8effd;color:#1a56db;}
 .rev-bucket.active-bucket{border-color:var(--blue);background:rgba(66,133,244,.1);}
 .rev-bucket-n{font-size:22px;font-weight:900;line-height:1;}
 .rev-bucket-l{font-size:9px;color:var(--muted);margin-top:3px;text-transform:uppercase;letter-spacing:.5px;}
-:root{--blue:#4285f4;--green:#34a853;--yellow:#fbbc05;--red:#ea4335;--purple:#7c3aed;--card:#111e33;--border:#1a2f50;--muted:#6b8ab0;--bg:#060d1f;--r:13px;}
+:root{--blue:#4285f4;--green:#34a853;--yellow:#fbbc05;--red:#ea4335;--purple:#7c3aed;--card:#111e33;--border:#1a2f50;--muted:#6b8ab0;--bg:#060d1f;--r:13px;
+  /* --text was used all over the editor CSS but never defined, so contenteditable
+     and textarea text fell back to the browser default (near-black) and vanished
+     in dark mode. --fg is an alias so both names work. */
+  --text:#e2eaf8;--fg:#e2eaf8;}
+body.light{--text:#1a2340;--fg:#1a2340;--muted:#5a7099;}
 .card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);}
 /* HERO */
 .hero{background:linear-gradient(160deg,#0d1f45,#060d1f);padding:52px 16px 20px;text-align:center;position:relative;overflow:hidden;}
@@ -193,7 +316,7 @@ body.light .rte-body code{background:#e8effd;color:#1a56db;}
 .hero h1{font-size:clamp(20px,5vw,26px);font-weight:900;background:linear-gradient(135deg,#e2eaf8,#8ab4f8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
 .hero-sub{font-size:10px;color:var(--muted);margin-top:4px;}
 .top-bar{display:flex;justify-content:flex-end;gap:8px;padding:10px 16px 0;}
-.icon-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:var(--card);font-size:16px;cursor:pointer;}
+.icon-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:var(--card);color:var(--text);font-size:16px;cursor:pointer;font-family:inherit;}
 .qotd{margin:12px 16px 0;background:linear-gradient(135deg,rgba(66,133,244,.12),rgba(124,58,237,.08));border:1px solid rgba(66,133,244,.3);border-radius:var(--r);padding:16px 20px;font-size:13px;font-weight:600;color:#c8d8f8;font-style:italic;text-align:center;line-height:1.7;}
 .qotd-a{display:inline-block;font-size:10px;font-weight:800;font-style:normal;color:var(--blue);margin-top:7px;background:rgba(66,133,244,.12);padding:3px 12px;border-radius:99px;border:1px solid rgba(66,133,244,.25);}
 .countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;padding:12px 16px 0;}
@@ -337,6 +460,7 @@ body.light .rte-body code{background:#e8effd;color:#1a56db;}
   <button class="icon-btn" onclick="toggleTheme()" id="theme-btn">🌙</button>
   <button class="icon-btn" onclick="document.getElementById('backup-ov').classList.add('open');renderBackupSummary();">💾</button>
   <button class="icon-btn" style="border-color:rgba(234,67,53,.3);background:rgba(234,67,53,.08);" onclick="openReset()">🗑️</button>
+  <button id="fs-btn" class="icon-btn" style="width:auto;padding:0 12px;border-radius:99px;font-size:10px;font-weight:800;white-space:nowrap;color:var(--muted);" onclick="fsToggle()" title="Autosave a backup file to a folder on this computer">💾 Autosave: off</button>
 </div>
 
 <!-- SUNDAY POPUP -->
@@ -353,6 +477,19 @@ body.light .rte-body code{background:#e8effd;color:#1a56db;}
       <div style="background:var(--bg);border:1px solid var(--border);border-radius:9px;padding:10px 13px;font-size:12px;">📊 Monthly Progress Review</div>
     </div>
     <button class="btn btn-blue" onclick="document.getElementById('sun-ov').classList.remove('open');switchTab('weekly')">Go to Weekly Tab →</button>
+  </div>
+</div>
+
+<!-- AUTOSAVE PROMPT — shown on every fresh open until you connect -->
+<div class="overlay" id="fs-nag">
+  <div class="modal-box" style="max-width:430px;text-align:center;border:1px solid rgba(251,188,5,.45);">
+    <div style="font-size:40px;line-height:1;margin-bottom:8px;">💾</div>
+    <div style="font-size:19px;font-weight:900;color:#fcd34d;margin-bottom:6px;">Autosave is OFF</div>
+    <div style="font-size:13px;color:#fca5a5;font-weight:700;margin-bottom:12px;">Your changes are only in this browser right now.</div>
+    <div id="fs-nag-sub" style="font-size:12px;color:var(--muted);line-height:1.75;margin-bottom:18px;"></div>
+    <button id="fs-nag-btn" onclick="fsNagAction()" style="width:100%;padding:15px;background:linear-gradient(135deg,#fbbc05,#f59e0b);color:#1a1200;border:none;border-radius:12px;font-size:15px;font-weight:900;cursor:pointer;font-family:inherit;">🔌  Connect autosave</button>
+    <button onclick="fsCloseNag()" style="width:100%;margin-top:9px;padding:10px;background:transparent;color:var(--muted);border:1px solid var(--border);border-radius:10px;font-size:11px;font-weight:700;cursor:pointer;font-family:inherit;">Not now — I'll risk it</button>
+    <div style="font-size:10px;color:var(--muted);margin-top:12px;line-height:1.6;">You can always reconnect later from the <b>💾</b> button in the top bar.</div>
   </div>
 </div>
 
@@ -451,6 +588,7 @@ body.light .rte-body code{background:#e8effd;color:#1a56db;}
   <button class="tab-btn"        id="tab-roadmap"     onclick="switchTab('roadmap')">🗺️ Roadmap</button>
   <button class="tab-btn"        id="tab-weekly"      onclick="switchTab('weekly')">📊 Weekly</button>
   <button class="tab-btn"        id="tab-revision"    onclick="switchTab('revision')">🔁 Revision</button>
+  <button class="tab-btn"        id="tab-notes"       onclick="switchTab('notes')">📔 Notes</button>
   <button class="tab-btn"        id="tab-history"     onclick="switchTab('history')">📅 History</button>
   <button class="tab-btn"        id="tab-journal"     onclick="switchTab('journal')">📓 Journal</button>
   <button class="tab-btn"        id="tab-manifest"    onclick="switchTab('manifest')">🌟 Mission</button>
@@ -486,15 +624,16 @@ body.light .rte-body code{background:#e8effd;color:#1a56db;}
   </div>
   <div class="sec">📝 Night Journal (3 min)</div>
   <div class="j-lbl">Today I completed</div>
-  <textarea class="j-area" id="j1" rows="2" placeholder="e.g. Solved 3 LeetCode mediums, studied TCP/IP..."></textarea>
+  <textarea class="j-area" id="j1" rows="2" oninput="jrnQueue()" onblur="jrnSaveNow()" placeholder="e.g. Solved 3 LeetCode mediums, studied TCP/IP..."></textarea>
   <div class="j-lbl">Tomorrow I will complete</div>
-  <textarea class="j-area" id="j2" rows="2" placeholder="e.g. Binary trees, system design reading..."></textarea>
+  <textarea class="j-area" id="j2" rows="2" oninput="jrnQueue()" onblur="jrnSaveNow()" placeholder="e.g. Binary trees, system design reading..."></textarea>
   <div class="j-lbl">I am grateful for</div>
-  <textarea class="j-area" id="j3" rows="2" placeholder="e.g. Clear mind, solid study session..."></textarea>
+  <textarea class="j-area" id="j3" rows="2" oninput="jrnQueue()" onblur="jrnSaveNow()" placeholder="e.g. Clear mind, solid study session..."></textarea>
   <div class="sec">💭 Free Notes — Write Anything</div>
-  <textarea class="j-area" id="j-notes" rows="4" placeholder="Frustration, thoughts, fears — no filter. Just for you."></textarea>
+  <textarea class="j-area" id="j-notes" rows="4" oninput="jrnQueue()" onblur="jrnSaveNow()" placeholder="Frustration, thoughts, fears — no filter. Just for you."></textarea>
   <button class="btn btn-blue" id="save-btn" onclick="saveDay()">✅ Save Today's Entry</button>
   <div id="save-status" style="font-size:10px;color:var(--muted);text-align:center;margin-top:-2px;"></div>
+  <div id="jrn-autosave" style="font-size:10px;color:var(--green);text-align:center;margin-top:3px;opacity:0;transition:opacity .4s;">✓ Auto-saved</div>
 </div>
 
 <!-- MEDITATION -->
@@ -544,6 +683,11 @@ body.light .rte-body code{background:#e8effd;color:#1a56db;}
   <div class="wgrid" id="weekly-grid"></div>
   <div class="sec">Sunday Extras</div>
   <div id="sunday-checks"></div>
+
+  <div style="font-size:9px;color:var(--muted);margin-top:4px;line-height:1.6;">Tap <b>+ notes</b> on any of the four to write up what you actually did — it saves against the day you ticked it.</div>
+
+  <div class="sec" style="margin-top:18px;">📚 Everything You've Written — for revision</div>
+  <div id="sun-archive"></div>
 </div>
 
 <!-- REVISION -->
@@ -556,12 +700,13 @@ body.light .rte-body code{background:#e8effd;color:#1a56db;}
   <div class="sec">Revision Schedule</div>
   <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:12px;" id="rev-buckets"></div>
 
+
   <!-- Log a problem -->
   <div class="card" style="padding:14px;margin-bottom:12px;">
     <div class="sec" style="margin-top:0;">➕ Log a Problem</div>
-    <input id="rev-name" class="j-area" placeholder="Problem name (e.g. Two Sum)" style="margin-bottom:7px;">
+    <input id="rev-name" class="j-area" placeholder="Problem name (e.g. Two Sum)" style="margin-bottom:7px;" oninput="revDraftQueue()">
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:7px;">
-      <select id="rev-topic" class="j-area" style="margin-bottom:0;" onchange="toggleCustomTopic()">
+      <select id="rev-topic" class="j-area" style="margin-bottom:0;" onchange="toggleCustomTopic();revDraftQueue()">
         <option value="Array">Array</option><option value="String">String</option>
         <option value="Hashing">Hashing</option><option value="Two Pointers">Two Pointers</option>
         <option value="Sliding Window">Sliding Window</option><option value="Prefix Sum">Prefix Sum</option>
@@ -576,14 +721,14 @@ body.light .rte-body code{background:#e8effd;color:#1a56db;}
         <option value="Matrix">Matrix</option><option value="Concurrency">Concurrency</option>
         <option value="Other">Other (type below)</option>
       </select>
-      <select id="rev-diff" class="j-area" style="margin-bottom:0;">
+      <select id="rev-diff" class="j-area" style="margin-bottom:0;" onchange="revDraftQueue()">
         <option value="Easy">🟢 Easy</option>
         <option value="Medium" selected>🟡 Medium</option>
         <option value="Hard">🔴 Hard</option>
       </select>
     </div>
-    <input id="rev-custom-topic" class="j-area" placeholder="Type your custom topic name..." style="margin-bottom:7px;display:none;">
-    <input id="rev-link" class="j-area" placeholder="🔗 Problem link (LeetCode / GFG / any URL)" style="margin-bottom:7px;">
+    <input id="rev-custom-topic" class="j-area" placeholder="Type your custom topic name..." style="margin-bottom:7px;display:none;" oninput="revDraftQueue()">
+    <input id="rev-link" class="j-area" placeholder="🔗 Problem link (LeetCode / GFG / any URL)" style="margin-bottom:7px;" oninput="revDraftQueue()">
 
     <div class="j-lbl">🧩 Pattern Used</div>
     <div class="rte-wrap">
@@ -598,14 +743,15 @@ body.light .rte-body code{background:#e8effd;color:#1a56db;}
         <span class="hl-swatch" style="background:rgba(52,168,83,.5)" onmousedown="event.preventDefault()" onclick="rteHighlight('rte-pattern','hl-green')" title="Green highlight"></span>
         <span class="hl-swatch" style="background:rgba(66,133,244,.5)" onmousedown="event.preventDefault()" onclick="rteHighlight('rte-pattern','hl-blue')" title="Blue highlight"></span>
         <span class="hl-swatch" style="background:rgba(234,67,53,.5)" onmousedown="event.preventDefault()" onclick="rteHighlight('rte-pattern','hl-red')" title="Red highlight"></span>
-        <span class="hl-swatch" style="background:rgba(124,58,237,.5)" onmousedown="event.preventDefault()" onclick="rteHighlight('rte-pattern','hl-purple')" title="Purple highlight"></span>
+        <span class="hl-swatch" style="background:rgba(124,58,237,.5)" onmousedown="event.preventDefault()" onclick="rteHighlight('rte-pattern','hl-purple')" title="Purple highlight"></span><div class="rte-sep"></div><span class="tc-swatch" style="border-color:#f87171;color:#f87171" onmousedown="event.preventDefault()" onclick="rteTextColour('rte-pattern','tc-red')" title="Text colour"></span><span class="tc-swatch" style="border-color:#fb923c;color:#fb923c" onmousedown="event.preventDefault()" onclick="rteTextColour('rte-pattern','tc-orange')" title="Text colour"></span><span class="tc-swatch" style="border-color:#fbbf24;color:#fbbf24" onmousedown="event.preventDefault()" onclick="rteTextColour('rte-pattern','tc-yellow')" title="Text colour"></span><span class="tc-swatch" style="border-color:#4ade80;color:#4ade80" onmousedown="event.preventDefault()" onclick="rteTextColour('rte-pattern','tc-green')" title="Text colour"></span><span class="tc-swatch" style="border-color:#60a5fa;color:#60a5fa" onmousedown="event.preventDefault()" onclick="rteTextColour('rte-pattern','tc-blue')" title="Text colour"></span><span class="tc-swatch" style="border-color:#c4b5fd;color:#c4b5fd" onmousedown="event.preventDefault()" onclick="rteTextColour('rte-pattern','tc-violet')" title="Text colour"></span>
         <div class="rte-sep"></div>
         <button class="rte-btn" onmousedown="event.preventDefault()" onclick="rteCode('rte-pattern')" title="Inline code">&lt;&gt;</button>
         <button class="rte-btn" onmousedown="event.preventDefault()" onclick="rteCodeBlock('rte-pattern')" title="Code block">▤</button>
         <div class="rte-sep"></div>
         <button class="rte-btn" onmousedown="event.preventDefault()" onclick="rteCmd('removeFormat','rte-pattern')" title="Clear">✕</button>
+        <button class="rte-btn" onmousedown="event.preventDefault()" onclick="rteCleanAll('rte-pattern')" title="Clean pasted styling">🧹</button>
       </div>
-      <div class="rte-body" id="rte-pattern" contenteditable="true" data-ph="e.g. Sliding Window + HashMap"></div>
+      <div class="rte-body" id="rte-pattern" contenteditable="true" oninput="revDraftQueue()" onblur="revDraftSave()" data-ph="e.g. Sliding Window + HashMap"></div>
     </div>
 
     <div class="j-lbl">💡 Why This Pattern?</div>
@@ -621,14 +767,15 @@ body.light .rte-body code{background:#e8effd;color:#1a56db;}
         <span class="hl-swatch" style="background:rgba(52,168,83,.5)" onmousedown="event.preventDefault()" onclick="rteHighlight('rte-why','hl-green')" title="Green highlight"></span>
         <span class="hl-swatch" style="background:rgba(66,133,244,.5)" onmousedown="event.preventDefault()" onclick="rteHighlight('rte-why','hl-blue')" title="Blue highlight"></span>
         <span class="hl-swatch" style="background:rgba(234,67,53,.5)" onmousedown="event.preventDefault()" onclick="rteHighlight('rte-why','hl-red')" title="Red highlight"></span>
-        <span class="hl-swatch" style="background:rgba(124,58,237,.5)" onmousedown="event.preventDefault()" onclick="rteHighlight('rte-why','hl-purple')" title="Purple highlight"></span>
+        <span class="hl-swatch" style="background:rgba(124,58,237,.5)" onmousedown="event.preventDefault()" onclick="rteHighlight('rte-why','hl-purple')" title="Purple highlight"></span><div class="rte-sep"></div><span class="tc-swatch" style="border-color:#f87171;color:#f87171" onmousedown="event.preventDefault()" onclick="rteTextColour('rte-why','tc-red')" title="Text colour"></span><span class="tc-swatch" style="border-color:#fb923c;color:#fb923c" onmousedown="event.preventDefault()" onclick="rteTextColour('rte-why','tc-orange')" title="Text colour"></span><span class="tc-swatch" style="border-color:#fbbf24;color:#fbbf24" onmousedown="event.preventDefault()" onclick="rteTextColour('rte-why','tc-yellow')" title="Text colour"></span><span class="tc-swatch" style="border-color:#4ade80;color:#4ade80" onmousedown="event.preventDefault()" onclick="rteTextColour('rte-why','tc-green')" title="Text colour"></span><span class="tc-swatch" style="border-color:#60a5fa;color:#60a5fa" onmousedown="event.preventDefault()" onclick="rteTextColour('rte-why','tc-blue')" title="Text colour"></span><span class="tc-swatch" style="border-color:#c4b5fd;color:#c4b5fd" onmousedown="event.preventDefault()" onclick="rteTextColour('rte-why','tc-violet')" title="Text colour"></span>
         <div class="rte-sep"></div>
         <button class="rte-btn" onmousedown="event.preventDefault()" onclick="rteCode('rte-why')">&lt;&gt;</button>
         <button class="rte-btn" onmousedown="event.preventDefault()" onclick="rteCodeBlock('rte-why')">▤</button>
         <div class="rte-sep"></div>
         <button class="rte-btn" onmousedown="event.preventDefault()" onclick="rteCmd('removeFormat','rte-why')">✕</button>
+        <button class="rte-btn" onmousedown="event.preventDefault()" onclick="rteCleanAll('rte-why')" title="Clean pasted styling">🧹</button>
       </div>
-      <div class="rte-body" id="rte-why" contenteditable="true" data-ph="What signal in the question told you to use this?"></div>
+      <div class="rte-body" id="rte-why" contenteditable="true" oninput="revDraftQueue()" onblur="revDraftSave()" data-ph="What signal in the question told you to use this?"></div>
     </div>
 
     <div class="j-lbl">🔑 Key Trick / Insight</div>
@@ -644,16 +791,42 @@ body.light .rte-body code{background:#e8effd;color:#1a56db;}
         <span class="hl-swatch" style="background:rgba(52,168,83,.5)" onmousedown="event.preventDefault()" onclick="rteHighlight('rte-trick','hl-green')" title="Green highlight"></span>
         <span class="hl-swatch" style="background:rgba(66,133,244,.5)" onmousedown="event.preventDefault()" onclick="rteHighlight('rte-trick','hl-blue')" title="Blue highlight"></span>
         <span class="hl-swatch" style="background:rgba(234,67,53,.5)" onmousedown="event.preventDefault()" onclick="rteHighlight('rte-trick','hl-red')" title="Red highlight"></span>
-        <span class="hl-swatch" style="background:rgba(124,58,237,.5)" onmousedown="event.preventDefault()" onclick="rteHighlight('rte-trick','hl-purple')" title="Purple highlight"></span>
+        <span class="hl-swatch" style="background:rgba(124,58,237,.5)" onmousedown="event.preventDefault()" onclick="rteHighlight('rte-trick','hl-purple')" title="Purple highlight"></span><div class="rte-sep"></div><span class="tc-swatch" style="border-color:#f87171;color:#f87171" onmousedown="event.preventDefault()" onclick="rteTextColour('rte-trick','tc-red')" title="Text colour"></span><span class="tc-swatch" style="border-color:#fb923c;color:#fb923c" onmousedown="event.preventDefault()" onclick="rteTextColour('rte-trick','tc-orange')" title="Text colour"></span><span class="tc-swatch" style="border-color:#fbbf24;color:#fbbf24" onmousedown="event.preventDefault()" onclick="rteTextColour('rte-trick','tc-yellow')" title="Text colour"></span><span class="tc-swatch" style="border-color:#4ade80;color:#4ade80" onmousedown="event.preventDefault()" onclick="rteTextColour('rte-trick','tc-green')" title="Text colour"></span><span class="tc-swatch" style="border-color:#60a5fa;color:#60a5fa" onmousedown="event.preventDefault()" onclick="rteTextColour('rte-trick','tc-blue')" title="Text colour"></span><span class="tc-swatch" style="border-color:#c4b5fd;color:#c4b5fd" onmousedown="event.preventDefault()" onclick="rteTextColour('rte-trick','tc-violet')" title="Text colour"></span>
         <div class="rte-sep"></div>
         <button class="rte-btn" onmousedown="event.preventDefault()" onclick="rteCode('rte-trick')">&lt;&gt;</button>
         <button class="rte-btn" onmousedown="event.preventDefault()" onclick="rteCodeBlock('rte-trick')">▤</button>
         <div class="rte-sep"></div>
         <button class="rte-btn" onmousedown="event.preventDefault()" onclick="rteCmd('removeFormat','rte-trick')">✕</button>
+        <button class="rte-btn" onmousedown="event.preventDefault()" onclick="rteCleanAll('rte-trick')" title="Clean pasted styling">🧹</button>
       </div>
-      <div class="rte-body" id="rte-trick" contenteditable="true" data-ph="The one insight you must not forget"></div>
+      <div class="rte-body" id="rte-trick" contenteditable="true" oninput="revDraftQueue()" onblur="revDraftSave()" data-ph="The one insight you must not forget"></div>
     </div>
 
+    <div class="j-lbl">⚠️ Mistakes / Watch Out</div>
+    <div class="rte-wrap">
+      <div class="rte-toolbar">
+        <button class="rte-btn" onmousedown="event.preventDefault()" onclick="rteCmd('bold','rte-mistakes')"><b>B</b></button>
+        <button class="rte-btn" onmousedown="event.preventDefault()" onclick="rteCmd('italic','rte-mistakes')"><i>I</i></button>
+        <div class="rte-sep"></div>
+        <button class="rte-btn" onmousedown="event.preventDefault()" onclick="rteHeading('rte-mistakes')">H</button>
+        <button class="rte-btn" onmousedown="event.preventDefault()" onclick="rteCmd('insertUnorderedList','rte-mistakes')">•</button>
+        <div class="rte-sep"></div>
+        <span class="hl-swatch" style="background:rgba(251,188,5,.5)" onmousedown="event.preventDefault()" onclick="rteHighlight('rte-mistakes','hl-yellow')" title="Yellow highlight"></span>
+        <span class="hl-swatch" style="background:rgba(52,168,83,.5)" onmousedown="event.preventDefault()" onclick="rteHighlight('rte-mistakes','hl-green')" title="Green highlight"></span>
+        <span class="hl-swatch" style="background:rgba(66,133,244,.5)" onmousedown="event.preventDefault()" onclick="rteHighlight('rte-mistakes','hl-blue')" title="Blue highlight"></span>
+        <span class="hl-swatch" style="background:rgba(234,67,53,.5)" onmousedown="event.preventDefault()" onclick="rteHighlight('rte-mistakes','hl-red')" title="Red highlight"></span>
+        <span class="hl-swatch" style="background:rgba(124,58,237,.5)" onmousedown="event.preventDefault()" onclick="rteHighlight('rte-mistakes','hl-purple')" title="Purple highlight"></span><div class="rte-sep"></div><span class="tc-swatch" style="border-color:#f87171;color:#f87171" onmousedown="event.preventDefault()" onclick="rteTextColour('rte-mistakes','tc-red')" title="Text colour"></span><span class="tc-swatch" style="border-color:#fb923c;color:#fb923c" onmousedown="event.preventDefault()" onclick="rteTextColour('rte-mistakes','tc-orange')" title="Text colour"></span><span class="tc-swatch" style="border-color:#fbbf24;color:#fbbf24" onmousedown="event.preventDefault()" onclick="rteTextColour('rte-mistakes','tc-yellow')" title="Text colour"></span><span class="tc-swatch" style="border-color:#4ade80;color:#4ade80" onmousedown="event.preventDefault()" onclick="rteTextColour('rte-mistakes','tc-green')" title="Text colour"></span><span class="tc-swatch" style="border-color:#60a5fa;color:#60a5fa" onmousedown="event.preventDefault()" onclick="rteTextColour('rte-mistakes','tc-blue')" title="Text colour"></span><span class="tc-swatch" style="border-color:#c4b5fd;color:#c4b5fd" onmousedown="event.preventDefault()" onclick="rteTextColour('rte-mistakes','tc-violet')" title="Text colour"></span>
+        <div class="rte-sep"></div>
+        <button class="rte-btn" onmousedown="event.preventDefault()" onclick="rteCode('rte-mistakes')">&lt;&gt;</button>
+        <button class="rte-btn" onmousedown="event.preventDefault()" onclick="rteCodeBlock('rte-mistakes')">▤</button>
+        <div class="rte-sep"></div>
+        <button class="rte-btn" onmousedown="event.preventDefault()" onclick="rteCmd('removeFormat','rte-mistakes')">✕</button>
+        <button class="rte-btn" onmousedown="event.preventDefault()" onclick="rteCleanAll('rte-mistakes')" title="Clean pasted styling">🧹</button>
+      </div>
+      <div class="rte-body" id="rte-mistakes" contenteditable="true" oninput="revDraftQueue()" onblur="revDraftSave()" data-ph="What did you get wrong? e.g. forgot the base condition, off-by-one on the last index, did not handle empty input"></div>
+    </div>
+
+    <div id="rev-draft-note" style="display:none;font-size:10px;color:#fbbf24;text-align:center;margin-bottom:7px;"></div>
     <button class="btn btn-blue" id="rev-save-btn" onclick="addRevProblem()">+ Add Problem</button>
     <button class="btn btn-ghost" id="rev-cancel-btn" onclick="cancelRevEdit()" style="display:none;">Cancel Edit</button>
   </div>
@@ -684,15 +857,79 @@ body.light .rte-body code{background:#e8effd;color:#1a56db;}
   <div id="rev-list"></div>
   <div id="rev-table" style="display:none;"></div>
 
-  <!-- Import / Export -->
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px;">
-    <button class="btn btn-ghost" onclick="exportRevisionCSV()" style="margin:0;">📊 Export CSV</button>
-    <label class="btn btn-ghost" style="margin:0;text-align:center;cursor:pointer;">
+  <!-- Download / Import -->
+  <div style="font-size:9px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin:20px 0 7px;">Download Problem Log</div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:7px;">
+    <button onclick="revExportWord()" style="padding:10px 6px;background:rgba(66,133,244,.12);color:#8ab4f8;border:1px solid rgba(66,133,244,.3);border-radius:10px;font-size:10px;font-weight:800;cursor:pointer;">📘 Word</button>
+    <button onclick="revExportPDF()" style="padding:10px 6px;background:rgba(234,67,53,.1);color:#fca5a5;border:1px solid rgba(234,67,53,.28);border-radius:10px;font-size:10px;font-weight:800;cursor:pointer;">📄 PDF-ready</button>
+    <button onclick="exportRevisionCSV()" style="padding:10px 6px;background:rgba(52,168,83,.1);color:#4ade80;border:1px solid rgba(52,168,83,.28);border-radius:10px;font-size:10px;font-weight:800;cursor:pointer;">📊 CSV</button>
+  </div>
+  <div style="display:flex;gap:7px;margin-top:7px;align-items:center;">
+    <label style="flex:1;padding:9px 6px;background:rgba(255,255,255,.05);color:var(--muted);border:1px solid var(--border);border-radius:10px;font-size:10px;font-weight:700;cursor:pointer;text-align:center;">
       📥 Import CSV
       <input type="file" accept=".csv" style="display:none" onchange="importRevisionCSV(this)">
     </label>
+    <label style="display:flex;align-items:center;gap:6px;font-size:10px;color:var(--muted);cursor:pointer;white-space:nowrap;padding-right:4px;">
+      <input type="checkbox" id="rev-exp-notes" checked style="accent-color:#4285f4;width:14px;height:14px;">
+      Include notes
+    </label>
   </div>
   <div id="rev-import-msg" style="font-size:11px;text-align:center;margin-top:8px;font-weight:700;"></div>
+
+  <!-- Code archive -->
+  <div style="font-size:9px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin:20px 0 7px;">Code Archive</div>
+  <button onclick="exportCodeFolders()" style="width:100%;padding:11px 6px;background:rgba(124,58,237,.12);color:#c4b5fd;border:1px solid rgba(124,58,237,.35);border-radius:10px;font-size:11px;font-weight:800;cursor:pointer;">&#8681; Export code to DSA_CODES folder</button>
+  <div style="display:flex;gap:10px;align-items:center;margin-top:7px;flex-wrap:wrap;">
+    <label style="display:flex;align-items:center;gap:6px;font-size:10px;color:var(--muted);cursor:pointer;">
+      <input type="checkbox" id="code-group" checked style="accent-color:#7c3aed;width:14px;height:14px;">
+      Group into folders by
+    </label>
+    <select id="code-group-by" style="padding:5px 8px;background:rgba(255,255,255,.05);color:var(--fg);border:1px solid var(--border);border-radius:7px;font-size:10px;font-family:inherit;cursor:pointer;">
+      <option value="topic">Topic (Array, Backtracking…)</option>
+      <option value="pattern">Pattern (Sliding Window, Two Pointers…)</option>
+    </select>
+  </div>
+  <div style="font-size:9px;color:var(--muted);margin-top:6px;line-height:1.6;">Pulls the code block out of each problem's notes and writes <b>&lt;Group&gt;/&lt;Problem&gt;/code.cpp</b> + <b>Readme.txt</b>. Existing code.cpp files are never overwritten.</div>
+  <div id="code-export-msg" style="font-size:11px;text-align:center;margin-top:8px;font-weight:700;"></div>
+</div>
+
+<!-- NOTES -->
+<div class="panel" id="panel-notes">
+
+  <!-- Subject library: Subject → Topic → Note -->
+  <div style="display:flex;justify-content:space-between;align-items:center;margin:4px 0 7px;flex-wrap:wrap;gap:8px;">
+    <div style="font-size:9px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;">📚 Subject Library</div>
+    <div style="display:flex;gap:5px;align-items:center;flex-wrap:wrap;">
+      <input id="sl-search" placeholder="🔎 Search…" oninput="slRender()" style="background:var(--card);border:1px solid var(--border);border-radius:99px;color:var(--text);padding:4px 12px;font-size:10px;font-family:inherit;outline:none;width:150px;">
+      <button id="sl-paper-btn" onclick="slTogglePaper()" title="Switch this section between light paper and dark" style="padding:4px 12px;background:rgba(251,188,5,.14);color:#fcd34d;border:1px solid rgba(251,188,5,.35);border-radius:99px;font-size:9px;font-weight:800;cursor:pointer;">☀ Paper</button>
+      <button onclick="slAddSubject()" style="padding:4px 12px;background:rgba(124,58,237,.16);color:#c4b5fd;border:1px solid rgba(124,58,237,.4);border-radius:99px;font-size:9px;font-weight:800;cursor:pointer;">+ Subject</button>
+    </div>
+  </div>
+  <div style="font-size:10px;color:var(--muted);margin-bottom:9px;line-height:1.6;">Add a subject (DSA, System Design, Behavioral…), then topics inside it (Sliding Window, Caching…), then notes inside those. It grows as you do.</div>
+  <div id="sl-list"></div>
+
+  <div style="height:1px;background:var(--border);margin:22px 0 16px;"></div>
+
+  <div style="display:flex;justify-content:space-between;align-items:center;margin:4px 0 7px;flex-wrap:wrap;gap:8px;">
+    <div style="font-size:9px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;">📔 My Notes</div>
+    <div style="display:flex;gap:5px;align-items:center;flex-wrap:wrap;">
+      <button id="mn-paper-btn" onclick="mnTogglePaper()" title="Switch this section between light paper and dark" style="padding:4px 12px;background:rgba(251,188,5,.14);color:#fcd34d;border:1px solid rgba(251,188,5,.35);border-radius:99px;font-size:9px;font-weight:800;cursor:pointer;">☀ Paper</button>
+      <button onclick="mnAdd()" style="padding:4px 12px;background:rgba(52,168,83,.12);color:#4ade80;border:1px solid rgba(52,168,83,.3);border-radius:99px;font-size:9px;font-weight:800;cursor:pointer;">☰ New Note</button>
+      <button onclick="mnExpandAll()" style="padding:4px 11px;background:rgba(66,133,244,.12);color:#8ab4f8;border:1px solid rgba(66,133,244,.25);border-radius:99px;font-size:9px;font-weight:700;cursor:pointer;">Expand all</button>
+      <button onclick="mnCollapseAll()" style="padding:4px 11px;background:rgba(255,255,255,.05);color:var(--muted);border:1px solid var(--border);border-radius:99px;font-size:9px;font-weight:700;cursor:pointer;">Collapse all</button>
+    </div>
+  </div>
+  <div style="font-size:10px;color:var(--muted);margin-bottom:8px;line-height:1.6;">Anything that isn't tied to one problem — framework rules, STL tricks, interview reminders, links.</div>
+  <input id="mn-search" placeholder="🔎 Search notes…" oninput="mnRender()" style="width:100%;background:var(--card);border:1px solid var(--border);border-radius:9px;color:var(--text);padding:9px 12px;font-size:12px;font-family:inherit;outline:none;margin-bottom:10px;">
+  <div id="mn-list"></div>
+
+  <div style="font-size:9px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin:20px 0 7px;">Download Notes</div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:7px;">
+    <button onclick="mnExportWord()" style="padding:10px 6px;background:rgba(66,133,244,.12);color:#8ab4f8;border:1px solid rgba(66,133,244,.3);border-radius:10px;font-size:10px;font-weight:800;cursor:pointer;">📘 Word</button>
+    <button onclick="mnExportHTML()" style="padding:10px 6px;background:rgba(234,67,53,.1);color:#fca5a5;border:1px solid rgba(234,67,53,.28);border-radius:10px;font-size:10px;font-weight:800;cursor:pointer;">📄 PDF-ready</button>
+    <button onclick="mnExportMD()" style="padding:10px 6px;background:rgba(255,255,255,.05);color:var(--muted);border:1px solid var(--border);border-radius:10px;font-size:10px;font-weight:800;cursor:pointer;">📝 Markdown</button>
+  </div>
+  <div id="mn-export-msg" style="font-size:11px;text-align:center;margin-top:8px;font-weight:700;"></div>
 </div>
 
 <!-- HISTORY -->
@@ -796,7 +1033,7 @@ const CHECKS=[
   {id:'english',text:'English 30+ min (Speak App · ChatGPT Voice · Shadowing)', cat:'Eng',    bg:'rgba(167,139,250,.15)',col:'#c4b5fd'},
   {id:'revision',text:'Revised at least one topic or solved problem',           cat:'Revise', bg:'rgba(66,133,244,.15)',col:'#8ab4f8'},
   {id:'focus',  text:'No unnecessary scrolling during study time',              cat:'Habit',  bg:'rgba(251,188,5,.15)', col:'#fcd34d'},
-  {id:'sleep',  text:'7+ hours sleep planned or completed',                     cat:'Sleep',  bg:'rgba(251,188,5,.15)', col:'#fcd34d'},
+  {id:'sleep',  text:'6+ hours sleep planned or completed',                     cat:'Sleep',  bg:'rgba(251,188,5,.15)', col:'#fcd34d'},
   {id:'growth', text:'One step more Google-ready than yesterday',               cat:'Mindset',bg:'rgba(234,67,53,.15)', col:'#fca5a5'},
 ];
 const DEFAULT_PHASES=[
@@ -810,10 +1047,14 @@ const DEFAULT_PHASES=[
 function getPhases(){return ld('gm-phases',DEFAULT_PHASES);}
 function savePhases(phases){sv('gm-phases',phases);}
 const SUNDAY_TASKS=[
-  {id:'puzzle',    text:'🧩 Puzzles & Reasoning (Fermi, Probability, Logic)'},
-  {id:'behavioral',text:'🎭 Behavioral STAR (Ownership, Failure, Leadership...)'},
-  {id:'mock',      text:'🎤 Mock Interview — coding or system design'},
-  {id:'review',    text:'📊 Monthly Progress Review (last Sunday of month)'},
+  {id:'puzzle',    text:'🧩 Puzzles & Reasoning (Fermi, Probability, Logic)',
+   ph:'Which puzzles did you do? Which one beat you, and what was the trick you missed?'},
+  {id:'behavioral',text:'🎭 Behavioral STAR (Ownership, Failure, Leadership...)',
+   ph:'Which question did you prepare? Jot the STAR — Situation, Task, Action, Result.'},
+  {id:'mock',      text:'🎤 Mock Interview — coding or system design',
+   ph:'Who with / where? What questions were asked? How did it go, and what will you fix next time?'},
+  {id:'review',    text:'📊 Monthly Progress Review (last Sunday of month)',
+   ph:'What moved forward this month? What slipped? What changes next month?'},
 ];
 const QUOTES=[
   {q:"There is no substitute for hard work. Never.",a:"Thomas Edison"},
@@ -892,7 +1133,15 @@ function getAllKeys(){
   return keys;
 }
 let DS=ld('gm-day-'+TK,{checks:{},dayType:null,journal:{c:'',t:'',g:'',n:''},mood:null,_s:false});
-function persist(){sv('gm-day-'+TK,DS);}
+// DS is a snapshot of today's record taken once at page load. Anything written
+// to gm-day-<today> by another part of the app (sunNotes, monthlyReview) would
+// be wiped the next time persist() ran, because DS never knew about it. Merge
+// back any field DS does not own before writing.
+function persist(){
+  const cur=ld('gm-day-'+TK,{});
+  Object.keys(cur).forEach(function(k){if(!(k in DS))DS[k]=cur[k];});
+  sv('gm-day-'+TK,DS);
+}
 
 // TAB SWITCHING
 function switchTab(name){
@@ -903,6 +1152,7 @@ function switchTab(name){
   if(tb)tb.classList.add('active');
   if(pn)pn.classList.add('active');
   if(name==='revision')renderRevision();
+  if(name==='notes'&&typeof mnRender==='function')mnRender();
   if(name==='history')renderHistory();
   if(name==='journal')renderJournal();
   if(name==='weekly')renderWeekly();
@@ -1298,13 +1548,187 @@ function renderWeekly(){
       return `<div class="wd ${dd.checks&&dd.checks[cat.key]?'done':''} ${dk===TK&&!(dd.checks&&dd.checks[cat.key])?'tday':''}">${d}</div>`;
     }).join('')}</div></div>`).join('');
   const ss=ld('gm-sun-'+wk,{});
-  document.getElementById('sunday-checks').innerHTML=SUNDAY_TASKS.map(t=>`
-    <div class="ci ${ss[t.id]?'checked':''}" onclick="toggleSun('${t.id}')">
-      <div class="ci-box">${ss[t.id]?'✓':''}</div><div class="ci-text">${t.text}</div>
-      <span class="ci-tag" style="background:rgba(251,188,5,.15);color:#fcd34d;">Weekly</span>
-    </div>`).join('');
+  document.getElementById('sunday-checks').innerHTML=SUNDAY_TASKS.map(t=>{
+    const day=sunNoteDate(t.id,ss,wk);
+    const note=sunNoteGet(t.id,day);
+    const open=!!sunNoteOpen[t.id];
+    const dateChip=typeof ss[t.id]==='string'
+      ? new Date(ss[t.id]+'T12:00:00').toLocaleDateString('en-IN',{day:'numeric',month:'short'})
+      : 'Weekly';
+    return `<div style="margin-bottom:7px;">
+      <div class="ci ${ss[t.id]?'checked':''}" onclick="toggleSun('${t.id}')" style="margin-bottom:0;">
+        <div class="ci-box">${ss[t.id]?'✓':''}</div><div class="ci-text">${t.text}</div>
+        <span onclick="event.stopPropagation();toggleSunNote('${t.id}')" title="Add or edit notes"
+          style="font-size:9px;font-weight:800;padding:3px 10px;border-radius:99px;cursor:pointer;margin-right:6px;white-space:nowrap;
+          background:${note?'rgba(251,146,60,.26)':'rgba(251,146,60,.13)'};color:${note?'#fdba74':'#fb923c'};
+          border:1px solid rgba(251,146,60,${note?'.6':'.4'});">${open?'✕ close':(note?'📝 notes':'+ notes')}</span>
+        <span class="ci-tag" style="background:rgba(251,188,5,.15);color:#fcd34d;">${dateChip}</span>
+      </div>
+      ${(!open&&note)?`<div onclick="toggleSunNote('${t.id}')" class="rte-body" style="margin:5px 0 0 34px;padding:8px 10px;min-height:0;background:rgba(66,133,244,.06);border:none;border-left:2px solid rgba(66,133,244,.4);border-radius:0 8px 8px 0;font-size:11px;cursor:pointer;">${asHTML(note)}</div>`:''}
+      ${open?`<div style="margin:6px 0 0 34px;padding:11px;background:rgba(66,133,244,.06);border:1px solid rgba(66,133,244,.22);border-radius:10px;">
+        <div style="font-size:9px;color:var(--muted);margin-bottom:6px;">Saves against <b>${new Date(day+'T12:00:00').toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long'})}</b> — shows under that one day in History.</div>
+        <div class="rte-wrap">${rteToolbar('sn-'+t.id)}
+          <div class="rte-body" id="sn-${t.id}" contenteditable="true" data-ph="${t.ph}">${asHTML(note)}</div>
+        </div>
+        <div style="display:flex;gap:7px;margin-top:7px;align-items:center;">
+          <button onclick="saveSunNote('${t.id}')" style="padding:7px 15px;background:rgba(66,133,244,.18);color:#8ab4f8;border:1px solid rgba(66,133,244,.35);border-radius:8px;font-size:11px;font-weight:800;cursor:pointer;">Save</button>
+          <button onclick="toggleSunNote('${t.id}')" style="padding:7px 12px;background:rgba(255,255,255,.05);color:var(--muted);border:1px solid var(--border);border-radius:8px;font-size:11px;cursor:pointer;">Cancel</button>
+        </div>
+      </div>`:''}
+    </div>`;}).join('');
+  renderSunArchive();
 }
-function toggleSun(id){const wk=wkOf(),ss=ld('gm-sun-'+wk,{});ss[id]=!ss[id];sv('gm-sun-'+wk,ss);renderWeekly();}
+// ── SUNDAY EXTRA NOTES ──
+// Each of the four extras can carry a write-up (what the mock asked, which
+// puzzle beat you, which STAR story you prepared). Notes live on the DAY record
+// so History shows them under that single day, never the whole week.
+var sunNoteOpen={};
+function escHTML(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+// Notes used to be plain text and are now rich HTML. Old ones have no tags, so
+// escape them and turn their line breaks into <br> before showing or editing.
+function asHTML(s){
+  s=String(s||'');
+  if(!s)return '';
+  return /<[a-z!/]/i.test(s)?s:escHTML(s).replace(/\n/g,'<br>');
+}
+function sunNoteDate(id,ss,wk){
+  // the day it was ticked; if not ticked yet, today
+  return sunDay(ss[id],wk)||TK;
+}
+function sunNoteGet(id,day){
+  const d=ld('gm-day-'+day,{checks:{}});
+  return (d.sunNotes&&d.sunNotes[id])||'';
+}
+function toggleSunNote(id){
+  sunNoteOpen[id]=!sunNoteOpen[id];
+  renderWeekly();
+  if(sunNoteOpen[id])setTimeout(function(){
+    var t=document.getElementById('sn-'+id);
+    if(t){t.focus();t.setSelectionRange(t.value.length,t.value.length);}
+  },40);
+}
+// ── ARCHIVE ──
+// Every note you have ever written, grouped by kind and newest first, so the
+// mock questions / STAR stories / puzzles build into something revisable
+// instead of being buried one day at a time in History.
+var sunArcOpen={},sunArcItem={},sunArcEdit=null;
+function toggleSunArc(id){sunArcOpen[id]=!sunArcOpen[id];sunArcEdit=null;renderSunArchive();}
+function toggleSunArcItem(key){sunArcItem[key]=!sunArcItem[key];renderSunArchive();}
+function startArcEdit(id,date){
+  sunArcEdit={id:id,date:date};sunArcOpen[id]=true;renderSunArchive();
+  setTimeout(function(){var e=document.getElementById('arc-ed');if(e)e.focus();},40);
+}
+function cancelArcEdit(){sunArcEdit=null;renderSunArchive();}
+function saveArcEdit(id,date){
+  const html=rteGet('arc-ed');
+  const d=ld('gm-day-'+date,{checks:{}});
+  if(!d.sunNotes)d.sunNotes={};
+  if(stripHTML(html).trim())d.sunNotes[id]=html; else delete d.sunNotes[id];
+  if(id==='review')delete d.monthlyReview;      // folded into sunNotes now
+  sv('gm-day-'+date,d);
+  if(date===TK){DS.sunNotes=d.sunNotes;delete DS.monthlyReview;}
+  sunArcEdit=null;renderWeekly();
+  if(typeof renderHistory==='function')try{renderHistory();}catch(e){}
+}
+function deleteArcNote(id,date){
+  const d=ld('gm-day-'+date,{checks:{}});
+  const cur=stripHTML((d.sunNotes&&d.sunNotes[id])||d.monthlyReview||'').trim();
+  if(!confirm('Delete this note?\n\n'+(cur.length>110?cur.slice(0,110)+'…':cur)))return;
+  if(d.sunNotes)delete d.sunNotes[id];
+  if(id==='review')delete d.monthlyReview;
+  sv('gm-day-'+date,d);
+  if(date===TK){DS.sunNotes=d.sunNotes;delete DS.monthlyReview;}
+  sunArcEdit=null;renderWeekly();
+  if(typeof renderHistory==='function')try{renderHistory();}catch(e){}
+}
+function collectSunNotes(){
+  const out={puzzle:[],behavioral:[],mock:[],review:[]};
+  getAllKeys().forEach(function(k){
+    const day=k.replace('gm-day-',''),d=ld(k,{});
+    if(d.sunNotes)Object.keys(out).forEach(function(id){
+      if(d.sunNotes[id])out[id].push({date:day,text:d.sunNotes[id]});
+    });
+    if(d.monthlyReview)out.review.push({date:day,text:d.monthlyReview});   // legacy
+  });
+  Object.keys(out).forEach(function(id){
+    out[id].sort(function(a,b){return b.date.localeCompare(a.date);});
+  });
+  return out;
+}
+function renderSunArchive(){
+  const host=document.getElementById('sun-archive');if(!host)return;
+  const all=collectSunNotes();
+  const total=Object.keys(all).reduce(function(n,id){return n+all[id].length;},0);
+  if(!total){
+    host.innerHTML='<div style="font-size:11px;color:var(--muted);font-style:italic;padding:10px 2px;">Nothing written yet. Every note you save above collects here, grouped by kind, so you can read back through your mock questions and STAR stories in one place.</div>';
+    return;
+  }
+  host.innerHTML=SUNDAY_TASKS.map(function(t){
+    const items=all[t.id]||[];
+    if(!items.length)return '';
+    const open=!!sunArcOpen[t.id];
+    return '<div style="margin-bottom:7px;border:1px solid var(--border);border-radius:11px;overflow:hidden;">'+
+      '<div onclick="toggleSunArc(\''+t.id+'\')" style="display:flex;align-items:center;gap:8px;padding:10px 12px;background:rgba(255,255,255,.03);cursor:pointer;">'+
+        '<div style="flex:1;font-size:12px;font-weight:700;">'+t.text+'</div>'+
+        '<span style="font-size:9px;font-weight:800;padding:2px 8px;border-radius:99px;background:rgba(66,133,244,.2);color:#8ab4f8;">'+items.length+'</span>'+
+        '<span style="font-size:11px;color:var(--muted);">'+(open?'▲':'▼')+'</span>'+
+      '</div>'+
+      (open?'<div style="padding:4px 12px 10px;">'+items.map(function(it){
+        const dt=new Date(it.date+'T12:00:00').toLocaleDateString('en-IN',{weekday:'short',day:'numeric',month:'short',year:'numeric'});
+        const ed=sunArcEdit&&sunArcEdit.id===t.id&&sunArcEdit.date===it.date;
+        const key=t.id+'|'+it.date;
+        const iOpen=ed||!!sunArcItem[key];
+        const peek=stripHTML(it.text).replace(/\s+/g,' ').trim();
+        return '<div style="padding:9px 0;border-top:1px solid var(--border);">'+
+          '<div style="display:flex;align-items:center;gap:7px;margin-bottom:5px;">'+
+            '<div onclick="toggleSunArcItem(\''+key+'\')" style="flex:1;display:flex;align-items:center;gap:7px;cursor:pointer;min-width:0;">'+
+              '<span style="font-size:11px;color:#fb923c;">'+(iOpen?'▲':'▼')+'</span>'+
+              '<span style="font-size:9px;font-weight:800;color:#fcd34d;text-transform:uppercase;letter-spacing:.8px;white-space:nowrap;">'+dt+'</span>'+
+              (iOpen?'':'<span style="font-size:11px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">'+escHTML(peek.slice(0,90))+(peek.length>90?'…':'')+'</span>')+
+            '</div>'+
+            (ed?'':'<button onclick="startArcEdit(\''+t.id+'\',\''+it.date+'\')" title="Edit" style="background:rgba(251,146,60,.16);border:1px solid rgba(251,146,60,.45);color:#fb923c;border-radius:6px;cursor:pointer;font-size:11px;padding:2px 7px;font-weight:800;">&#9998; edit</button>'+
+                 '<button onclick="deleteArcNote(\''+t.id+'\',\''+it.date+'\')" title="Delete" style="background:rgba(234,67,53,.14);border:1px solid rgba(234,67,53,.4);color:#f87171;border-radius:6px;cursor:pointer;font-size:11px;padding:2px 7px;font-weight:800;">&#10005;</button>')+
+          '</div>'+
+          (ed
+            ? '<div class="rte-wrap">'+rteToolbar('arc-ed')+
+              '<div class="rte-body" id="arc-ed" contenteditable="true">'+asHTML(it.text)+'</div></div>'+
+              '<div style="display:flex;gap:7px;margin-top:7px;">'+
+              '<button onclick="saveArcEdit(\''+t.id+'\',\''+it.date+'\')" style="padding:6px 14px;background:rgba(66,133,244,.18);color:#8ab4f8;border:1px solid rgba(66,133,244,.35);border-radius:8px;font-size:11px;font-weight:800;cursor:pointer;">Save</button>'+
+              '<button onclick="cancelArcEdit()" style="padding:6px 12px;background:rgba(255,255,255,.05);color:var(--muted);border:1px solid var(--border);border-radius:8px;font-size:11px;cursor:pointer;">Cancel</button>'+
+              '</div>'
+            : (iOpen?'<div class="rte-body" style="padding:0;min-height:0;border:none;background:none;font-size:12px;line-height:1.75;">'+asHTML(it.text)+'</div>':''))+
+        '</div>';
+      }).join('')+'</div>':'')+
+    '</div>';
+  }).join('');
+}
+function saveSunNote(id){
+  const t=document.getElementById('sn-'+id);if(!t)return;
+  const wk=wkOf(),ss=ld('gm-sun-'+wk,{});
+  const day=sunNoteDate(id,ss,wk);
+  const d=ld('gm-day-'+day,{checks:{}});
+  if(!d.sunNotes)d.sunNotes={};
+  const v=rteGet('sn-'+id);
+  if(stripHTML(v).trim())d.sunNotes[id]=v; else delete d.sunNotes[id];
+  sv('gm-day-'+day,d);
+  if(day===TK)DS.sunNotes=d.sunNotes;      // keep today's in-memory copy in step
+  sunNoteOpen[id]=false;
+  renderWeekly();
+  if(typeof renderHistory==='function')try{renderHistory();}catch(e){}
+}
+// A Sunday Extra now records WHICH DAY you did it on, not just that it happened
+// somewhere in the week — otherwise history shows it on all seven days.
+// Legacy entries are plain `true`; sunDay() maps those to the week's Sunday.
+function toggleSun(id){
+  const wk=wkOf(),ss=ld('gm-sun-'+wk,{});
+  ss[id]=ss[id]?false:TK;          // store today's date
+  sv('gm-sun-'+wk,ss);renderWeekly();
+}
+function sunDay(val,weekStart){
+  if(!val)return null;
+  if(typeof val==='string')return val;
+  return fmt(new Date(new Date(weekStart+'T12:00:00').getTime()+6*86400000)); // legacy → Sunday
+}
 
 // HISTORY
 function toggleHistExpand(date){
@@ -1348,13 +1772,21 @@ function renderHistory(){
     const col=sc<=2?'#ea4335':sc<=4?'#fbbc05':'#34a853';
     const em=d.dayType==='green'?'🟢':d.dayType==='yellow'?'🟡':d.dayType==='red'?'🔴':'';
     const me=med[date],mf=man[date];
-    const ss=ld('gm-sun-'+wkOf(date),{});
-    const sunDone=Object.keys(SUN_MAP).filter(id=>ss[id]).map(id=>SUN_MAP[id]);
+    const wkStart=wkOf(date);
+    const ss=ld('gm-sun-'+wkStart,{});
+    // only the day it was actually done on
+    const sunDone=Object.keys(SUN_MAP).filter(id=>sunDay(ss[id],wkStart)===date).map(id=>SUN_MAP[id]);
     const dots=CIDS.map((id,i)=>{const ok=d.checks&&d.checks[id];return `<span class="dot-tag" style="background:${ok?'rgba(52,168,83,.2)':'rgba(255,255,255,.04)'};color:${ok?'#4ade80':'var(--muted)'};border-color:${ok?'rgba(52,168,83,.4)':'var(--border)'}">${CLBLS[i]}</span>`;}).join('');
     const extras=[
       mf?`<div class="hist-row" style="color:#a78bfa"><span class="hist-key">🌟 Manifestation:</span>Done</div>`:'',
       me&&me.done?`<div class="hist-row" style="color:#c4b5fd"><span class="hist-key">🕉️ Meditation:</span>${me.mins} min at ${me.time}</div>`:'',
       sunDone.length?`<div class="hist-row" style="color:#fcd34d"><span class="hist-key">📅 Weekly:</span>${sunDone.join(' · ')}</div>`:'',
+      d.monthlyReview?`<div class="hist-row" style="color:#8ab4f8"><span class="hist-key">📊 Monthly Review:</span>${d.monthlyReview}</div>`:'',
+      ...(d.sunNotes?Object.keys(SUN_MAP).filter(id=>d.sunNotes[id]).map(id=>
+        `<div class="hist-row" style="display:block;color:#8ab4f8;">
+           <div class="hist-key" style="margin-bottom:3px;">${SUN_MAP[id]} notes:</div>
+           <div class="rte-body" style="padding:0;min-height:0;font-size:11.5px;">${asHTML(d.sunNotes[id])}</div>
+         </div>`):[]),
       d.journal&&d.journal.c?`<div class="hist-row"><span class="hist-key">✅ Done:</span>${d.journal.c}</div>`:'',
       d.journal&&d.journal.t?`<div class="hist-row"><span class="hist-key">🎯 Tomorrow:</span>${d.journal.t}</div>`:'',
       d.journal&&d.journal.g?`<div class="hist-row" style="color:#fbbf24"><span class="hist-key">🙏 Grateful:</span>${d.journal.g}</div>`:'',
@@ -1521,7 +1953,8 @@ function backupSummary(){
   try{med=Object.keys(ld('gm-med',{})||{}).length;}catch(e){}
   try{man=Object.keys(ld('gm-manifest',{})||{}).length;}catch(e){}
   try{rev=(ld('gm-revision',[])||[]).length;}catch(e){}
-  return {days,med,man,rev,sun,journals,moods};
+  var mynotes=0;try{mynotes=(ld('gm-mynotes',[])||[]).length;}catch(e){}
+  return {days,med,man,rev,sun,journals,moods,mynotes};
 }
 function renderBackupSummary(){
   const el=document.getElementById('backup-summary');if(!el)return;
@@ -1533,6 +1966,7 @@ function renderBackupSummary(){
     ['🕉️ Meditation sessions',s.med],
     ['🌟 Manifestation days',s.man],
     ['🔁 Revision problems',s.rev],
+    ['📔 My Notes',s.mynotes],
     ['📅 Weekly (Sunday) records',s.sun],
   ];
   const total=s.days+s.med+s.man+s.rev+s.sun;
@@ -1568,7 +2002,7 @@ function exportData(){
   data.__backupInfo={
     savedOn:fmt(new Date()),
     dailyEntries:s.days, moods:s.moods, journals:s.journals,
-    meditations:s.med, manifestations:s.man, revisionProblems:s.rev, weeklyRecords:s.sun,
+    meditations:s.med, manifestations:s.man, revisionProblems:s.rev, myNotes:s.mynotes, weeklyRecords:s.sun,
     totalKeys:Object.keys(data).length
   };
 
@@ -1615,6 +2049,10 @@ function importData(input){
         } else if(k==='gm-revision'){
           const ex=ld(k,[]);
           (v||[]).forEach(p=>{if(!ex.some(x=>x.name&&p.name&&x.name.toLowerCase()===p.name.toLowerCase()))ex.push(p);});
+          sv(k,ex);c++;
+        } else if(k==='gm-mynotes'){
+          const ex=ld(k,[]);
+          (v||[]).forEach(p=>{if(!ex.some(x=>String(x.id)===String(p.id)))ex.push(p);});
           sv(k,ex);c++;
         } else if(k.startsWith('gm-day-')){
           if(localStorage.getItem(k)===null){localStorage.setItem(k,JSON.stringify(v));c++;}
@@ -1823,6 +2261,13 @@ function rteHighlight(id,cls){
   rteRestore(id,s);
   document.execCommand('insertHTML',false,'<mark class="'+(cls||'hl-yellow')+'">'+txt+'</mark>&nbsp;');
 }
+function rteTextColour(id,cls){
+  const s=rteSelectionIn(id);
+  if(!s||s.collapsed||!s.text){alert('Select the text you want to colour first, then tap a letter swatch.');return;}
+  const txt=rteEscape(s.text);
+  rteRestore(id,s);
+  document.execCommand('insertHTML',false,'<span class="'+(cls||'tc-blue')+'">'+txt+'</span>&nbsp;');
+}
 function rteCode(id){
   const s=rteSelectionIn(id);
   if(!s||s.collapsed||!s.text){alert('Select the text you want as inline code first.');return;}
@@ -1835,6 +2280,191 @@ function rteCodeBlock(id){
   const txt=(s&&!s.collapsed&&s.text)?rteEscape(s.text):'// code here';
   rteRestore(id,s);
   document.execCommand('insertHTML',false,'<pre>'+txt+'</pre><div><br></div>');
+}
+// Build the standard editor toolbar for any contenteditable id.
+function rteToolbar(id){
+  const HL=[['rgba(251,188,5,.5)','hl-yellow'],['rgba(52,168,83,.5)','hl-green'],['rgba(66,133,244,.5)','hl-blue'],['rgba(234,67,53,.5)','hl-red'],['rgba(124,58,237,.5)','hl-purple']];
+  const TC=[['#f87171','tc-red'],['#fb923c','tc-orange'],['#fbbf24','tc-yellow'],['#4ade80','tc-green'],['#60a5fa','tc-blue'],['#c4b5fd','tc-violet'],['#0b1020','tc-black'],['#ffffff','tc-white']];
+  const b=(lbl,fn)=>`<button class="rte-btn" onmousedown="event.preventDefault()" onclick="${fn}">${lbl}</button>`;
+  return `<div class="rte-toolbar">`+
+    b('<b>B</b>',`rteCmd('bold','${id}')`)+
+    b('<i>I</i>',`rteCmd('italic','${id}')`)+
+    `<div class="rte-sep"></div>`+
+    b('H',`rteHeading('${id}')`)+
+    b('&bull;',`rteCmd('insertUnorderedList','${id}')`)+
+    `<div class="rte-sep"></div>`+
+    HL.map(h=>`<span class="hl-swatch" style="background:${h[0]}" onmousedown="event.preventDefault()" onclick="rteHighlight('${id}','${h[1]}')" title="Highlight"></span>`).join('')+
+    `<div class="rte-sep"></div>`+
+    TC.map(c=>`<span class="tc-swatch" style="border-color:${c[0]};color:${c[0]}" onmousedown="event.preventDefault()" onclick="rteTextColour('${id}','${c[1]}')" title="Text colour"></span>`).join('')+
+    `<div class="rte-sep"></div>`+
+    b('&lt;&gt;',`rteCode('${id}')`)+
+    b('&#9636;',`rteCodeBlock('${id}')`)+
+    `<div class="rte-sep"></div>`+
+    b('&#10005;',`rteCmd('removeFormat','${id}')`)+
+    b('&#129529;',`rteCleanAll('${id}')`)+
+  `</div>`;
+}
+// ── PASTE CLEANER ──
+// Pasting from VS Code, ChatGPT or a webpage drags that source's own colours in
+// as inline styles (black text on a white background), which looks broken on a
+// dark theme. Strip every inline style and foreign class on the way in, so the
+// pasted content picks up THIS app's styling instead. Structure is kept.
+const PASTE_OK={B:1,STRONG:1,I:1,EM:1,U:1,S:1,H1:1,H2:1,H3:1,H4:1,P:1,DIV:1,BR:1,
+                UL:1,OL:1,LI:1,CODE:1,PRE:1,MARK:1,SPAN:1,A:1,BLOCKQUOTE:1,TABLE:1,
+                THEAD:1,TBODY:1,TR:1,TD:1,TH:1};
+function looksLikeCode(node){
+  const f=(node.getAttribute&&node.getAttribute('style')||'').toLowerCase();
+  return /consolas|monospace|courier|menlo|monaco/.test(f);
+}
+// VS Code light theme → VS Code Dark+ equivalents, so pasted code keeps its
+// syntax highlighting instead of coming out one flat colour.
+const VS_DARK={'#0000ff':'#569cd6','#af00db':'#c586c0','#267f99':'#4ec9b0',
+  '#795e26':'#dcdcaa','#001080':'#9cdcfe','#098658':'#b5cea8','#a31515':'#ce9178',
+  '#008000':'#6a9955','#0070c1':'#4fc1ff','#ee0000':'#f48771','#000000':'#d4d4d4'};
+function toHex(c){
+  c=String(c||'').trim().toLowerCase();
+  const m=c.match(/rgba?\(\s*(\d+)[,\s]+(\d+)[,\s]+(\d+)/);
+  if(!m)return c;
+  return '#'+[1,2,3].map(i=>(+m[i]).toString(16).padStart(2,'0')).join('');
+}
+function recolourCode(node){
+  const d=node.cloneNode(true);
+  Array.prototype.forEach.call(d.querySelectorAll('*'),function(n){
+    const st=n.getAttribute('style')||'';
+    const cm=st.match(/(?:^|;)\s*color\s*:\s*([^;]+)/i);
+    let col='';
+    if(cm)col=toHex(cm[1]);          // keep the editor's own syntax colours
+    n.removeAttribute('style');n.removeAttribute('class');
+    if(/^(SCRIPT|STYLE)$/.test(n.tagName))n.remove();
+    else if(col)n.setAttribute('style','color:'+col);
+  });
+  // every <div> in a VS Code copy is one line — flatten them to real newlines
+  Array.prototype.forEach.call(d.querySelectorAll('br'),function(b){
+    b.parentNode.replaceChild(document.createTextNode('\n'),b);
+  });
+  const blocks=Array.prototype.slice.call(d.querySelectorAll('div,p'));
+  for(let i=blocks.length-1;i>=0;i--){
+    const n=blocks[i],p=n.parentNode;if(!p)continue;
+    if(!/\n$/.test(n.textContent))n.appendChild(document.createTextNode('\n'));
+    while(n.firstChild)p.insertBefore(n.firstChild,n);
+    p.removeChild(n);
+  }
+  return d.innerHTML.replace(/ /g,' ').replace(/\n{3,}/g,'\n\n').replace(/^\n+|\n+$/g,'');
+}
+function cleanPastedHTML(html){
+  const d=document.createElement('div');
+  d.innerHTML=html;
+  d.querySelectorAll('script,style,meta,link,img,iframe,noscript').forEach(n=>n.remove());
+
+  // Whole paste is one code block? Keep the editor's syntax colours, but remap
+  // them from the light theme to their dark equivalents and drop the white
+  // background — otherwise it is a white slab in the middle of a dark card.
+  const pre=d.querySelector('pre');
+  const whole=(d.textContent||'').trim();
+  if(pre&&(d.textContent||'').trim()===(pre.textContent||'').trim()&&whole)
+    return '<pre>'+recolourCode(pre)+'</pre>';
+  const first=d.firstElementChild;
+  if(first&&looksLikeCode(first)&&whole)
+    return '<pre>'+recolourCode(first)+'</pre>';
+
+  Array.prototype.forEach.call(d.querySelectorAll('*'),function(n){
+    if(!PASTE_OK[n.tagName]){                       // unwrap anything unknown
+      const p=n.parentNode;
+      while(n.firstChild)p.insertBefore(n.firstChild,n);
+      p.removeChild(n);
+      return;
+    }
+    // inside a <pre> the colour is the syntax highlighting — keep just that
+    if(n.closest('pre')){
+      const st=n.getAttribute('style')||'';
+      const cm=st.match(/(?:^|;)\s*color\s*:\s*([^;]+)/i);
+      let col='';
+      if(cm)col=toHex(cm[1]);        // keep the editor's own syntax colours
+      ['style','bgcolor','color','face','width','height','align','id'].forEach(a=>n.removeAttribute(a));
+      if(col)n.setAttribute('style','color:'+col);
+      n.removeAttribute('class');
+      return;
+    }
+    ['style','bgcolor','color','face','width','height','align','id'].forEach(a=>n.removeAttribute(a));
+    const cls=(n.getAttribute('class')||'').split(/\s+/).filter(c=>/^(hl-|tc-)/.test(c)).join(' ');
+    if(cls)n.setAttribute('class',cls);else n.removeAttribute('class');
+    if(n.tagName==='A'){
+      const h=n.getAttribute('href')||'';
+      if(!/^https?:/i.test(h))n.removeAttribute('href');
+      else{n.setAttribute('target','_blank');n.setAttribute('rel','noopener');}
+    }
+  });
+  return d.innerHTML.replace(/<div>\s*<\/div>/g,'').trim();
+}
+// Markdown pasted as plain text used to land as literal "## Heading" and
+// "| a | b |" rows. Convert it to real HTML so it renders properly.
+function looksMarkdown(t){
+  t=String(t||'');
+  return /^#{1,6}\s/m.test(t)||/\*\*[^*\n]+\*\*/.test(t)||/^\s*\|.*\|\s*$/m.test(t)||
+         /^```/m.test(t)||/^\s*[-*+]\s+\S/m.test(t);
+}
+function mdToHTML(src){
+  const lines=String(src||'').replace(/\r/g,'').split('\n');
+  const out=[];let i=0;
+  const inline=s=>escHTML(s)
+    .replace(/`([^`]+)`/g,'<code>$1</code>')
+    .replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>')
+    .replace(/(^|[^*])\*([^*\s][^*]*)\*/g,'$1<em>$2</em>')
+    .replace(/\[([^\]]+)\]\((https?:[^)\s]+)\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>');
+  const isBlock=l=>/^(#{1,6}\s|```|\s*[-*+]\s|\s*\d+[.)]\s|\s*>|\s*\|)/.test(l);
+  while(i<lines.length){
+    const l=lines[i];
+    if(/^```/.test(l)){const buf=[];i++;
+      while(i<lines.length&&!/^```/.test(lines[i])){buf.push(lines[i]);i++;}
+      i++;out.push('<pre>'+escHTML(buf.join('\n'))+'</pre>');continue;}
+    if(/^\s*(-{3,}|\*{3,}|_{3,})\s*$/.test(l)){out.push('<hr>');i++;continue;}
+    const h=l.match(/^(#{1,6})\s+(.*)$/);
+    if(h){out.push('<h3>'+inline(h[2])+'</h3>');i++;continue;}
+    if(/^\s*\|/.test(l)&&i+1<lines.length&&/^[\s|:-]+$/.test(lines[i+1])&&/-/.test(lines[i+1])){
+      const cells=r=>r.replace(/^\s*\|/,'').replace(/\|\s*$/,'').split('|').map(s=>s.trim());
+      const head=cells(l);i+=2;const rows=[];
+      while(i<lines.length&&/^\s*\|/.test(lines[i])){rows.push(cells(lines[i]));i++;}
+      out.push('<table><thead><tr>'+head.map(c=>'<th>'+inline(c)+'</th>').join('')+
+        '</tr></thead><tbody>'+rows.map(r=>'<tr>'+r.map(c=>'<td>'+inline(c)+'</td>').join('')+'</tr>').join('')+
+        '</tbody></table>');continue;}
+    if(/^\s*[-*+]\s+/.test(l)){const it=[];
+      while(i<lines.length&&/^\s*[-*+]\s+/.test(lines[i])){it.push(inline(lines[i].replace(/^\s*[-*+]\s+/,'')));i++;}
+      out.push('<ul>'+it.map(x=>'<li>'+x+'</li>').join('')+'</ul>');continue;}
+    if(/^\s*\d+[.)]\s+/.test(l)){const it=[];
+      while(i<lines.length&&/^\s*\d+[.)]\s+/.test(lines[i])){it.push(inline(lines[i].replace(/^\s*\d+[.)]\s+/,'')));i++;}
+      out.push('<ol>'+it.map(x=>'<li>'+x+'</li>').join('')+'</ol>');continue;}
+    if(/^\s*>\s?/.test(l)){const q=[];
+      while(i<lines.length&&/^\s*>\s?/.test(lines[i])){q.push(inline(lines[i].replace(/^\s*>\s?/,'')));i++;}
+      out.push('<blockquote>'+q.join('<br>')+'</blockquote>');continue;}
+    if(!l.trim()){i++;continue;}
+    const para=[];
+    while(i<lines.length&&lines[i].trim()&&!isBlock(lines[i])){para.push(inline(lines[i]));i++;}
+    out.push('<p>'+para.join('<br>')+'</p>');
+  }
+  return out.join('');
+}
+document.addEventListener('paste',function(e){
+  const el=e.target&&e.target.closest?e.target.closest('.rte-body[contenteditable]'):null;
+  if(!el)return;
+  const cd=e.clipboardData||window.clipboardData;
+  if(!cd)return;
+  e.preventDefault();
+  const html=cd.getData('text/html'),text=cd.getData('text/plain');
+  let out='';
+  try{
+    if(text&&looksMarkdown(text))out=mdToHTML(text);       // markdown wins
+    else if(html)out=cleanPastedHTML(html);
+  }catch(err){out='';}
+  if(!out)out=escHTML(text||'').replace(/\n/g,'<br>');
+  document.execCommand('insertHTML',false,out);
+});
+// Strip foreign styling from whatever is already in an editor (the 🧹 button).
+function rteCleanAll(id){
+  const el=document.getElementById(id);if(!el)return;
+  const asText=preToPlainText(el);          // <div>/<br> back into real newlines
+  if(looksMarkdown(asText))el.innerHTML=mdToHTML(asText);   // raw markdown → rendered
+  else el.innerHTML=cleanPastedHTML(el.innerHTML);
+  el.focus();
 }
 function rteGet(id){const el=document.getElementById(id);return el?el.innerHTML.trim():'';}
 function rteSet(id,h){const el=document.getElementById(id);if(el)el.innerHTML=h||'';}
@@ -1877,20 +2507,20 @@ function addRevProblem(){
     problems.push({
       id:Date.now(),name,topic,customTopic:topic==='Other'?customTopic:'',diff,
       link:document.getElementById('rev-link').value.trim(),
-      pattern:rteGet('rte-pattern'),why:rteGet('rte-why'),trick:rteGet('rte-trick'),
+      pattern:rteGet('rte-pattern'),why:rteGet('rte-why'),trick:rteGet('rte-trick'),mistakes:rteGet('rte-mistakes'),
       solved,slots:buildSlots(solved,diff)
     });
   }
-  saveRevProblems(problems);clearRevForm();renderRevision();
+  saveRevProblems(problems);clearRevForm();revDraftClear();renderRevision();
 }
 function clearRevForm(){
   document.getElementById('rev-name').value='';
   document.getElementById('rev-link').value='';
   const c=document.getElementById('rev-custom-topic');c.value='';c.style.display='none';
-  ['rte-pattern','rte-why','rte-trick'].forEach(rteClear);
+  ['rte-pattern','rte-why','rte-trick','rte-mistakes'].forEach(rteClear);
 }
 function cancelRevEdit(){
-  revEditId=null;clearRevForm();
+  revEditId=null;clearRevForm();revDraftClear();
   document.getElementById('rev-save-btn').textContent='+ Add Problem';
   document.getElementById('rev-cancel-btn').style.display='none';
 }
@@ -1902,7 +2532,7 @@ function editRevProblem(id){
   document.getElementById('rev-diff').value=p.diff;
   document.getElementById('rev-link').value=p.link||'';
   if(p.topic==='Other'){const c=document.getElementById('rev-custom-topic');c.style.display='block';c.value=p.customTopic||'';}
-  rteSet('rte-pattern',p.pattern);rteSet('rte-why',p.why);rteSet('rte-trick',p.trick);
+  rteSet('rte-pattern',p.pattern);rteSet('rte-why',p.why);rteSet('rte-trick',p.trick);rteSet('rte-mistakes',p.mistakes);
   document.getElementById('rev-save-btn').textContent='💾 Save Changes';
   document.getElementById('rev-cancel-btn').style.display='block';
   window.scrollTo({top:0,behavior:'smooth'});
@@ -1919,6 +2549,134 @@ function toggleSlot(pid,key){
   const s=p.slots.find(x=>x.key===key);if(!s)return;
   s.done=!s.done;
   s.doneOn=s.done?fmt(new Date()):null;
+  saveRevProblems(problems);renderRevision();
+}
+// ── QUICK MISTAKE CAPTURE ──
+// Jot a mistake straight from the card while revising, without opening Edit.
+// Each one is appended as a bullet to the problem's mistakes field.
+var mistakeOpen={};
+var mistakeShow={};          // is the list expanded for this problem?
+var mistakeEdit={};          // which bullet index is being edited, if any
+function startEditMistake(pid,idx){
+  mistakeEdit[pid]=idx;mistakeOpen[pid]=false;mistakeShow[pid]=true;
+  renderRevision();
+  setTimeout(function(){
+    var t=document.getElementById('mk-ed-'+pid);
+    if(t){t.focus();t.setSelectionRange(t.value.length,t.value.length);}
+  },40);
+}
+function cancelEditMistake(pid){delete mistakeEdit[pid];renderRevision();}
+function mistakeEditKey(e,pid,idx){
+  if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();saveEditMistake(pid,idx);}
+  if(e.key==='Escape'){cancelEditMistake(pid);}
+}
+function saveEditMistake(pid,idx){
+  var t=document.getElementById('mk-ed-'+pid);if(!t)return;
+  var v=(t.value||'').trim();
+  if(!v){delete mistakeEdit[pid];deleteMistake(pid,idx);return;}
+  var problems=getRevProblems();
+  var p=problems.find(function(x){return x.id===pid;});if(!p)return;
+  var d=document.createElement('div');d.innerHTML=p.mistakes||'';
+  var lis=d.querySelectorAll('li');
+  if(!lis[idx]){delete mistakeEdit[pid];renderRevision();return;}
+  lis[idx].textContent=v;                 // textContent escapes for us
+  p.mistakes=d.innerHTML.trim();
+  saveRevProblems(problems);
+  delete mistakeEdit[pid];
+  renderRevision();
+}
+function mistakeCount(p){
+  if(!p.mistakes)return 0;
+  var d=document.createElement('div');d.innerHTML=p.mistakes;
+  var n=d.querySelectorAll('li').length;
+  return n||(d.textContent.trim()?1:0);
+}
+function toggleMistakeShow(pid){
+  mistakeShow[pid]=!mistakeShow[pid];
+  renderRevision();
+}
+function toggleMistakeAdd(pid){
+  mistakeOpen[pid]=!mistakeOpen[pid];
+  renderRevision();
+  if(mistakeOpen[pid])setTimeout(function(){
+    var t=document.getElementById('mk-in-'+pid);if(t)t.focus();
+  },40);
+}
+function mistakeKey(e,pid){
+  if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();saveMistake(pid);}
+  if(e.key==='Escape'){mistakeOpen[pid]=false;renderRevision();}
+}
+function saveMistake(pid){
+  var t=document.getElementById('mk-in-'+pid);if(!t)return;
+  var v=(t.value||'').trim();
+  if(!v){mistakeOpen[pid]=false;renderRevision();return;}
+  var problems=getRevProblems();
+  var p=problems.find(function(x){return x.id===pid;});if(!p)return;
+  var esc=v.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  var cur=p.mistakes||'';
+  // append into the existing bullet list if there is one, else start one
+  if(/<\/ul>\s*$/i.test(cur))p.mistakes=cur.replace(/<\/ul>\s*$/i,'<li>'+esc+'</li></ul>');
+  else p.mistakes=cur+'<ul><li>'+esc+'</li></ul>';
+  saveRevProblems(problems);
+  mistakeOpen[pid]=false;
+  mistakeShow[pid]=true;      // show what you just wrote
+  renderRevision();
+}
+// Render the mistakes list with a delete control on each bullet. Anything that
+// is not a list item (typed in the full Edit form) is shown above, untouched.
+function mistakeBody(p){
+  var html=p.mistakes||'';
+  if(!html)return '';
+  var d=document.createElement('div');d.innerHTML=html;
+  var lis=d.querySelectorAll('li');
+  if(!lis.length)
+    return '<div class="rte-body rev-detail mk-box" style="padding:0;min-height:0;font-size:12px;">'+html+'</div>';
+  var rows='',i,editing=(mistakeEdit[p.id]===undefined?-1:mistakeEdit[p.id]);
+  for(i=0;i<lis.length;i++){
+    if(i===editing){
+      var raw=(lis[i].textContent||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+      rows+='<div onclick="event.stopPropagation();" style="padding:7px 0;'+
+            (i<lis.length-1?'border-bottom:1px solid rgba(234,67,53,.15);':'')+'">'+
+            '<textarea id="mk-ed-'+p.id+'" rows="2" onkeydown="mistakeEditKey(event,'+p.id+','+i+')" '+
+            'style="width:100%;box-sizing:border-box;padding:8px 9px;background:rgba(0,0,0,.25);color:var(--fg);'+
+            'border:1px solid rgba(234,67,53,.5);border-radius:8px;font-size:12px;font-family:inherit;resize:vertical;">'+raw+'</textarea>'+
+            '<div style="display:flex;gap:6px;margin-top:6px;align-items:center;">'+
+            '<button onclick="saveEditMistake('+p.id+','+i+')" style="padding:5px 13px;background:rgba(234,67,53,.3);color:#fca5a5;border:1px solid rgba(234,67,53,.5);border-radius:8px;font-size:11px;font-weight:800;cursor:pointer;">Save</button>'+
+            '<button onclick="cancelEditMistake('+p.id+')" style="padding:5px 11px;background:rgba(255,255,255,.05);color:var(--muted);border:1px solid var(--border);border-radius:8px;font-size:11px;cursor:pointer;">Cancel</button>'+
+            '<span style="font-size:9px;color:var(--muted);">Enter to save · Esc to cancel</span>'+
+            '</div></div>';
+      continue;
+    }
+    rows+='<div style="display:grid;grid-template-columns:13px 1fr 18px 18px;column-gap:6px;align-items:start;'+
+          'padding:6px 0;'+(i<lis.length-1?'border-bottom:1px solid rgba(234,67,53,.15);':'')+'">'+
+          '<span style="color:#f87171;font-weight:900;font-size:12px;line-height:1.55;">&bull;</span>'+
+          '<div class="rte-body rev-detail mk-box" style="padding:0;min-height:0;margin:0;font-size:12px;line-height:1.55;">'+lis[i].innerHTML+'</div>'+
+          '<button onclick="event.stopPropagation();startEditMistake('+p.id+','+i+')" title="Edit this one" '+
+          'style="background:none;border:none;color:#fb923c;cursor:pointer;font-size:12px;padding:0;line-height:1.55;">&#9998;</button>'+
+          '<button onclick="event.stopPropagation();deleteMistake('+p.id+','+i+')" title="Delete this one" '+
+          'style="background:none;border:none;color:#f87171;cursor:pointer;font-size:12px;padding:0;line-height:1.55;">&#10005;</button>'+
+          '</div>';
+  }
+  var clone=d.cloneNode(true);
+  var uls=clone.querySelectorAll('ul,ol');
+  for(i=uls.length-1;i>=0;i--)uls[i].parentNode.removeChild(uls[i]);
+  var pre=clone.textContent.trim()
+    ? '<div class="rte-body rev-detail" style="padding:0;min-height:0;font-size:12px;margin-bottom:5px;">'+clone.innerHTML+'</div>'
+    : '';
+  return pre+rows;
+}
+function deleteMistake(pid,idx){
+  var problems=getRevProblems();
+  var p=problems.find(function(x){return x.id===pid;});if(!p)return;
+  var d=document.createElement('div');d.innerHTML=p.mistakes||'';
+  var lis=d.querySelectorAll('li');
+  if(!lis[idx])return;
+  var txt=(lis[idx].textContent||'').trim();
+  if(!confirm('Delete this mistake?\n\n'+(txt.length>90?txt.slice(0,90)+'…':txt)))return;
+  var ul=lis[idx].parentNode;
+  ul.removeChild(lis[idx]);
+  if(!ul.querySelectorAll('li').length&&ul.parentNode)ul.parentNode.removeChild(ul);
+  p.mistakes=d.textContent.trim()?d.innerHTML.trim():'';
   saveRevProblems(problems);renderRevision();
 }
 // Log an extra revision (beyond the scheduled slots)
@@ -2153,6 +2911,27 @@ function renderRevision(){
         }).join('')}</div>`:`<div style="font-size:10px;color:var(--muted);font-style:italic;margin-top:4px;">No extra revisions logged yet</div>`}
       </div>
 
+      ${(()=>{const mc=mistakeCount(p);const mo=!!mistakeShow[p.id];return `
+      <div style="margin-top:10px;padding:11px 12px;background:rgba(234,67,53,.09);border:1px solid rgba(234,67,53,.32);border-left:3px solid #f87171;border-radius:11px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;">
+          <div onclick="event.stopPropagation();toggleMistakeShow(${p.id})" style="display:flex;align-items:center;gap:6px;cursor:${mc?'pointer':'default'};flex:1;min-width:0;">
+            <span style="font-size:9px;font-weight:800;color:#f87171;text-transform:uppercase;letter-spacing:1px;">⚠️ Mistakes / Watch Out</span>
+            ${mc?`<span style="font-size:9px;font-weight:800;padding:2px 7px;border-radius:99px;background:rgba(234,67,53,.28);color:#fca5a5;">${mc}</span>
+                  <span style="font-size:10px;color:#f87171;opacity:.8;">${mo?'▲':'▼'}</span>`:''}
+          </div>
+          <button onclick="event.stopPropagation();toggleMistakeAdd(${p.id})" style="padding:4px 11px;background:rgba(234,67,53,.22);color:#fca5a5;border:1px solid rgba(234,67,53,.45);border-radius:99px;font-size:10px;font-weight:800;cursor:pointer;white-space:nowrap;">${mistakeOpen[p.id]?'✕ Cancel':'+ Add mistake'}</button>
+        </div>
+        ${mc?(mo?`<div style="margin-top:7px;">${mistakeBody(p)}</div>`
+                :`<div onclick="event.stopPropagation();toggleMistakeShow(${p.id})" style="margin-top:5px;font-size:10px;color:#fca5a5;opacity:.75;cursor:pointer;font-style:italic;">tap to read ${mc===1?'it':'all '+mc}</div>`)
+             :(mistakeOpen[p.id]?'':`<div style="font-size:10px;color:var(--muted);font-style:italic;margin-top:4px;">Nothing logged yet — tap <b>+ Add mistake</b> the moment you slip up</div>`)}
+        ${mistakeOpen[p.id]?`<div onclick="event.stopPropagation();" style="margin-top:8px;">
+          <textarea id="mk-in-${p.id}" rows="2" onkeydown="mistakeKey(event,${p.id})" placeholder="e.g. forgot the base condition · off-by-one on the last index · did not handle empty input" style="width:100%;box-sizing:border-box;padding:9px 10px;background:rgba(0,0,0,.25);color:var(--fg);border:1px solid rgba(234,67,53,.4);border-radius:8px;font-size:12px;font-family:inherit;resize:vertical;"></textarea>
+          <div style="display:flex;gap:6px;margin-top:6px;align-items:center;">
+            <button onclick="saveMistake(${p.id})" style="padding:6px 14px;background:rgba(234,67,53,.3);color:#fca5a5;border:1px solid rgba(234,67,53,.5);border-radius:8px;font-size:11px;font-weight:800;cursor:pointer;">Save</button>
+            <span style="font-size:9px;color:var(--muted);">Enter to save · Shift+Enter for a new line · Esc to cancel</span>
+          </div>
+        </div>`:''}
+      </div>`;})()}
       ${(p.pattern||p.why||p.trick)?`<div class="rev-notes-box" style="margin-top:10px;padding:12px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:11px;">
         ${p.pattern?`<div style="margin-bottom:10px;"><div style="font-size:9px;font-weight:800;color:#8ab4f8;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">🧩 Pattern</div><div class="rte-body rev-detail" style="padding:0;min-height:0;font-size:12px;">${p.pattern}</div></div>`:''}
         ${p.why?`<div style="margin-bottom:10px;"><div style="font-size:9px;font-weight:800;color:#c4b5fd;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">💡 Why This Pattern</div><div class="rte-body rev-detail" style="padding:0;min-height:0;font-size:12px;">${p.why}</div></div>`:''}
@@ -2175,16 +2954,117 @@ function renderRevision(){
   if(typeof revViewMode!=='undefined'&&revViewMode==='table'&&typeof revRenderTable==='function')revRenderTable();
 }
 
+// ══════════════════════════════════════════════
+// CODE ARCHIVE — write each problem's own code to disk
+// Your solutions live inside the notes as <pre> blocks. This pulls the biggest
+// one out of each problem, converts it back to plain text, and writes
+//   <Problem Name>/code.cpp   and   <Problem Name>/Readme.txt (the link)
+// into a folder you choose. Never overwrites a code.cpp that already has code.
+// ══════════════════════════════════════════════
+function preToPlainText(pre){
+  var d=pre.cloneNode(true),i;
+  var br=d.querySelectorAll('br');
+  for(i=0;i<br.length;i++)br[i].parentNode.replaceChild(document.createTextNode('\n'),br[i]);
+  var blk=d.querySelectorAll('div,p,li');
+  for(i=0;i<blk.length;i++){
+    var tc=blk[i].textContent;
+    if(!/\n$/.test(tc))blk[i].appendChild(document.createTextNode('\n'));
+  }
+  return d.textContent
+          .replace(/ /g,' ')      // &nbsp; back to a real space
+          .replace(/\r/g,'')
+          .replace(/[ \t]+$/gm,'')     // trailing whitespace per line
+          .replace(/\n{3,}/g,'\n\n')
+          .trim();
+}
+function extractCodeFrom(html){
+  if(!html)return '';
+  var d=document.createElement('div');d.innerHTML=html;
+  var pres=d.querySelectorAll('pre');
+  var best='',i,t;
+  for(i=0;i<pres.length;i++){t=preToPlainText(pres[i]);if(t.length>best.length)best=t;}
+  return best;
+}
+function problemCode(p){
+  return extractCodeFrom(p.trick)||extractCodeFrom(p.why)||extractCodeFrom(p.pattern)||'';
+}
+function safeFolderName(n){
+  return String(n||'Untitled').replace(/[\\\/:*?"<>|]/g,'-').replace(/\s+/g,' ').trim().slice(0,120);
+}
+// Which folder a problem belongs in. Topic comes straight off the tracker.
+// Pattern is read from the Pattern note, keeping only the part before "-->"
+// so "Sliding Window --> Variable Size" files under "Sliding Window".
+function groupNameFor(p,mode){
+  if(mode==='pattern'){
+    var txt=stripHTML(p.pattern||'').replace(/\s+/g,' ').trim();
+    if(txt){
+      txt=txt.split(/-->|—>|->|:|→/)[0].trim();
+      if(txt)return safeFolderName(txt);
+    }
+    return 'Uncategorised';
+  }
+  var t=(p.topic==='Other'&&p.customTopic)?p.customTopic:p.topic;
+  return safeFolderName(t||'Uncategorised');
+}
+async function writeTextFile(dirHandle,name,text){
+  var fh=await dirHandle.getFileHandle(name,{create:true});
+  var w=await fh.createWritable();
+  await w.write(text);
+  await w.close();
+}
+async function fileHasContent(dirHandle,name){
+  try{
+    var fh=await dirHandle.getFileHandle(name);
+    var f=await fh.getFile();
+    return f.size>10;
+  }catch(e){return false;}
+}
+async function exportCodeFolders(){
+  var msg=document.getElementById('code-export-msg');
+  var say=function(t,c){if(msg){msg.style.color=c||'var(--muted)';msg.textContent=t;}};
+  if(typeof window.showDirectoryPicker!=='function'){
+    say('This browser cannot write folders. Use Chrome or Edge on desktop.','#ea4335');return;
+  }
+  var problems=getRevProblems();
+  if(!problems.length){say('No problems in the tracker yet.','#ea4335');return;}
+  var dir;
+  try{dir=await window.showDirectoryPicker({mode:'readwrite'});}
+  catch(e){say('Cancelled.','#fbbf24');return;}
+  var grp=document.getElementById('code-group');
+  var grpBy=document.getElementById('code-group-by');
+  var grouping=grp?grp.checked:false;
+  var mode=grpBy?grpBy.value:'topic';
+  var made=0,skipped=0,noCode=[],i;
+  say('Writing…','#fbbf24');
+  for(i=0;i<problems.length;i++){
+    var p=problems[i];
+    try{
+      var parent=dir;
+      if(grouping)parent=await dir.getDirectoryHandle(groupNameFor(p,mode),{create:true});
+      var folder=await parent.getDirectoryHandle(safeFolderName(p.name),{create:true});
+      if(p.link)await writeTextFile(folder,'Readme.txt',p.link+'\n');
+      var code=problemCode(p);
+      if(!code){noCode.push(p.name);continue;}
+      if(await fileHasContent(folder,'code.cpp')){skipped++;continue;}
+      await writeTextFile(folder,'code.cpp',code+'\n');
+      made++;
+    }catch(e){/* keep going through the rest */}
+  }
+  var line='✅ '+made+' code.cpp written'+(skipped?', '+skipped+' already had code (left alone)':'');
+  if(noCode.length)line+=' — no code block found in: '+noCode.slice(0,6).join(', ')+(noCode.length>6?' +'+(noCode.length-6)+' more':'');
+  say(line,'#34a853');
+}
+
 // ── CSV ──
 function stripHTML(h){const d=document.createElement('div');d.innerHTML=h||'';return d.textContent||'';}
 function exportRevisionCSV(){
   const problems=getRevProblems();
   if(!problems.length){alert('No problems to export yet.');return;}
-  const rows=[['Problem','Link','Topic','Difficulty','Pattern','Why This Pattern','Key Trick','Date Solved','NextDay Done','Sunday Done','MonthEnd Done']];
+  const rows=[['Problem','Link','Topic','Difficulty','Pattern','Why This Pattern','Key Trick','Mistakes / Watch Out','Date Solved','NextDay Done','Sunday Done','MonthEnd Done']];
   problems.forEach(p=>{
     const s=p.slots||[];
     const g=k=>{const x=s.find(y=>y.key===k);return x?(x.done?'Yes ('+(x.doneOn||'')+')':'No ('+x.date+')'):'N/A';};
-    rows.push([p.name,p.link||'',p.topic==='Other'&&p.customTopic?p.customTopic:p.topic,p.diff,stripHTML(p.pattern),stripHTML(p.why),stripHTML(p.trick),p.solved,g('nextday'),g('sunday'),g('monthend')]);
+    rows.push([p.name,p.link||'',p.topic==='Other'&&p.customTopic?p.customTopic:p.topic,p.diff,stripHTML(p.pattern),stripHTML(p.why),stripHTML(p.trick),stripHTML(p.mistakes),p.solved,g('nextday'),g('sunday'),g('monthend')]);
   });
   const csv=rows.map(r=>r.map(c=>'"'+String(c).replace(/"/g,'""')+'"').join(',')).join('\n');
   const blob=new Blob([csv],{type:'text/csv'}),url=URL.createObjectURL(blob),a=document.createElement('a');
@@ -2201,7 +3081,7 @@ function importRevisionCSV(input){
       function pl(line){const o=[];let c='',q=false;for(let i=0;i<line.length;i++){const ch=line[i];if(ch==='"'){if(q&&line[i+1]==='"'){c+='"';i++;}else q=!q;}else if(ch===','&&!q){o.push(c);c='';}else c+=ch;}o.push(c);return o;}
       const h=pl(lines[0]).map(x=>x.trim().toLowerCase());
       const ix=n=>h.findIndex(x=>x.includes(n));
-      const iN=ix('problem'),iL=ix('link'),iT=ix('topic'),iD=ix('difficulty'),iP=ix('pattern'),iW=ix('why'),iK=ix('trick'),iS=ix('solved');
+      const iN=ix('problem'),iL=ix('link'),iT=ix('topic'),iD=ix('difficulty'),iP=ix('pattern'),iW=ix('why'),iK=ix('trick'),iM=ix('mistake'),iS=ix('solved');
       if(iN<0){msg.style.color='#ea4335';msg.textContent='❌ No "Problem" column.';return;}
       const ex=getRevProblems();let added=0;
       for(let i=1;i<lines.length;i++){
@@ -2211,7 +3091,7 @@ function importRevisionCSV(input){
         const diff=['Easy','Medium','Hard'].includes(d)?d:'Medium';
         const solved=(c[iS]||fmt(new Date())).trim();
         ex.push({id:Date.now()+i,name,link:iL>=0?(c[iL]||'').trim():'',topic:(c[iT]||'Other').trim(),customTopic:'',diff,
-          pattern:(c[iP]||'').trim(),why:(c[iW]||'').trim(),trick:(c[iK]||'').trim(),
+          pattern:(c[iP]||'').trim(),why:(c[iW]||'').trim(),trick:(c[iK]||'').trim(),mistakes:iM>=0?(c[iM]||'').trim():'',
           solved,slots:buildSlots(solved,diff)});
         added++;
       }
@@ -2357,6 +3237,8 @@ function histExportReport(){
   '.details{border-top:1px solid #eef1f6;padding-top:9px;}'+
   '.row{font-size:12px;line-height:1.6;margin-bottom:4px;}.row b{color:#5f6c85;}'+
   '.grateful{color:#8a6d00;}.notes{color:#5b21b6;font-style:italic;}'+
+  '.tc-red{color:#b91c1c;}.tc-orange{color:#c2410c;}.tc-yellow{color:#a16207;}'+
+  '.tc-green{color:#15803d;}.tc-blue{color:#1d4ed8;}.tc-violet{color:#6d28d9;}'+
   '.ft{text-align:center;color:#9aa5b5;font-size:11px;margin-top:26px;border-top:1px solid #eef1f6;padding-top:12px;}'+
   '@media print{body{padding:12px;}.day{border-color:#ccc;}}'+
   '</style></head><body>'+
@@ -2470,7 +3352,7 @@ function revRenderTable(){
     const link=p.link?'<a href="'+p.link+'" target="_blank" rel="noopener">Open ↗</a>':'<span style="color:var(--muted);">—</span>';
     const pat=stripHTML(p.pattern||'')||'—';
     const solvedDt=p.solved?new Date(p.solved+'T12:00:00').toLocaleDateString('en-IN',{day:'numeric',month:'short'}):'—';
-    const hasNotes=!!(p.pattern||p.why||p.trick);
+    const hasNotes=!!(p.pattern||p.why||p.trick||p.mistakes);
     const isOpen=!!openNotes[p.id];
     const noteBtn=hasNotes
       ? '<button class="rev-note-btn" onclick="revToggleNote('+p.id+')" title="Show notes">'+(isOpen?'▲':'📝')+'</button>'
@@ -2493,6 +3375,7 @@ function revRenderTable(){
       if(p.pattern)n+='<div class="rev-note-sec"><div class="rev-note-lbl" style="color:#8ab4f8;">🧩 Pattern</div><div class="rev-note-body">'+p.pattern+'</div></div>';
       if(p.why)n+='<div class="rev-note-sec"><div class="rev-note-lbl" style="color:#c4b5fd;">💡 Why This Pattern</div><div class="rev-note-body">'+p.why+'</div></div>';
       if(p.trick)n+='<div class="rev-note-sec"><div class="rev-note-lbl" style="color:#fbbf24;">🔑 Key Trick</div><div class="rev-note-body">'+p.trick+'</div></div>';
+      if(p.mistakes)n+='<div class="rev-note-sec"><div class="rev-note-lbl" style="color:#f87171;">⚠️ Mistakes / Watch Out</div><div class="rev-note-body">'+p.mistakes+'</div></div>';
       n+='</div>';
       tr+='<tr class="notes-row"><td colspan="9">'+n+'</td></tr>';
     }
@@ -2519,6 +3402,928 @@ function revRenderTable(){
 }
 
 
+// ══════════════════════════════════════════════
+// MY NOTES  (additive — independent of problem notes)
+// ══════════════════════════════════════════════
+var MN_COLORS=[
+  {id:'gold',  sw:'rgba(245,158,11,.55)'},
+  {id:'green', sw:'rgba(34,197,94,.55)'},
+  {id:'blue',  sw:'rgba(66,133,244,.55)'},
+  {id:'rose',  sw:'rgba(239,68,68,.5)'},
+  {id:'violet',sw:'rgba(124,58,237,.55)'},
+  {id:'grey',  sw:'rgba(160,175,200,.35)'}
+];
+function mnGet(){return ld('gm-mynotes',[]);}
+function mnSave(n){sv('gm-mynotes',n);}
+function mnAdd(){
+  const notes=mnGet();
+  const id=Date.now();
+  notes.unshift({id,title:'New note',body:'',color:'blue',open:true,created:fmt(new Date())});
+  mnSave(notes);mnRender();
+  setTimeout(function(){const t=document.getElementById('mn-t-'+id);if(t){t.focus();t.select();}},60);
+}
+function mnDelete(id){
+  if(!confirm('Delete this note?'))return;
+  mnSave(mnGet().filter(n=>n.id!==id));mnRender();
+}
+function mnToggle(id){
+  const notes=mnGet();const n=notes.find(x=>x.id===id);if(!n)return;
+  n.open=!n.open;mnSave(notes);mnRender();
+}
+function mnSetColor(id,c){
+  const notes=mnGet();const n=notes.find(x=>x.id===id);if(!n)return;
+  n.color=c;mnSave(notes);mnRender();
+}
+function mnSetTitle(id,v){
+  const notes=mnGet();const n=notes.find(x=>x.id===id);if(!n)return;
+  n.title=(v||'').trim()||'Untitled note';mnSave(notes);
+}
+function mnSetBody(id){
+  const el=document.getElementById('mn-b-'+id);if(!el)return;
+  const notes=mnGet();const n=notes.find(x=>x.id===id);if(!n)return;
+  n.body=el.innerHTML;mnSave(notes);
+}
+function mnExpandAll(){const n=mnGet();n.forEach(x=>x.open=true);mnSave(n);mnRender();}
+function mnCollapseAll(){const n=mnGet();n.forEach(x=>x.open=false);mnSave(n);mnRender();}
+function mnMove(id,dir){
+  const notes=mnGet();const i=notes.findIndex(x=>x.id===id);if(i<0)return;
+  const j=i+dir;if(j<0||j>=notes.length)return;
+  const t=notes[i];notes[i]=notes[j];notes[j]=t;
+  mnSave(notes);mnRender();
+}
+// ══════════════════════════════════════════════
+// SUBJECT LIBRARY — Subject › Topic › Note
+// Grows with you: add DSA, then Sliding Window under it, then notes under that.
+// Later add System Design and it sits alongside, same shape.
+// Note bodies render on a light "paper" sheet, which is far easier to read for
+// long passages than white-on-dark.
+// ══════════════════════════════════════════════
+function slGet(){return ld('gm-subject-lib',[]);}
+function slSave(v){sv('gm-subject-lib',v);}
+var slOpen={},slEdit=null;               // slEdit = {sid,tid,nid} being edited
+function slToggle(k){slOpen[k]=!slOpen[k];slRender();}
+function slUid(){return Date.now()+Math.floor(Math.random()*1000);}
+
+function slAddSubject(){
+  const name=prompt('Subject name  (e.g. DSA, System Design, Behavioral)');
+  if(!name||!name.trim())return;
+  const lib=slGet();
+  lib.push({id:slUid(),name:name.trim(),topics:[]});
+  slSave(lib);slRender();
+}
+function slAddTopic(sid){
+  const name=prompt('Topic name  (e.g. Sliding Window, Caching, Ownership)');
+  if(!name||!name.trim())return;
+  const lib=slGet(),s=lib.find(x=>x.id===sid);if(!s)return;
+  if(!s.topics)s.topics=[];
+  s.topics.push({id:slUid(),name:name.trim(),notes:[]});
+  slSave(lib);slOpen['s'+sid]=true;slRender();
+}
+function slAddNote(sid,tid){
+  const title=prompt('Note title');
+  if(!title||!title.trim())return;
+  const lib=slGet(),s=lib.find(x=>x.id===sid);if(!s)return;
+  const t=(s.topics||[]).find(x=>x.id===tid);if(!t)return;
+  if(!t.notes)t.notes=[];
+  const n={id:slUid(),title:title.trim(),body:'',date:fmt(new Date())};
+  t.notes.push(n);
+  slSave(lib);slOpen['s'+sid]=true;slOpen['t'+tid]=true;
+  slEdit={sid:sid,tid:tid,nid:n.id};
+  slRender();
+}
+function slRename(kind,sid,tid){
+  const lib=slGet(),s=lib.find(x=>x.id===sid);if(!s)return;
+  if(kind==='s'){const v=prompt('Rename subject',s.name);if(v&&v.trim())s.name=v.trim();}
+  else{const t=(s.topics||[]).find(x=>x.id===tid);if(!t)return;
+       const v=prompt('Rename topic',t.name);if(v&&v.trim())t.name=v.trim();}
+  slSave(lib);slRender();
+}
+function slDelete(kind,sid,tid,nid){
+  const lib=slGet(),si=lib.findIndex(x=>x.id===sid);if(si<0)return;
+  const s=lib[si];
+  if(kind==='s'){
+    const n=(s.topics||[]).reduce((a,t)=>a+((t.notes||[]).length),0);
+    if(!confirm('Delete subject "'+s.name+'"?\n\n'+(s.topics||[]).length+' topic(s) and '+n+' note(s) go with it.'))return;
+    lib.splice(si,1);
+  }else if(kind==='t'){
+    const ti=(s.topics||[]).findIndex(x=>x.id===tid);if(ti<0)return;
+    const t=s.topics[ti];
+    if(!confirm('Delete topic "'+t.name+'"?\n\n'+((t.notes||[]).length)+' note(s) go with it.'))return;
+    s.topics.splice(ti,1);
+  }else{
+    const t=(s.topics||[]).find(x=>x.id===tid);if(!t)return;
+    const ni=(t.notes||[]).findIndex(x=>x.id===nid);if(ni<0)return;
+    if(!confirm('Delete note "'+t.notes[ni].title+'"?'))return;
+    t.notes.splice(ni,1);
+  }
+  slSave(lib);slRender();
+}
+function slStartEdit(sid,tid,nid){
+  slEdit={sid:sid,tid:tid,nid:nid};slOpen['n'+nid]=true;slRender();
+  setTimeout(function(){const e=document.getElementById('sl-ed');if(e)e.focus();},40);
+}
+function slCancelEdit(){slEdit=null;slRender();}
+function slSaveEdit(sid,tid,nid){
+  const lib=slGet(),s=lib.find(x=>x.id===sid);if(!s)return;
+  const t=(s.topics||[]).find(x=>x.id===tid);if(!t)return;
+  const n=(t.notes||[]).find(x=>x.id===nid);if(!n)return;
+  n.body=rteGet('sl-ed');
+  n.date=fmt(new Date());
+  slSave(lib);slEdit=null;slRender();
+}
+function slPaper(){const v=ld('gm-sl-paper',null);return v===null?true:!!v;}
+function slTogglePaper(){sv('gm-sl-paper',!slPaper());slRender();}
+function slRender(){
+  const host=document.getElementById('sl-list');if(!host)return;
+  const pb=document.getElementById('sl-paper-btn');
+  if(pb)pb.innerHTML=slPaper()?'&#9728; Paper':'&#127769; Dark';
+  const PAP=slPaper()?' sl-paper':'', PAPW=slPaper()?' sl-paper-wrap':'';
+  const lib=slGet();
+  const q=((document.getElementById('sl-search')||{}).value||'').trim().toLowerCase();
+  if(!lib.length){
+    host.innerHTML='<div style="font-size:11px;color:var(--muted);font-style:italic;padding:12px 2px;">Nothing here yet. Tap <b>+ Subject</b> and add <b>DSA</b> — then topics inside it, then notes inside those.</div>';
+    return;
+  }
+  const hit=(txt)=>!q||String(txt||'').toLowerCase().indexOf(q)>=0;
+  host.innerHTML=lib.map(function(s){
+    let topics=(s.topics||[]);
+    if(q)topics=topics.filter(t=>hit(t.name)||hit(s.name)||(t.notes||[]).some(n=>hit(n.title)||hit(stripHTML(n.body))));
+    if(q&&!topics.length&&!hit(s.name))return '';
+    const sOpen=q?true:!!slOpen['s'+s.id];
+    const noteCount=(s.topics||[]).reduce((a,t)=>a+((t.notes||[]).length),0);
+    return `<div style="margin-bottom:9px;border:1px solid rgba(124,58,237,.3);border-radius:12px;overflow:hidden;">
+      <div style="display:flex;align-items:center;gap:8px;padding:11px 13px;background:rgba(124,58,237,.1);">
+        <div onclick="slToggle('s${s.id}')" style="flex:1;display:flex;align-items:center;gap:8px;cursor:pointer;min-width:0;">
+          <span style="font-size:11px;color:#c4b5fd;">${sOpen?'▲':'▼'}</span>
+          <span style="font-size:13px;font-weight:800;color:#c4b5fd;">${escHTML(s.name)}</span>
+          <span style="font-size:9px;font-weight:800;padding:2px 8px;border-radius:99px;background:rgba(124,58,237,.25);color:#ddd6fe;">${(s.topics||[]).length} topics · ${noteCount} notes</span>
+        </div>
+        <button onclick="slAddTopic(${s.id})" style="padding:3px 10px;background:rgba(124,58,237,.22);color:#c4b5fd;border:1px solid rgba(124,58,237,.45);border-radius:99px;font-size:9px;font-weight:800;cursor:pointer;white-space:nowrap;">+ Topic</button>
+        <button onclick="slRename('s',${s.id})" title="Rename" style="background:none;border:none;color:#fb923c;cursor:pointer;font-size:12px;padding:0 2px;">&#9998;</button>
+        <button onclick="slDelete('s',${s.id})" title="Delete subject" style="background:none;border:none;color:#f87171;cursor:pointer;font-size:12px;padding:0 2px;">&#10005;</button>
+      </div>
+      ${sOpen?`<div style="padding:9px 11px 11px;">${topics.length?topics.map(function(t){
+        let notes=(t.notes||[]);
+        if(q)notes=notes.filter(n=>hit(n.title)||hit(stripHTML(n.body))||hit(t.name));
+        const tOpen=q?true:!!slOpen['t'+t.id];
+        return `<div style="margin-bottom:7px;border:1px solid var(--border);border-radius:10px;overflow:hidden;">
+          <div style="display:flex;align-items:center;gap:8px;padding:9px 11px;background:rgba(66,133,244,.08);">
+            <div onclick="slToggle('t${t.id}')" style="flex:1;display:flex;align-items:center;gap:7px;cursor:pointer;min-width:0;">
+              <span style="font-size:10px;color:#8ab4f8;">${tOpen?'▲':'▼'}</span>
+              <span style="font-size:12px;font-weight:800;color:#8ab4f8;">${escHTML(t.name)}</span>
+              <span style="font-size:9px;font-weight:800;padding:2px 7px;border-radius:99px;background:rgba(66,133,244,.2);color:#a8c7fa;">${(t.notes||[]).length}</span>
+            </div>
+            <button onclick="slAddNote(${s.id},${t.id})" style="padding:3px 10px;background:rgba(66,133,244,.18);color:#8ab4f8;border:1px solid rgba(66,133,244,.4);border-radius:99px;font-size:9px;font-weight:800;cursor:pointer;white-space:nowrap;">+ Note</button>
+            <button onclick="slRename('t',${s.id},${t.id})" title="Rename" style="background:none;border:none;color:#fb923c;cursor:pointer;font-size:11px;padding:0 2px;">&#9998;</button>
+            <button onclick="slDelete('t',${s.id},${t.id})" title="Delete topic" style="background:none;border:none;color:#f87171;cursor:pointer;font-size:11px;padding:0 2px;">&#10005;</button>
+          </div>
+          ${tOpen?`<div style="padding:8px 10px 10px;">${notes.length?notes.map(function(n){
+            const ed=slEdit&&slEdit.nid===n.id;
+            const nOpen=ed||!!slOpen['n'+n.id];
+            const peek=stripHTML(n.body).replace(/\s+/g,' ').trim();
+            return `<div style="margin-bottom:7px;">
+              <div style="display:flex;align-items:center;gap:7px;padding:6px 2px;">
+                <div onclick="slToggle('n${n.id}')" style="flex:1;display:flex;align-items:center;gap:7px;cursor:pointer;min-width:0;">
+                  <span style="font-size:10px;color:#fcd34d;">${nOpen?'▲':'▼'}</span>
+                  <span style="font-size:12px;font-weight:700;white-space:nowrap;">${escHTML(n.title)}</span>
+                  ${nOpen?'':`<span style="font-size:10px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${escHTML(peek.slice(0,70))}${peek.length>70?'…':''}</span>`}
+                </div>
+                ${ed?'':`<button onclick="slStartEdit(${s.id},${t.id},${n.id})" style="padding:2px 8px;background:rgba(251,146,60,.16);border:1px solid rgba(251,146,60,.45);color:#fb923c;border-radius:6px;cursor:pointer;font-size:10px;font-weight:800;">&#9998; edit</button>
+                <button onclick="slDelete('n',${s.id},${t.id},${n.id})" style="padding:2px 8px;background:rgba(234,67,53,.14);border:1px solid rgba(234,67,53,.4);color:#f87171;border-radius:6px;cursor:pointer;font-size:10px;font-weight:800;">&#10005;</button>`}
+              </div>
+              ${ed?`<div class="rte-wrap${PAPW}">${rteToolbar('sl-ed')}
+                     <div class="rte-body${PAP}" id="sl-ed" contenteditable="true" data-ph="Write it up — paste code, add headings, highlight the bits that matter.">${n.body||''}</div></div>
+                   <div style="display:flex;gap:7px;margin-top:7px;">
+                     <button onclick="slSaveEdit(${s.id},${t.id},${n.id})" style="padding:6px 15px;background:rgba(52,168,83,.18);color:#4ade80;border:1px solid rgba(52,168,83,.4);border-radius:8px;font-size:11px;font-weight:800;cursor:pointer;">Save</button>
+                     <button onclick="slCancelEdit()" style="padding:6px 12px;background:rgba(255,255,255,.05);color:var(--muted);border:1px solid var(--border);border-radius:8px;font-size:11px;cursor:pointer;">Cancel</button>
+                   </div>`
+                 :(nOpen?`<div class="rte-body${PAP}" style="min-height:0;">${n.body?asHTML(n.body):'<span style="opacity:.55;font-style:italic;">Empty — tap edit to write.</span>'}</div>
+                          <div style="font-size:9px;color:var(--muted);margin-top:3px;">updated ${n.date||''}</div>`:'')}
+            </div>`;}).join('')
+            :'<div style="font-size:10px;color:var(--muted);font-style:italic;padding:4px 2px;">No notes yet — tap <b>+ Note</b>.</div>'}</div>`:''}
+        </div>`;}).join('')
+        :'<div style="font-size:10px;color:var(--muted);font-style:italic;padding:4px 2px;">No topics yet — tap <b>+ Topic</b>.</div>'}</div>`:''}
+    </div>`;}).join('')||'<div style="font-size:11px;color:var(--muted);font-style:italic;padding:10px 2px;">Nothing matches that search.</div>';
+}
+// Paper (light) reading mode for the My Notes section. On by default — long
+// passages are much easier to read dark-on-light.
+function mnPaper(){const v=ld('gm-notes-paper',null);return v===null?true:!!v;}
+function mnTogglePaper(){
+  sv('gm-notes-paper',!mnPaper());
+  const b=document.getElementById('mn-paper-btn');
+  if(b)b.innerHTML=mnPaper()?'&#9728; Paper':'&#127769; Dark';
+  mnRender();
+}
+function mnRender(){
+  const el=document.getElementById('mn-list');if(!el)return;
+  const pb=document.getElementById('mn-paper-btn');
+  if(pb)pb.innerHTML=mnPaper()?'&#9728; Paper':'&#127769; Dark';
+  let notes=mnGet();
+  const q=(document.getElementById('mn-search')||{}).value;
+  if(q&&q.trim()){
+    const t=q.trim().toLowerCase();
+    notes=notes.filter(function(n){
+      return String(n.title||'').toLowerCase().indexOf(t)>-1
+          || stripHTML(n.body||'').toLowerCase().indexOf(t)>-1;
+    });
+    if(!notes.length){el.innerHTML='<div class="empty-s" style="padding:20px;">No notes match "'+stripHTML(q)+'".</div>';return;}
+  }
+  if(!notes.length){
+    el.innerHTML='<div class="empty-s" style="padding:20px;">No notes yet.<br>Tap <b>☰ New Note</b> to add your first one.</div>';
+    return;
+  }
+  el.innerHTML=notes.map(function(n,idx){
+    const bodyId='mn-b-'+n.id;
+    const swatches=MN_COLORS.map(function(c){
+      return '<span class="mn-sw'+(n.color===c.id?' on':'')+'" style="background:'+c.sw+'" title="'+c.id+'" onmousedown="event.preventDefault()" onclick="event.stopPropagation();mnSetColor('+n.id+',\''+c.id+'\')"></span>';
+    }).join(' ');
+    const tb=function(fn,label,title){
+      return '<button class="rte-btn" onmousedown="event.preventDefault()" onclick="'+fn+'" title="'+title+'">'+label+'</button>';
+    };
+    const toolbar=
+      '<div class="rte-toolbar" style="border-radius:8px 8px 0 0;">'+
+      tb("rteCmd('bold','"+bodyId+"')",'<b>B</b>','Bold')+
+      tb("rteCmd('italic','"+bodyId+"')",'<i>I</i>','Italic')+
+      '<div class="rte-sep"></div>'+
+      tb("rteHeading('"+bodyId+"')",'H','Heading')+
+      tb("rteCmd('insertUnorderedList','"+bodyId+"')",'&bull;','Bullets')+
+      '<div class="rte-sep"></div>'+
+      MN_COLORS.slice(0,5).map(function(c,i){
+        const hl=['hl-yellow','hl-green','hl-blue','hl-red','hl-purple'][i];
+        return '<span class="hl-swatch" style="background:'+c.sw+'" onmousedown="event.preventDefault()" onclick="rteHighlight(\''+bodyId+'\',\''+hl+'\')" title="Highlight"></span>';
+      }).join('')+
+      '<div class="rte-sep"></div>'+
+      [['tc-red','#f87171'],['tc-orange','#fb923c'],['tc-yellow','#fbbf24'],['tc-green','#4ade80'],['tc-blue','#60a5fa'],['tc-violet','#c4b5fd'],['tc-black','#0b1020'],['tc-white','#ffffff']].map(function(t){
+        return '<span class="tc-swatch" style="border-color:'+t[1]+';color:'+t[1]+'" onmousedown="event.preventDefault()" onclick="rteTextColour(\''+bodyId+'\',\''+t[0]+'\')" title="Text colour"></span>';
+      }).join('')+
+      '<div class="rte-sep"></div>'+
+      tb("rteCode('"+bodyId+"')",'&lt;&gt;','Inline code')+
+      tb("rteCodeBlock('"+bodyId+"')",'&#9636;','Code block')+
+      tb("rteCmd('removeFormat','"+bodyId+"')",'&#10005;','Clear format')+
+      '</div>';
+
+    return '<div class="mn-card mn-c-'+(n.color||'blue')+'">'+
+      '<div class="mn-head">'+
+        '<span class="mn-arrow" onclick="mnToggle('+n.id+')">'+(n.open?'&#9662;':'&#9656;')+'</span>'+
+        '<input class="mn-title" id="mn-t-'+n.id+'" value="'+String(n.title||'').replace(/"/g,'&quot;')+'" '+
+          'onclick="event.stopPropagation()" onblur="mnSetTitle('+n.id+',this.value)" '+
+          'onkeydown="if(event.key===\'Enter\'){this.blur();}">'+
+        '<span class="mn-actions">'+
+          '<button class="mn-btn" onclick="event.stopPropagation();mnMove('+n.id+',-1)" title="Move up"'+(idx===0?' disabled style="opacity:.25"':'')+'>&#9650;</button>'+
+          '<button class="mn-btn" onclick="event.stopPropagation();mnMove('+n.id+',1)" title="Move down"'+(idx===notes.length-1?' disabled style="opacity:.25"':'')+'>&#9660;</button>'+
+          '<button class="mn-btn" onclick="event.stopPropagation();mnDelete('+n.id+')" title="Delete">&#128465;</button>'+
+        '</span>'+
+      '</div>'+
+      (n.open
+        ? '<div class="mn-body-wrap">'+
+            '<div style="display:flex;gap:4px;align-items:center;margin-bottom:6px;">'+swatches+'</div>'+
+            '<div class="rte-wrap'+(mnPaper()?' sl-paper-wrap':'')+'" style="margin-bottom:0;">'+toolbar+
+              '<div class="rte-body'+(mnPaper()?' sl-paper':'')+'" id="'+bodyId+'" contenteditable="true" data-ph="Write anything here…" '+
+                'oninput="mnSetBody('+n.id+')" onblur="mnSetBody('+n.id+')">'+(n.body||'')+'</div>'+
+            '</div>'+
+          '</div>'
+        : '')+
+    '</div>';
+  }).join('');
+}
+
+// ══════════════════════════════════════════════
+// MY NOTES — EXPORTS (Word / PDF-ready HTML / Markdown)
+// ══════════════════════════════════════════════
+function mnMsg(t,c){
+  var el=document.getElementById('mn-export-msg');if(!el)return;
+  el.textContent=t;el.style.color=c||'#34a853';
+  setTimeout(function(){if(el)el.textContent='';},4000);
+}
+function mnDownload(content,filename,mime){
+  var blob=new Blob([content],{type:mime});
+  var url=URL.createObjectURL(blob),a=document.createElement('a');
+  a.href=url;a.download=filename;
+  document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(url);
+}
+function mnColHex(c){
+  return {gold:['#8a6d00','#fffbeb','#f5d67a'],green:['#166534','#f0fdf4','#86d9a3'],
+          blue:['#1a56db','#eff6ff','#93b8f5'],rose:['#9f1239','#fff1f2','#f5a3ad'],
+          violet:['#5b21b6','#f5f3ff','#c4b5fd'],grey:['#475569','#f8fafc','#cbd5e1']}[c]||['#1a56db','#eff6ff','#93b8f5'];
+}
+function mnNotesHTML(){
+  var notes=mnGet();
+  return notes.map(function(n){
+    var c=mnColHex(n.color);
+    return '<div style="border:1px solid '+c[2]+';border-left:4px solid '+c[2]+';background:'+c[1]+';border-radius:8px;padding:12px 14px;margin:0 0 14px 0;">'+
+      '<div style="font-size:14px;font-weight:bold;color:'+c[0]+';margin-bottom:6px;">'+stripHTML(n.title||'Untitled note')+'</div>'+
+      '<div style="font-size:12px;color:#1a2340;line-height:1.7;">'+(n.body||'<i style="color:#9aa5b5;">(empty)</i>')+'</div>'+
+      '</div>';
+  }).join('');
+}
+function mnBaseCSS(){
+  return 'body{font-family:Calibri,-apple-system,Segoe UI,Arial,sans-serif;max-width:820px;margin:0 auto;padding:30px;color:#1a2340;line-height:1.7;}'+
+  'h1{font-size:22px;border-bottom:3px solid #4285f4;padding-bottom:10px;margin-bottom:6px;}'+
+  '.meta{color:#6b7c99;font-size:12px;margin-bottom:22px;}'+
+  'code{background:#e8effd;color:#1a56db;padding:1px 5px;border-radius:4px;font-family:Consolas,monospace;font-size:12px;}'+
+  'pre{background:#f0f4ff;border:1px solid #dbe4f5;border-radius:6px;padding:10px;overflow-x:auto;font-family:Consolas,monospace;font-size:12px;color:#1a56db;}'+
+  'mark.hl-yellow{background:#fff3c4;color:#8a6d00;} mark.hl-green{background:#d6f5e0;color:#166534;}'+
+  'mark.hl-blue{background:#dbe8ff;color:#1a56db;} mark.hl-red{background:#ffe0e0;color:#b91c1c;}'+
+  'mark.hl-purple{background:#ede4ff;color:#5b21b6;}'+
+  '.tc-red{color:#b91c1c;} .tc-orange{color:#c2410c;} .tc-yellow{color:#a16207;}'+
+  '.tc-green{color:#15803d;} .tc-blue{color:#1d4ed8;} .tc-violet{color:#6d28d9;}'+
+  'h3{font-size:14px;color:#1a56db;margin:10px 0 3px;} ul{margin:5px 0 5px 20px;}';
+}
+function mnExportWord(){
+  var notes=mnGet();
+  if(!notes.length){mnMsg('No notes to export yet.','#ea4335');return;}
+  var doc='<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">'+
+    '<head><meta charset="utf-8"><title>My Notes</title>'+
+    '<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom></w:WordDocument></xml><![endif]-->'+
+    '<style>@page{size:A4;margin:2cm;}'+mnBaseCSS()+'</style></head><body>'+
+    '<h1>My Notes &mdash; Google Mission 2027</h1>'+
+    '<div class="meta">Shivam Chauhan &middot; '+notes.length+' note'+(notes.length===1?'':'s')+' &middot; exported '+
+    new Date().toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'})+'</div>'+
+    mnNotesHTML()+'</body></html>';
+  mnDownload('\ufeff'+doc,'my-notes-'+fmt(new Date())+'.doc','application/msword');
+  mnMsg('📘 Word file downloaded — open in MS Word');
+}
+function mnExportHTML(){
+  var notes=mnGet();
+  if(!notes.length){mnMsg('No notes to export yet.','#ea4335');return;}
+  var doc='<!DOCTYPE html><html><head><meta charset="utf-8"><title>My Notes — Google Mission 2027</title>'+
+    '<style>'+mnBaseCSS()+'@media print{body{padding:12px;}div{page-break-inside:avoid;}}</style></head><body>'+
+    '<h1>My Notes &mdash; Google Mission 2027</h1>'+
+    '<div class="meta">Shivam Chauhan &middot; '+notes.length+' note'+(notes.length===1?'':'s')+' &middot; exported '+
+    new Date().toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'})+'</div>'+
+    mnNotesHTML()+
+    '<div style="text-align:center;color:#9aa5b5;font-size:11px;margin-top:26px;border-top:1px solid #eef1f6;padding-top:12px;">Press Ctrl/Cmd + P to save as PDF</div>'+
+    '</body></html>';
+  mnDownload(doc,'my-notes-'+fmt(new Date())+'.html','text/html;charset=utf-8;');
+  mnMsg('📄 HTML downloaded — open it and press Ctrl/Cmd+P for PDF');
+}
+function mnHtmlToMd(h){
+  if(!h)return '';
+  var s=String(h);
+  s=s.replace(/<h3[^>]*>([\s\S]*?)<\/h3>/gi,'\n### $1\n');
+  s=s.replace(/<pre[^>]*>([\s\S]*?)<\/pre>/gi,function(m,p){return '\n```\n'+p.replace(/<[^>]*>/g,'')+'\n```\n';});
+  s=s.replace(/<code[^>]*>([\s\S]*?)<\/code>/gi,'`$1`');
+  s=s.replace(/<(b|strong)[^>]*>([\s\S]*?)<\/(b|strong)>/gi,'**$2**');
+  s=s.replace(/<(i|em)[^>]*>([\s\S]*?)<\/(i|em)>/gi,'_$2_');
+  s=s.replace(/<mark[^>]*>([\s\S]*?)<\/mark>/gi,'==$1==');
+  s=s.replace(/<span[^>]*class="tc-[^"]*"[^>]*>([\s\S]*?)<\/span>/gi,'**$1**');
+  s=s.replace(/<li[^>]*>([\s\S]*?)<\/li>/gi,'- $1\n');
+  s=s.replace(/<\/(ul|ol|div|p)>/gi,'\n');
+  s=s.replace(/<br\s*\/?>/gi,'\n');
+  s=s.replace(/<[^>]+>/g,'');
+  s=s.replace(/&nbsp;/g,' ').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"');
+  s=s.replace(/\n{3,}/g,'\n\n');
+  return s.trim();
+}
+function mnExportMD(){
+  var notes=mnGet();
+  if(!notes.length){mnMsg('No notes to export yet.','#ea4335');return;}
+  var out='# My Notes — Google Mission 2027\n\n'+
+    '_Shivam Chauhan · '+notes.length+' note'+(notes.length===1?'':'s')+' · exported '+
+    new Date().toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'})+'_\n\n---\n\n';
+  notes.forEach(function(n){
+    out+='## '+stripHTML(n.title||'Untitled note')+'\n\n';
+    var b=mnHtmlToMd(n.body||'');
+    out+=(b||'_(empty)_')+'\n\n---\n\n';
+  });
+  mnDownload(out,'my-notes-'+fmt(new Date())+'.md','text/markdown;charset=utf-8;');
+  mnMsg('📝 Markdown downloaded');
+}
+
+// ══════════════════════════════════════════════
+// REVISION LOG — Word / PDF-ready exports
+// ══════════════════════════════════════════════
+function revExpMsg(t,c){
+  var el=document.getElementById('rev-import-msg');if(!el)return;
+  el.textContent=t;el.style.color=c||'#34a853';
+  setTimeout(function(){if(el)el.textContent='';},4500);
+}
+function revExpDownload(content,filename,mime){
+  var blob=new Blob([content],{type:mime});
+  var url=URL.createObjectURL(blob),a=document.createElement('a');
+  a.href=url;a.download=filename;
+  document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(url);
+}
+function revExpFiltered(){
+  // respect whatever filters are active in the UI
+  var rows=getRevProblems().slice();
+  if(['Easy','Medium','Hard'].indexOf(revFilter)!==-1)rows=rows.filter(function(p){return p.diff===revFilter;});
+  if(revTopic!=='all')rows=rows.filter(function(p){
+    var t=(p.topic==='Other'&&p.customTopic)?p.customTopic:p.topic;return t===revTopic;});
+  rows.sort(function(a,b){return String(b.solved||'').localeCompare(String(a.solved||''));});
+  return rows;
+}
+function revExpWantsNotes(){
+  var cb=document.getElementById('rev-exp-notes');
+  return cb?!!cb.checked:true;
+}
+function revExpCSS(){
+  return 'body{font-family:Calibri,-apple-system,Segoe UI,Arial,sans-serif;max-width:1000px;margin:0 auto;padding:28px;color:#1a2340;line-height:1.6;}'+
+  'h1{font-size:22px;border-bottom:3px solid #4285f4;padding-bottom:10px;margin-bottom:5px;}'+
+  '.meta{color:#6b7c99;font-size:12px;margin-bottom:20px;}'+
+  '.sum{margin-bottom:20px;font-size:12px;color:#3a5080;}'+
+  '.sum b{color:#1a2340;}'+
+  'table{width:100%;border-collapse:collapse;font-size:11.5px;margin-bottom:22px;}'+
+  'th{background:#eef3fc;color:#3a5080;font-size:10px;text-transform:uppercase;letter-spacing:.6px;padding:8px 9px;text-align:left;border:1px solid #dbe4f5;}'+
+  'td{padding:8px 9px;border:1px solid #dbe4f5;vertical-align:top;}'+
+  'tr:nth-child(even) td{background:#fafbfe;}'+
+  '.pill{display:inline-block;font-size:10px;padding:2px 8px;border-radius:99px;font-weight:bold;}'+
+  '.easy{background:#e6f4ea;color:#166534;} .med{background:#fef6dd;color:#8a6d00;} .hard{background:#fde8e8;color:#b91c1c;}'+
+  '.topic{background:#e8effd;color:#1a56db;}'+
+  '.card{border:1px solid #dbe4f5;border-left:4px solid #4285f4;border-radius:8px;padding:13px 15px;margin-bottom:13px;page-break-inside:avoid;}'+
+  '.card h2{font-size:15px;margin:0 0 7px;color:#1a2340;}'+
+  '.card .tags{margin-bottom:9px;}'+
+  '.sec{margin-bottom:9px;}'+
+  '.lbl{font-size:10px;font-weight:bold;text-transform:uppercase;letter-spacing:.7px;margin-bottom:3px;}'+
+  '.lbl-p{color:#1a56db;} .lbl-w{color:#6d28d9;} .lbl-t{color:#a16207;} .lbl-m{color:#b91c1c;}'+
+  '.bd{font-size:12px;color:#1a2340;line-height:1.7;}'+
+  '.slots{font-size:11px;color:#5f6c85;margin-top:8px;padding-top:7px;border-top:1px solid #eef1f6;}'+
+  '.ok{color:#166534;font-weight:bold;} .due{color:#b06000;font-weight:bold;} .up{color:#9aa5b5;}'+
+  'code{background:#e8effd;color:#1a56db;padding:1px 5px;border-radius:4px;font-family:Consolas,monospace;font-size:11px;}'+
+  'pre{background:#f0f4ff;border:1px solid #dbe4f5;border-radius:6px;padding:9px;overflow-x:auto;font-family:Consolas,monospace;font-size:11px;color:#1a56db;}'+
+  'mark.hl-yellow{background:#fff3c4;color:#8a6d00;} mark.hl-green{background:#d6f5e0;color:#166534;}'+
+  'mark.hl-blue{background:#dbe8ff;color:#1a56db;} mark.hl-red{background:#ffe0e0;color:#b91c1c;}'+
+  'mark.hl-purple{background:#ede4ff;color:#5b21b6;}'+
+  '.tc-red{color:#b91c1c;} .tc-orange{color:#c2410c;} .tc-yellow{color:#a16207;}'+
+  '.tc-green{color:#15803d;} .tc-blue{color:#1d4ed8;} .tc-violet{color:#6d28d9;}'+
+  'h3{font-size:13px;color:#1a56db;margin:8px 0 3px;} ul{margin:4px 0 4px 19px;}';
+}
+function revExpBuild(){
+  var rows=revExpFiltered();
+  if(!rows.length)return null;
+  var withNotes=revExpWantsNotes();
+  var today=fmt(new Date());
+  var dcls=function(d){return d==='Easy'?'easy':d==='Medium'?'med':'hard';};
+  var topicOf=function(p){return (p.topic==='Other'&&p.customTopic)?p.customTopic:p.topic;};
+
+  var byDiff={Easy:0,Medium:0,Hard:0};
+  rows.forEach(function(p){if(byDiff[p.diff]!==undefined)byDiff[p.diff]++;});
+  var fully=rows.filter(function(p){var s=p.slots||[];return s.length&&s.every(function(x){return x.done;});}).length;
+  var byTopic={};
+  rows.forEach(function(p){var t=topicOf(p);byTopic[t]=(byTopic[t]||0)+1;});
+  var topicLine=Object.keys(byTopic).sort(function(a,b){return byTopic[b]-byTopic[a];})
+    .map(function(t){return t+' ('+byTopic[t]+')';}).join(' &middot; ');
+
+  // summary table
+  var trs=rows.map(function(p,i){
+    var s=p.slots||[];
+    var done=s.filter(function(x){return x.done;}).length;
+    var slotTxt=s.map(function(x){
+      var nm=x.key==='nextday'?'Next Day':x.key==='sunday'?'Sunday':'Month End';
+      if(x.done)return '<span class="ok">'+nm+' &#10003;</span>';
+      if(x.date<=today)return '<span class="due">'+nm+' (due)</span>';
+      return '<span class="up">'+nm+'</span>';
+    }).join(' &middot; ');
+    return '<tr><td>'+(i+1)+'</td>'+
+      '<td><b>'+stripHTML(p.name)+'</b></td>'+
+      '<td>'+(p.link?'<a href="'+p.link+'">Link</a>':'&mdash;')+'</td>'+
+      '<td><span class="pill topic">'+stripHTML(topicOf(p))+'</span></td>'+
+      '<td><span class="pill '+dcls(p.diff)+'">'+p.diff+'</span></td>'+
+      '<td>'+(stripHTML(p.pattern||'')||'&mdash;')+'</td>'+
+      '<td>'+done+'/'+s.length+'<br><span style="font-size:10px;">'+slotTxt+'</span></td>'+
+      '<td>'+((p.extraRevs||[]).length||'&mdash;')+'</td>'+
+      '<td>'+(p.solved||'&mdash;')+'</td></tr>';
+  }).join('');
+
+  var table='<table><thead><tr><th>#</th><th>Problem</th><th>Link</th><th>Topic</th><th>Level</th>'+
+    '<th>Pattern</th><th>Revisions</th><th>Extra</th><th>Solved</th></tr></thead><tbody>'+trs+'</tbody></table>';
+
+  // detail cards
+  var cards='';
+  if(withNotes){
+    cards='<h2 style="font-size:17px;border-bottom:2px solid #dbe4f5;padding-bottom:7px;margin:26px 0 15px;">Notes &amp; Patterns</h2>';
+    cards+=rows.map(function(p){
+      var s=p.slots||[];
+      var slotTxt=s.map(function(x){
+        var nm=x.key==='nextday'?'Next Day':x.key==='sunday'?'Sunday':'Month End';
+        if(x.done)return '<span class="ok">'+nm+' &#10003; '+(x.doneOn||'')+'</span>';
+        if(x.date<=today)return '<span class="due">'+nm+' &mdash; due '+x.date+'</span>';
+        return '<span class="up">'+nm+' &mdash; '+x.date+'</span>';
+      }).join(' &nbsp;|&nbsp; ');
+      var body='';
+      if(p.pattern)body+='<div class="sec"><div class="lbl lbl-p">Pattern</div><div class="bd">'+p.pattern+'</div></div>';
+      if(p.why)body+='<div class="sec"><div class="lbl lbl-w">Why This Pattern</div><div class="bd">'+p.why+'</div></div>';
+      if(p.trick)body+='<div class="sec"><div class="lbl lbl-t">Key Trick</div><div class="bd">'+p.trick+'</div></div>';
+      if(p.mistakes)body+='<div class="sec"><div class="lbl lbl-m">Mistakes / Watch Out</div><div class="bd">'+p.mistakes+'</div></div>';
+      if(!body)body='<div class="bd" style="color:#9aa5b5;font-style:italic;">No notes recorded.</div>';
+      var extra=(p.extraRevs||[]).length;
+      return '<div class="card"><h2>'+stripHTML(p.name)+'</h2>'+
+        '<div class="tags"><span class="pill '+dcls(p.diff)+'">'+p.diff+'</span> '+
+        '<span class="pill topic">'+stripHTML(topicOf(p))+'</span> '+
+        (p.link?'<a href="'+p.link+'" style="font-size:11px;">Open problem</a>':'')+'</div>'+
+        body+
+        '<div class="slots">'+slotTxt+(extra?' &nbsp;|&nbsp; <b>'+extra+' extra revision'+(extra===1?'':'s')+'</b>':'')+
+        ' &nbsp;|&nbsp; Solved '+(p.solved||'&mdash;')+'</div></div>';
+    }).join('');
+  }
+
+  var filterNote='';
+  if(revFilter!=='all'||revTopic!=='all'){
+    filterNote=' &middot; filtered by '+(revTopic!=='all'?revTopic:'')+(revFilter!=='all'?(revTopic!=='all'?' + ':'')+revFilter:'');
+  }
+
+  return {
+    rows:rows,
+    head:'<h1>DSA Problem Log &mdash; Google Mission 2027</h1>'+
+      '<div class="meta">Shivam Chauhan &middot; '+rows.length+' problem'+(rows.length===1?'':'s')+
+      ' &middot; exported '+new Date().toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long',year:'numeric'})+filterNote+'</div>'+
+      '<div class="sum"><b>'+byDiff.Easy+'</b> Easy &nbsp;&middot;&nbsp; <b>'+byDiff.Medium+'</b> Medium &nbsp;&middot;&nbsp; <b>'+
+      byDiff.Hard+'</b> Hard &nbsp;&middot;&nbsp; <b>'+fully+'</b> fully revised<br>'+
+      '<span style="font-size:11px;">Topics: '+topicLine+'</span></div>',
+    table:table, cards:cards
+  };
+}
+function revExportWord(){
+  var d=revExpBuild();
+  if(!d){revExpMsg('No problems to export yet.','#ea4335');return;}
+  var doc='<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">'+
+    '<head><meta charset="utf-8"><title>DSA Problem Log</title>'+
+    '<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View><w:Zoom>100</w:Zoom></w:WordDocument></xml><![endif]-->'+
+    '<style>@page{size:A4 landscape;margin:1.5cm;}'+revExpCSS()+'</style></head><body>'+
+    d.head+d.table+d.cards+'</body></html>';
+  revExpDownload('\ufeff'+doc,'dsa-problem-log-'+fmt(new Date())+'.doc','application/msword');
+  revExpMsg('📘 Word file downloaded — '+d.rows.length+' problems');
+}
+function revExportPDF(){
+  var d=revExpBuild();
+  if(!d){revExpMsg('No problems to export yet.','#ea4335');return;}
+  var doc='<!DOCTYPE html><html><head><meta charset="utf-8"><title>DSA Problem Log — Google Mission 2027</title>'+
+    '<style>'+revExpCSS()+'@media print{body{padding:10px;}.card{page-break-inside:avoid;}thead{display:table-header-group;}}</style>'+
+    '</head><body>'+d.head+d.table+d.cards+
+    '<div style="text-align:center;color:#9aa5b5;font-size:11px;margin-top:24px;border-top:1px solid #eef1f6;padding-top:12px;">Press Ctrl/Cmd + P to save as PDF</div>'+
+    '</body></html>';
+  revExpDownload(doc,'dsa-problem-log-'+fmt(new Date())+'.html','text/html;charset=utf-8;');
+  revExpMsg('📄 HTML downloaded — open it and press Ctrl/Cmd+P for PDF');
+}
+
+// ══════════════════════════════════════════════
+// AUTOSAVE — Journal + Revision draft
+// ══════════════════════════════════════════════
+var _jrnTimer=null,_revDraftTimer=null;
+
+function jrnFlash(){
+  var el=document.getElementById('jrn-autosave');if(!el)return;
+  el.style.opacity='1';
+  clearTimeout(window._jrnFlashT);
+  window._jrnFlashT=setTimeout(function(){el.style.opacity='0';},1600);
+}
+function jrnSaveNow(){
+  var g=function(id){var e=document.getElementById(id);return e?e.value:'';};
+  DS.journal={c:g('j1'),t:g('j2'),g:g('j3'),n:g('j-notes')};
+  persist();
+  if(typeof updateSaveButton==='function')updateSaveButton();
+  jrnFlash();
+}
+function jrnQueue(){
+  if(_jrnTimer)clearTimeout(_jrnTimer);
+  _jrnTimer=setTimeout(jrnSaveNow,700);
+}
+
+// ── Revision form draft ──
+function revDraftSave(){
+  var g=function(id){var e=document.getElementById(id);return e?e.value:'';};
+  var h=function(id){var e=document.getElementById(id);return e?e.innerHTML:'';};
+  var d={
+    name:g('rev-name'),topic:g('rev-topic'),custom:g('rev-custom-topic'),
+    diff:g('rev-diff'),link:g('rev-link'),
+    pattern:h('rte-pattern'),why:h('rte-why'),trick:h('rte-trick'),mistakes:h('rte-mistakes'),
+    editId:(typeof revEditId!=='undefined'?revEditId:null),
+    at:new Date().toISOString()
+  };
+  var empty=!d.name&&!d.link&&!d.custom&&!stripHTML(d.pattern)&&!stripHTML(d.why)&&!stripHTML(d.trick);
+  if(empty){revDraftClear();return;}
+  sv('gm-rev-draft',d);
+  revDraftBanner(true);
+}
+function revDraftQueue(){
+  if(_revDraftTimer)clearTimeout(_revDraftTimer);
+  _revDraftTimer=setTimeout(revDraftSave,700);
+}
+function revDraftClear(){
+  try{localStorage.removeItem('gm-rev-draft');}catch(e){}
+  revDraftBanner(false);
+}
+function revDraftBanner(show,restored){
+  var el=document.getElementById('rev-draft-note');if(!el)return;
+  if(!show){el.style.display='none';el.textContent='';return;}
+  el.style.display='block';
+  el.textContent=restored?'📝 Unsaved draft restored — finish it and tap Add Problem'
+                         :'✓ Draft auto-saved — safe if you close the page';
+}
+function revDraftRestore(){
+  var d=ld('gm-rev-draft',null);
+  if(!d)return;
+  var s=function(id,v){var e=document.getElementById(id);if(e)e.value=v||'';};
+  var h=function(id,v){var e=document.getElementById(id);if(e)e.innerHTML=v||'';};
+  s('rev-name',d.name); s('rev-link',d.link);
+  if(d.topic)s('rev-topic',d.topic);
+  if(d.diff)s('rev-diff',d.diff);
+  if(d.topic==='Other'){
+    var c=document.getElementById('rev-custom-topic');
+    if(c){c.style.display='block';c.value=d.custom||'';}
+  }
+  h('rte-pattern',d.pattern); h('rte-why',d.why); h('rte-trick',d.trick); h('rte-mistakes',d.mistakes);
+  if(d.editId&&typeof revEditId!=='undefined'){
+    revEditId=d.editId;
+    var b=document.getElementById('rev-save-btn');
+    var cb=document.getElementById('rev-cancel-btn');
+    if(b)b.textContent='💾 Save Changes';
+    if(cb)cb.style.display='block';
+  }
+  revDraftBanner(true,true);
+}
+
+// Last-chance save if the tab is closed or hidden mid-typing.
+// Guarded so a missing addEventListener can never break the whole script.
+function _autosaveFlush(){try{jrnSaveNow();}catch(e){} try{revDraftSave();}catch(e){} try{if(_fsHandle)fsWrite();}catch(e){}}
+try{
+  if(typeof window!=='undefined'&&typeof window.addEventListener==='function'){
+    window.addEventListener('beforeunload',_autosaveFlush);
+    window.addEventListener('pagehide',_autosaveFlush);
+  }
+}catch(e){}
+try{
+  if(typeof document!=='undefined'&&typeof document.addEventListener==='function'){
+    document.addEventListener('visibilitychange',function(){
+      if(document.visibilityState==='hidden')_autosaveFlush();
+    });
+  }
+}catch(e){}
+
+// ══════════════════════════════════════════════
+// FOLDER AUTOSAVE — writes a real backup file to disk
+// Chrome / Edge desktop only (File System Access API)
+// ══════════════════════════════════════════════
+var _fsHandle=null,_fsTimer=null,_fsBusy=false,_fsLastWrite=null;
+var FS_FILENAME='google-mission-backup.json';
+
+function fsSupported(){
+  return typeof window!=='undefined'&&typeof window.showDirectoryPicker==='function';
+}
+// The directory handle can't live in localStorage — it needs IndexedDB.
+function fsIdb(){
+  return new Promise(function(res,rej){
+    if(typeof indexedDB==='undefined'){rej('no-idb');return;}
+    var r=indexedDB.open('gm-fs',1);
+    r.onupgradeneeded=function(){r.result.createObjectStore('h');};
+    r.onsuccess=function(){res(r.result);};
+    r.onerror=function(){rej(r.error);};
+  });
+}
+function fsPutHandle(h){
+  return fsIdb().then(function(db){
+    return new Promise(function(res,rej){
+      var t=db.transaction('h','readwrite');
+      t.objectStore('h').put(h,'dir');
+      t.oncomplete=function(){res(true);};
+      t.onerror=function(){rej(t.error);};
+    });
+  });
+}
+function fsGetHandle(){
+  return fsIdb().then(function(db){
+    return new Promise(function(res){
+      var t=db.transaction('h','readonly');
+      var q=t.objectStore('h').get('dir');
+      q.onsuccess=function(){res(q.result||null);};
+      q.onerror=function(){res(null);};
+    });
+  }).catch(function(){return null;});
+}
+function fsClearHandle(){
+  return fsIdb().then(function(db){
+    return new Promise(function(res){
+      var t=db.transaction('h','readwrite');
+      t.objectStore('h').delete('dir');
+      t.oncomplete=function(){res(true);};
+      t.onerror=function(){res(false);};
+    });
+  }).catch(function(){return false;});
+}
+function fsStatus(text,colour){
+  var b=document.getElementById('fs-btn');if(!b)return;
+  b.textContent=text;
+  if(colour){
+    b.style.color=colour;
+    b.style.borderColor=colour;
+    b.style.background=(colour==='#4ade80')?'rgba(52,168,83,.12)':'rgba(251,188,5,.12)';
+  } else {
+    // default / off state — always readable in both themes
+    b.style.color='var(--muted)';
+    b.style.borderColor='var(--border)';
+    b.style.background='var(--card)';
+  }
+}
+function fsBuildPayload(){
+  // identical shape to the manual backup so Import understands it
+  var data={},keys=[];
+  try{
+    var n=localStorage.length;
+    for(var i=0;i<n;i++){
+      var k=null;
+      try{k=localStorage.key(i);}catch(e){continue;}
+      if(k)keys.push(k);
+    }
+  }catch(e){}
+  keys.forEach(function(k){
+    var raw=null;
+    try{raw=localStorage.getItem(k);}catch(e){return;}
+    if(raw===null)return;
+    try{data[k]=JSON.parse(raw);}catch(e){data[k]={__rawString:raw};}
+  });
+  var s=(typeof backupSummary==='function')?backupSummary():{};
+  data.__backupInfo={
+    savedOn:fmt(new Date()),savedAt:new Date().toISOString(),source:'folder-autosave',
+    dailyEntries:s.days,moods:s.moods,journals:s.journals,meditations:s.med,
+    manifestations:s.man,revisionProblems:s.rev,weeklyRecords:s.sun,
+    totalKeys:Object.keys(data).length
+  };
+  return JSON.stringify(data,null,2);
+}
+function fsWrite(){
+  if(!_fsHandle||_fsBusy)return Promise.resolve(false);
+  _fsBusy=true;
+  return _fsHandle.getFileHandle(FS_FILENAME,{create:true})
+    .then(function(fh){return fh.createWritable();})
+    .then(function(w){return w.write(fsBuildPayload()).then(function(){return w.close();});})
+    .then(function(){
+      _fsBusy=false;
+      _fsLastWrite=new Date();
+      fsStatus('✓ Autosave: folder','#4ade80');
+      return true;
+    })
+    .catch(function(err){
+      _fsBusy=false;
+      fsStatus('⚠ Autosave: error','#fbbf24');
+      return false;
+    });
+}
+function fsQueueWrite(){
+  if(!_fsHandle)return;
+  if(_fsTimer)clearTimeout(_fsTimer);
+  _fsTimer=setTimeout(function(){fsWrite();},1200);
+}
+function fsToggle(){
+  if(_fsHandle){
+    if(!confirm('Turn off folder autosave?\n\nYour data stays in this browser, and the backup file already written stays on disk.'))return;
+    _fsHandle=null;
+    fsClearHandle();
+    fsStatus('💾 Autosave: off','');
+    return;
+  }
+  if(!fsSupported()){
+    alert('Folder autosave needs Chrome or Edge on a computer.\n\nOn iPhone/iPad or Safari this is not available — use the 💾 button to download a backup file instead.');
+    return;
+  }
+  window.showDirectoryPicker({mode:'readwrite'})
+    .then(function(h){
+      _fsHandle=h;
+      return fsPutHandle(h).catch(function(){return true;});
+    })
+    .then(function(){
+      return fsWrite();
+    })
+    .then(function(ok){
+      if(ok)alert('Folder autosave is on.\n\nEvery change now writes to "'+FS_FILENAME+'" in that folder.\nKeep the folder in OneDrive/Google Drive and it syncs automatically.');
+    })
+    .catch(function(e){ /* user cancelled the picker */ });
+}
+// ── THE BIG "AUTOSAVE IS OFF" PROMPT ──
+// Deliberately loud and deliberately manual. Nothing reconnects behind your
+// back, so if this is not on screen you know your changes are reaching disk.
+function fsShowNag(hasHandle){
+  var ov=document.getElementById('fs-nag');if(!ov)return;
+  var sub=document.getElementById('fs-nag-sub');
+  if(sub)sub.textContent=hasHandle
+    ? 'Windows forgets folder permission every time you close the tab. One click gives it back — nothing else to do.'
+    : 'No folder is linked yet. Pick the folder your tracker lives in and every change will be written there from now on.';
+  var btn=document.getElementById('fs-nag-btn');
+  if(btn)btn.textContent=hasHandle?'🔌  Connect autosave':'📂  Choose folder';
+  ov.classList.add('open');
+}
+function fsCloseNag(){
+  var ov=document.getElementById('fs-nag');if(ov)ov.classList.remove('open');
+}
+function fsNagAction(){
+  if(typeof window.__fsReconnect==='function')window.__fsReconnect();
+  else fsToggle();
+}
+function fsRestore(){
+  if(!fsSupported())return;
+  fsGetHandle().then(function(h){
+    if(!h){fsShowNag(false);return;}
+    if(!h.queryPermission){return;}
+    h.queryPermission({mode:'readwrite'}).then(function(p){
+      if(p==='granted'){
+        _fsHandle=h;fsStatus('✓ Autosave: folder','#4ade80');fsWrite();
+      } else {
+        // Chrome drops write permission when the tab closes and only re-grants
+        // it after a click. Nothing happens silently — put a big, unmissable
+        // prompt on screen so you always know autosave is off until you act.
+        fsStatus('💾 Autosave: reconnect','#fbbf24');
+        var b=document.getElementById('fs-btn');
+        var tryReconnect=function(){
+          if(_fsHandle)return;
+          h.requestPermission({mode:'readwrite'}).then(function(p2){
+            if(p2==='granted'){
+              _fsHandle=h;
+              if(b)b.onclick=fsToggle;
+              fsCloseNag();
+              fsStatus('✓ Autosave: folder','#4ade80');
+              fsWrite();
+            } else {
+              alert('Permission denied.\n\nYour changes are only in this browser until you connect.\nClick "Connect autosave" again and choose Allow.');
+            }
+          }).catch(function(){});
+        };
+        if(b)b.onclick=tryReconnect;
+        window.__fsReconnect=tryReconnect;
+        fsShowNag(true);
+      }
+    });
+  });
+}
+
+// ══════════════════════════════════════════════
+// SERVER SAVE — the no-permission path
+// When OPEN-TRACKER.py is running and the page is opened from localhost, every
+// change is POSTed straight to disk. No File System Access, no permission
+// prompt, nothing to reconnect after closing the tab. If the page is still on
+// file:// but the server is up, hop over to it automatically.
+// ══════════════════════════════════════════════
+var TSRV={on:false,timer:null,busy:false,again:false};
+function tsrvAvailable(){return location.protocol==='http:'||location.protocol==='https:';}
+function tsrvSave(){
+  if(!TSRV.on)return;
+  if(TSRV.busy){TSRV.again=true;return;}
+  TSRV.busy=true;fsStatus('⏳ Saving…','#fbbf24');
+  fetch('api/save',{method:'POST',headers:{'Content-Type':'application/json'},
+                    body:fsBuildPayload()})
+    .then(function(r){return r.json();})
+    .then(function(j){fsStatus(j&&j.ok?'✓ Autosave: server':'⚠ Save failed',j&&j.ok?'#4ade80':'#ea4335');})
+    .catch(function(){fsStatus('⚠ Save failed — is OPEN-TRACKER.py running?','#ea4335');})
+    .then(function(){
+      TSRV.busy=false;
+      if(TSRV.again){TSRV.again=false;setTimeout(tsrvSave,150);}
+    });
+}
+function tsrvQueue(){
+  if(!TSRV.on)return;
+  clearTimeout(TSRV.timer);
+  TSRV.timer=setTimeout(tsrvSave,900);
+}
+function tsrvInit(){
+  if(!tsrvAvailable())return false;
+  TSRV.on=true;
+  fsStatus('✓ Autosave: server','#4ade80');
+  var b=document.getElementById('fs-btn');
+  if(b){b.onclick=function(){tsrvRefresh();tsrvSave();};b.title='Saving straight to google-mission-backup.json — tap to sync now';}
+  tsrvRefresh();                                  // fill gaps on this device
+  window.addEventListener('focus',tsrvRefresh);   // and when you come back to the tab
+  return true;
+}
+// Pull anything this device is MISSING from the server file. This is what makes
+// the iPad work: Safari starts with empty storage, so without it the tracker
+// would look blank there. Only fills gaps — it can never overwrite something
+// you just typed on this device.
+function tsrvRefresh(){
+  if(!TSRV.on||TSRV.busy)return;
+  fetch('google-mission-backup.json',{cache:'no-store'})
+    .then(function(r){return r.ok?r.json():null;})
+    .then(function(obj){
+      if(!obj)return;
+      var added=0;
+      Object.keys(obj).forEach(function(k){
+        if(k==='__backupInfo'||k.indexOf('gm-')!==0)return;
+        try{
+          if(localStorage.getItem(k)!==null)return;
+          var v=obj[k];
+          localStorage.setItem(k,(v&&v.__rawString!==undefined)?v.__rawString:JSON.stringify(v));
+          added++;
+        }catch(e){}
+      });
+      if(added){
+        fsStatus('✓ Loaded '+added+' items','#4ade80');
+        setTimeout(function(){location.reload();},700);
+      }
+    }).catch(function(){});
+}
+
+// Route every single write through whichever autosave is active.
+// This is what makes it cover A-Z: checks, journal, meditation, notes, revision, roadmap, settings.
+(function wrapSave(){
+  if(typeof sv!=='function')return;
+  var original=sv;
+  sv=function(k,v){
+    original(k,v);
+    try{
+      if(String(k).indexOf('gm-')!==0)return;
+      if(TSRV.on)tsrvQueue();
+      else if(_fsHandle)fsQueueWrite();
+    }catch(e){}
+  };
+})();
+
 // INIT
 renderQuote();
 renderCountdown();setInterval(renderCountdown,60000);
@@ -2526,14 +4331,70 @@ renderDate();
 renderChecklist();
 renderStreak();
 renderRoadmap();
+// ── ONE-TIME FIX: sliding-window wording, "Slide" -> "Shrink" ──────────────
+// The step that does start++ is a SHRINK. A SLIDE is the whole window moving
+// with its width unchanged (end++ AND start++). Import cannot do this for us:
+// importData() skips any gm-revision problem whose name already exists, so an
+// edited backup can never update a problem that is already on this device.
+// Runs once, then leaves a flag behind and never runs again.
+(function fixShrinkWording(){
+  try{
+    if(localStorage.getItem('gm-fix-shrink-v1'))return;
+    var pairs=[
+      ['<strong>Shrink + Slide:</strong>','<strong>Shrink:</strong>'],
+      ['<strong>Slide (Shrink):</strong>','<strong>Shrink:</strong>'],
+      ['<strong>Slide (Shrink)</strong>','<strong>Shrink</strong>'],
+      ['Slide (Shrink)</span>','Shrink</span>'],
+      ['// Slide (Shrink)','// Shrink'],
+      ['// Step2: Slide and remove effect','// Step2: Shrink and remove effect'],
+      ['// Slide and remove effect','// Shrink and remove effect'],
+      ['// Step 3: Slide window and remove effect if needed','// Step 3: Shrink window and remove effect if needed'],
+      ['// Step 3: Slide','// Step 3: Shrink'],
+      ['effect (if needed), then slide','effect (if needed), then shrink'],
+      ['Calculation → Answer → Slide','Calculation → Answer → Shrink'],
+      ['<strong>Slide</strong> → only when condition breaks','<strong>Shrink</strong> → only when condition breaks'],
+      ['<strong>Slide</strong>: while condition breaks','<strong>Shrink</strong>: while condition breaks'],
+      ['Slide gated','Shrink gated'],
+      ['Answer outside Slide','Answer outside Shrink'],
+      ['Answer inside Slide','Answer inside Shrink'],
+      ['inside the Slide loop','inside the Shrink loop'],
+      ['<strong>Slide or shrink</strong>','<strong>Shrink</strong>'],
+      ['<b>Slide or shrink</b>','<b>Shrink</b>'],
+      ['Slide or Shrink window until it becomes invalid.','Shrink the window until it becomes invalid.'],
+      ['Every slide step','Every shrink step'],
+      ['because every slide gives','because every shrink gives'],
+      ["// Slide window while it's valid","// Shrink window while it's valid"],
+      [' // slide or shrink window',' // shrink window'],
+      ['// slide</span>','// shrink</span>']
+    ];
+    var touched=0;
+    ['gm-revision','gm-mynotes'].forEach(function(key){
+      var raw=localStorage.getItem(key);
+      if(!raw)return;
+      var out=raw;
+      pairs.forEach(function(p){out=out.split(p[0]).join(p[1]);});
+      if(out!==raw){
+        try{JSON.parse(out);localStorage.setItem(key,out);touched++;}catch(e){}
+      }
+    });
+    localStorage.setItem('gm-fix-shrink-v1','1');
+    if(touched)location.reload();
+  }catch(e){}
+})();
 loadSaved();
+revDraftRestore();
 loadManifest();renderMissionStats();renderWhyList();
 loadMedStatus();
 updTimer();
 applyTheme(ld('gm-theme','dark'));
 renderRevision();
+mnRender();
+slRender();
 checkSundayPopup();
 checkRevisionReminders();
+// Server save is used only if you deliberately opened the localhost address.
+// Otherwise: restore the folder handle, and if it needs a click, SAY SO loudly.
+if(!tsrvInit()) fsRestore();
 </script>
 </body>
 </html>
